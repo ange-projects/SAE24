@@ -16,3 +16,5 @@ SAÉ24 : Fonctionnalités du projet
        – Configuration de scénario de déplacements
        – Simulation de déplacement de l’objet en environnement non perturbé
        – Affichage du déplacement estimé de l’objet
+
+<img src="/images/gant-initial.png" alt="gant créé en début de projet" title="Gant initial">
