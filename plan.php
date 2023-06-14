@@ -19,6 +19,7 @@
     const pointColor = "steelblue";
     const animationDuration = 1000;
     const updateInterval = 2000;
+    const gridSize = 9; // Number of rows and columns in the grid
 
     // Set up SVG container
     const svg = d3.select("#plan")
@@ -27,24 +28,45 @@
 
     // Set up scales for x and y axes
     const xScale = d3.scaleLinear()
-    .domain([0, 8])
-    .range([padding, width - padding]); //minimum output value is padding. The maximum output value is width minus the padding. 
+      .domain([0, 8])
+      .range([padding, width - padding]);
 
     const yScale = d3.scaleLinear()
       .domain([8, 0])
-      .range([padding, height - padding]); //minimum output value corresponds to height minus the padding. The maximum output value is padding
+      .range([padding, height - padding]);
 
     // Draw x axis
     svg.append("g")
-      .attr("transform", "translate(0," + (height - padding) + ")") // move horizontally by 0 unit, move vertically by "height - padding"
-      .call(d3.axisBottom(xScale)); // generates the x-axis using the d3.axisBottom function
+      .attr("transform", "translate(0," + (height - padding) + ")")
+      .call(d3.axisBottom(xScale));
 
     // Draw y axis
     svg.append("g")
-      .attr("transform", "translate(" + padding + ",0)") // move it horizontally by the padding so it is not inside it
-      .call(d3.axisLeft(yScale)); // generates the y-axis using the d3.axisLeft function
+      .attr("transform", "translate(" + padding + ",0)")
+      .call(d3.axisLeft(yScale));
 
-    // defines the point
+    // Draw the grid lines
+    svg.append("g")
+      .selectAll("line")
+      .data(d3.range(gridSize))
+      .join("line")
+      .attr("x1", d => xScale(d))
+      .attr("y1", padding)
+      .attr("x2", d => xScale(d))
+      .attr("y2", height - padding)
+      .attr("stroke", "lightgray");
+
+    svg.append("g")
+      .selectAll("line")
+      .data(d3.range(gridSize))
+      .join("line")
+      .attr("x1", padding)
+      .attr("y1", d => yScale(d))
+      .attr("x2", width - padding)
+      .attr("y2", d => yScale(d))
+      .attr("stroke", "lightgray");
+
+    // Define the point
     const point = svg.append("circle")
       .attr("r", pointRadius)
       .style("fill", pointColor);
