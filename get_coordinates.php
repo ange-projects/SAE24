@@ -1,20 +1,20 @@
 <?php
-    // generate random  coordinates and publish it one the DB for the tests
-    $request_content = "SELECT * FROM coord_points ORDER BY id DESC LIMIT 1";
+    require_once("connexion_bdd.php");
+    $request_content = "SELECT id_mesure FROM coord_points ORDER BY id DESC LIMIT 1";
     $SQL_data = mysqli_query($connexion, $request_content);
-    $line = mysqli_fetch_assoc($SQL_data);
-    $coord[] = $line['x'];
-    $coord[] = $line['y'];
+    $id_mesure = mysqli_fetch_assoc($SQL_data)['id_mesure'];
     
-    $x = (rand(0, 7));
-    $y = (rand(0, 7));
-
-    $x .= ".5";
-    $y .= ".5";
-
-    $publish_content = "INSERT INTO `coord_points` (x, y) VALUES ('$x', '$y')";
-    mysqli_query($connexion, $publish_content);
-    mysqli_close($connexion);
+    $request_content = "SELECT x, y FROM coord_points WHERE id_mesure = $id_mesure";
+    $SQL_data = mysqli_query($connexion, $request_content);
+    $coord = array(
+        'x' => array(),
+        'y' => array()
+    );
+    
+    while ($line = mysqli_fetch_assoc($SQL_data)) {
+        $coord['x'][] = $line['x'];
+        $coord['y'][] = $line['y'];
+    }
+    
     echo json_encode($coord);
-    #ange
 ?>
