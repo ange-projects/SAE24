@@ -15,9 +15,10 @@
     const height = 500;
     const padding = 40;
     const pointRadius = 8;
-    const pointColor = "steelblue";
+    squareSize = width/9;
+    const pointColor = squareColor = "steelblue";
     const animationDuration = 1000;
-    const updateInterval = 2000;
+    const updateInterval = 5000;
     const gridSize = 9; // Number of rows and columns in the grid
 
     // Set up SVG container
@@ -71,21 +72,53 @@
       .attr("r", pointRadius)
       .style("fill", pointColor);
 
+    //define the rectangles
+    const squaresGroup = svg.append("g");
+
     // Function to update the point's position
     function updatePoint() {
-    fetch("get_coordinates.php") // Replace "get_coordinates.php" with the correct PHP file path
+      squaresGroup.selectAll("rect") // Clear previous squares
+      .remove();
+      point.remove();
+    fetch("get_coordinates.php")
         .then(response => response.json())
         .then(coord => {
-            console.log(coord);
-        // Calculate new coordinates for the point
-        const newX = coord[0]; // Adjust the calculation as per your requirement
-        const newY = coord[1]; // Adjust the calculation as per your requirement
+            if(coord['x'].length > 1){
 
-        // Update the point's position with animation
-        point.transition()
-            .duration(animationDuration)
-            .attr("cx", xScale(newX))
-            .attr("cy", yScale(newY));
+              var newX = [];
+              var newY = [];
+              for (var i = 0; i < coord['x'].length; i++) {
+                newX.push(coord['x'][i]);
+                newY.push(coord['y'][i]);
+                console.log("the line" + i + "values are " + newX + ' ; ' + newY)
+              }
+              const squares = squaresGroup.selectAll("circle")
+              .data(coord['x'])
+              .enter()
+              .append("rect")
+              .attr("x", (d, i) => xScale(coord['x'][i]) - squareSize / 2)
+              .attr("y", (d, i) => yScale(coord['y'][i]) - squareSize / 2)
+              .attr("width", squareSize)
+              .attr("height", squareSize)
+              .attr("fill", squareColor)
+              .attr("opacity", 0)
+              .transition()
+              .duration(animationDuration)
+              .attr("opacity", 1);
+              
+              rectangle.transition()
+                .duration(animationDuration)
+                .attr("cx", xScale(newX[0]))
+                .attr("cy", yScale(newY[0]))
+
+              } else {
+              
+              // Update the point's position with animation
+              point.transition()
+                  .duration(animationDuration)
+                  .attr("cx", xScale(newX[0]))
+                  .attr("cy", yScale(newY[0]))
+            }
         })
         .catch(error => console.error(error));
     }
