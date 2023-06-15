@@ -109,7 +109,7 @@ def amplitude_a_binaire(nombre):
 
     representation_binaire.append(valeur_binaire) #Add this binary representation to the list
 
-    nbr_binaire = ''.join(representation_binaire) #Concatenate all binary representations into a single string
+  nbr_binaire = ''.join(representation_binaire) #Concatenate all binary representations into a single string
     
   return nbr_binaire
 
