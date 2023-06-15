@@ -16,4 +16,5 @@
     mysqli_query($connexion, $publish_content);
     mysqli_close($connexion);
     echo json_encode($coord);
+    #ange
 ?>
