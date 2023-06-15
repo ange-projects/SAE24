@@ -21,4 +21,5 @@
     $publish_content = "INSERT INTO `coordinates` (x, y) VALUES ('$x', '$y')";
     mysqli_query($connexion, $publish_content);
     echo json_encode($coord);
+    #ange
 ?>

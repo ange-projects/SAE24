@@ -68,19 +68,22 @@ amplitude = {}
 micro = ["micro1","micro2","micro3"]
 coef_permittivite = scipy.constants.epsilon_0
 
-for id_case in range(1,65):
-  amplitude_micro = {}
-  for id_micro, microphone in enumerate(micro): #enumerate contains the index and the element traversed
-    distance = distance_case[id_case][microphone]
-    if distance == 0: #can't be divided by 0
-      amplitude_micro["am_micro"+str(id_micro+1)] = 0
-    else:
-      resultat = (coef_permittivite/(distance **2))
-      amplitude_micro["am_micro"+str(id_micro+1)] = resultat
-  amplitude[id_case] = amplitude_micro
+def dico_amplitude():
+  for id_case in range(1,65):
+    amplitude_micro = {}
+    for id_micro, microphone in enumerate(micro): #enumerate contains the index and the element traversed
+      distance = distance_case[id_case][microphone]
+      if distance == 0: #can't be divided by 0
+        amplitude_micro["am_micro"+str(id_micro+1)] = 0
+      else:
+        resultat = (coef_permittivite/(distance **2))
+        amplitude_micro["am_micro"+str(id_micro+1)] = resultat
+    amplitude[id_case] = amplitude_micro
+  return amplitude
 
-print(amplitude)
-   
+dico_amplitude = dico_amplitude()
 
 
 
+
+        
