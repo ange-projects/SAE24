@@ -1,0 +1,155 @@
+/*-----------import font------------*/
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../police/Poppins-Medium.ttf);
+}
+
+/*To prevent browsers from imposing their own margin*/
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins";
+    background-image: url(../img/purple_1920_x_1080.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*----------Navigation Bar----------*/
+
+.navbar {
+    position: absolute;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.7em;
+    letter-spacing: 1.25px;
+    font-weight: bolder;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin: 0 30px;
+    letter-spacing: 1.25px;
+}
+
+
+.navbar .nav-links .actif a {
+    color: rgb(140, 0, 255);
+    font-weight: 900;
+}
+
+/*-----Form-----*/
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+}
+
+.container {
+    position: relative;
+    background: rgba(255, 255, 255, .3);
+    padding: 2.5rem;
+    height: 400px;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: rgba(255, 255, 255, .3);
+    box-shadow: 20px 20px 35px -6px rgba(0, 0, 0, .2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    /*Blur effect*/
+}
+
+.container .accueil {
+    color: white;
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    margin-bottom: 28px;
+    opacity: .8;
+}
+
+.container .erreur {
+    font-weight: 400;
+    color: rgb(140, 0, 255);
+    font-size: 14px;
+    transition: all .3s;
+}
+
+.container input {
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    box-shadow: 3px 3px 50px rgba(0, 0, 0, .2);
+    border-radius: 40px;
+    padding: 1rem;
+    width: 200px;
+    color: white;
+    font-weight: 600;
+    transition: all .3s;
+    margin-bottom: 20px;
+}
+
+.container label {
+    color: white;
+    padding: 8px;
+    opacity: .8;
+}
+
+select {
+    background: rgba(255, 255, 255, .3);
+    border-radius: 20px;
+    font-family: "Poppins";
+    text-align: center;
+    width: 150px;
+    height: 30px;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+::placeholder {
+    color: white;
+}
+
+input:hover {
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
+}
+
+.container .erreur:hover {
+    text-shadow: 2px 2px 6px rgb(0, 0, 0);
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    width: 115px;
+    align-items: center;
+}

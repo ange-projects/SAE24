@@ -4,5 +4,6 @@
     $password="brul1goat";
     $dbname="bd_micros";
     $mysql_port="3306";
-    $connexion = mysqli_connect($servername, $username, $password, $dbname);
+    $connexion = mysqli_connect($servername, $username, $password, $dbname)
+        or die("Connexion impossible à la base de données");
 ?>
