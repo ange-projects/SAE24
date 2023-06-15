@@ -7,7 +7,7 @@ micro1 = (0.25, 0.25)   #Position of mic1
 micro2 = (0.25, 7.75)   #Position of mic2
 micro3 = (7.75, 7.75)   #Position of mic3
 
-    #Functions
+#---------------Functions-----------------
 
 #Calculating all box of the room
 def room_mapping (room_size):
@@ -55,7 +55,9 @@ def display_distance_table(distance_case):
         for capteur, distance in distances.items():
             print(f"  {capteur}: {distance}")
 
-#------------Main program------------
+
+#----------------Main program------------------
+
 
 positions = room_mapping(room_size)
 #display_room_map(positions)
@@ -63,7 +65,9 @@ positions = room_mapping(room_size)
 distance_case = distance(positions)
 #display_distance_table(distance_case)
 
-#-----------------------------------
+
+#--------------Amplitude calculation------------------
+
 
 amplitude  = {}
 micro = ["micro1","micro2","micro3"]
@@ -87,9 +91,10 @@ dico_amplitude = dico_amplitude()
 #print(dico_amplitude)
 
 
-def amplitude_a_binaire(nombre):
+#---------------------Amplitude to binary conversion-------------------
 
-  nbr_binaire = []
+
+def amplitude_a_binaire(nombre):
   
   packed = struct.pack('!d', nombre) 
   
@@ -100,22 +105,57 @@ def amplitude_a_binaire(nombre):
   representation_binaire = [] #Initialise an empty list to store the binary representations of each byte
 
   for octet in packed: #Browse every byte in packed
-  
     valeur_binaire = bin(octet) #Convert the byte into binary, which returns a string of characters starting with '0b'.
-
-    valeur_binaire = valeur_binaire.replace('0b', '') #Remove the '0b' from the beginning of the string
-    
+    valeur_binaire = valeur_binaire.replace('0b', '') #Remove the '0b' from the beginning of the string 
     valeur_binaire = valeur_binaire.rjust(8, '0') #Ensure that the binary representation is of length 8 (since a byte contains 8 bits)
-
     representation_binaire.append(valeur_binaire) #Add this binary representation to the list
-
   nbr_binaire = ''.join(representation_binaire) #Concatenate all binary representations into a single string
     
   return nbr_binaire
 
 
-nombre_bin = amplitude_a_binaire(1.5e-13)
-print(nombre_bin)
+#---------------------Conversion from binary to amplitude-------------------
 
 
+def binaire_a_amplitude(nbr_binaire):
+  
+  representation_binaire = []
+  octets = []
+
+  for i in range(0, len(nbr_binaire), 8): #a step of 8
+    octet = nbr_binaire[i:i+8]
+    octets.append(octet) #example of list contents ['01001100', '01100101', '01101100']
+
+  for octet in octets:
+    valeur_decimale = int(octet, 2)  
+    representation_binaire.append(valeur_decimale) #example of list contents [76, 101, 108] 
+
+  longueur_repre_binaire = len(representation_binaire)
+  packed = struct.pack('!{}B'.format(longueur_repre_binaire), *representation_binaire) #we convert the values contained in the list into a packed sequence of bytes
+  amplitude = struct.unpack('!d', packed)[0] #This command unpacks the packed byte sequence into a floating point number
+    
+  return amplitude
+
+#print(binaire_a_amplitude('0011110110100011011110000101101111100000000011101010011111011010'))
+
+
+#-----------------------Dictionary with binary data-------------------------
+
+
+amplitude_binaire  = {}
+micro_binaire = ["am_micro1","am_micro2","am_micro3"]
+
+def dico_amplitude_binaire():
+  for id_case in range(1,65):
+    amplitude_micro_binaire = {}
+    for id_micro, microphone in enumerate(micro_binaire): 
+      valeur = dico_amplitude[id_case][microphone]
+      binaire = amplitude_a_binaire(valeur)
+      amplitude_micro_binaire["am_micro_binaire"+str(id_micro+1)] = binaire
+    amplitude_binaire[id_case] = amplitude_micro_binaire
+  return amplitude_binaire
+
+print(dico_amplitude_binaire())
+
+#--------------------------------------------------------------------------
 
