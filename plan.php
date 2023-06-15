@@ -10,7 +10,6 @@
   <svg id="plan" width="500" height="500"></svg>
 
   <script>
-
     // Set up dimensions and variables
     const width = 500;
     const height = 500;
@@ -44,6 +43,7 @@
     svg.append("g")
       .attr("transform", "translate(" + padding + ",0)")
       .call(d3.axisLeft(yScale));
+
 
     // Draw the grid lines
     svg.append("g")
