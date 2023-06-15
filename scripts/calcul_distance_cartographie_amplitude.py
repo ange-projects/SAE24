@@ -158,7 +158,7 @@ def dico_amplitude_binaire():
 dico_amplitude_binaire = dico_amplitude_binaire()
 
 
-#-------------------Dictionary with boxes and microphone identifiers concatenated with amplitude in binary----------------------
+#----------Dictionary with boxes and microphone identifiers concatenated with amplitude in binary-------------
 
 
 amplitude_binaire_id  = {}
@@ -175,4 +175,18 @@ def dico_amplitude_binaire_id():
     amplitude_binaire_id[id_case] = liste_valeur
   return amplitude_binaire_id
 
-print(dico_amplitude_binaire_id())
+dico_amplitude_binaire_id = dico_amplitude_binaire_id()
+
+
+#---------------------The way to find the cell from binary data----------------------------
+
+def trouver_salle(valeur):
+  for case, value in dico_amplitude_binaire_id.items():
+      if valeur in str(value):
+          return case
+  return "La suite de caractères n'est pas trouvée dans le dictionnaire"
+
+solution = trouver_salle('010011110101010111111111101110100011101110101010100010010110101011')
+#print(solution)
+
+
