@@ -155,7 +155,24 @@ def dico_amplitude_binaire():
     amplitude_binaire[id_case] = amplitude_micro_binaire
   return amplitude_binaire
 
-print(dico_amplitude_binaire())
+dico_amplitude_binaire = dico_amplitude_binaire()
 
-#--------------------------------------------------------------------------
 
+#-------------------Dictionary with boxes and microphone identifiers concatenated with amplitude in binary----------------------
+
+
+amplitude_binaire_id  = {}
+micro_binaire_id = ["am_micro_binaire1","am_micro_binaire2","am_micro_binaire3"]
+combinaison = ["01","10","11"]
+
+def dico_amplitude_binaire_id():
+  for id_case in range(1,65):
+    liste_valeur = []
+    for id_micro, microphone in enumerate(micro_binaire_id): 
+      valeur = dico_amplitude_binaire[id_case][microphone]
+      valeur = combinaison[id_micro] + str(valeur)
+      liste_valeur.append(valeur)
+    amplitude_binaire_id[id_case] = liste_valeur
+  return amplitude_binaire_id
+
+print(dico_amplitude_binaire_id())
