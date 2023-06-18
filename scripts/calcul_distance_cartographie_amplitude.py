@@ -204,7 +204,7 @@ dico_coord_sans_para = enlever_parenthese(dico_coordonnee)
 #---------------------The way to find the cell from binary data----------------------------
 
 
-def trouver_case(valeur):
+def trouver_x_y(valeur):
   micro_plage = {'01': 'micro1', '10': 'micro2','11': 'micro3'}
   id_micro = valeur[0:2]
   data = valeur[2:]
@@ -214,7 +214,7 @@ def trouver_case(valeur):
           return [dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y']] #can add : "case micro, binaire_a_amplitude(data)"
   return "La suite de caractères n'est pas trouvée dans le dictionnaire"
 
-#print(trouver_case('100011110101000010000000111010111110011110111001110101011000010110'))
+#print(trouver_x_y('100011110101000010000000111010111110011110111001110101011000010110'))
 
 #-----------------------Table for pierre-------------------------------------------
 
