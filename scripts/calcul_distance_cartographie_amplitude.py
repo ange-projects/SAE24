@@ -211,7 +211,7 @@ def trouver_case(valeur):
   micro = micro_plage.get(id_micro, 'inconnu')
   for case, value in dico_amplitude_binaire_id.items():
       if valeur in str(value):
-          return [case, micro, dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y'], binaire_a_amplitude(data)]
+          return [dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y']] #can add : "case micro, binaire_a_amplitude(data)"
   return "La suite de caractères n'est pas trouvée dans le dictionnaire"
 
 #print(trouver_case('100011110101000010000000111010111110011110111001110101011000010110'))
