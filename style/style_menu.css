@@ -1,0 +1,269 @@
+/*---------Import font---------*/
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../police/Poppins-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 130%;
+    left: 0;
+    background: rgb(255, 255, 255);
+    width: 95px;
+    overflow: hidden;
+    /*Content overflow outside of a block*/
+    transition: width 0.3s linear;
+    /*Linear and slow transition*/
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+}
+
+.logo span {
+    top: 15px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+
+.logo img {
+    width: 59px;
+    height: 45px;
+    margin-right: 8px;
+}
+
+svg {
+    width: 50px;
+    height: 30px;
+    margin-left: 6px;
+    margin-right: 9px;
+}
+
+nav a {
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 17px;
+    display: table;
+    width: 400px;
+    padding: 20px;
+}
+
+.nav-item {
+    position: relative;
+    margin-left: 10px;
+}
+
+a:hover {
+    background: #eee;
+}
+
+nav:hover {
+    width: 360px;
+    transition: all 0.5s ease;
+}
+
+.deconnexion {
+    position: absolute;
+    bottom: 0;
+}
+
+/*------------Section-----------*/
+
+#zero {
+    display: flex;
+    padding-left: 120px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#zero #left {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#zero span {
+    font-size: large;
+    font-family: 'Poppins';
+    letter-spacing: 2px;
+}
+
+#zero h2 {
+    font-size: 30px;
+    font-family: 'Poppins';
+    letter-spacing: 1.5px;
+    padding: 9px;
+}
+
+#zero p {
+    font-size: medium;
+    font-family: 'Poppins';
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    border-style: groove;
+    padding: 5px;
+}
+
+#illustration_droite {
+    max-width: 180px;
+    padding: 6px;
+}
+
+#illustration_gauche {
+    max-width: 100px;
+}
+
+/*--------Toggle button between table and chart---------*/
+
+#boutton_bascule {
+    background-color: #4ebb52;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+}
+
+#boutton_bascule:hover {
+    background-color: #439b47;
+}
+
+/*-----data table-----*/
+
+#first {
+    display: flex;
+    justify-content: center;
+    margin-left: 75px;
+}
+
+#first .info_tab {
+    width: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#first .info_tab h4 {
+    max-width: 65%;
+    text-align: center;
+    padding-right: 40px;
+}
+
+table {
+    border-spacing: 0 4px;
+    border-collapse: separate;
+    width: 35%;
+}
+
+
+caption {
+    text-align: left;
+    margin-top: 20px;
+    color: #686868;
+    font-size: 15px;
+}
+
+
+td,
+th {
+    padding: 10px 20px 10px 10px;
+}
+
+
+th {
+    color: #7e7e7e;
+    font-size: 18px;
+}
+
+td {
+    background-color: #eaeaea;
+    color: #464646;
+    font-size: .95em;
+}
+
+/*To get rounded corners on certain squares*/
+
+td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*To purposely not display the graph first*/
+
+#second {
+    display: none;
+}
+
+/*Date Form*/
+
+.container {
+    width: 350px;
+    margin: auto;
+    padding: 25px;
+    box-shadow: 0 0 10px 0 #5f5f5f;
+    background-color: #fff;
+}
+
+.saisir_date {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input[name="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+input[name="connexion"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #009336;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[name="connexion"]:hover {
+    background-color: #1c8100;
+}
+
+section #form {
+    padding: 50px;
+}
+
+/* List of password */
+
+#mdp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
