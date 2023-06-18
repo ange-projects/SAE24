@@ -24,6 +24,13 @@ def display_room_map (positions):
     for i, position in enumerate(positions):
         print(f"Case {i+1} : {position}")
 
+#The creation of a dictionary linking boxes and their positions
+def dico_coord(positions):
+  dico_pos = {}
+  for i, position in enumerate(positions):
+    dico_pos[i+1] = position
+  return dico_pos
+
 #Distance calculation function (Pythagoras)
 def pythagore (position1, position2):
     x1, y1 = position1
@@ -61,7 +68,7 @@ def display_distance_table(distance_case):
 
 positions = room_mapping(room_size)
 #display_room_map(positions)
-
+dico_coordonnee = dico_coord(positions)
 distance_case = distance(positions)
 #display_distance_table(distance_case)
 
@@ -178,7 +185,24 @@ def dico_amplitude_binaire_id():
 dico_amplitude_binaire_id = dico_amplitude_binaire_id()
 
 
+#--------------------Function to remove brackets and return x and y separately--------------------
+
+
+def enlever_parenthese(dico):
+  dico_distance_sans_para = {}
+  for id_case, x_y in enumerate(dico):
+    element_a_supp = dico[id_case+1]
+    element = [float(element) for element in element_a_supp]
+    x,y = element[0], element[1]
+    dico_x_y = {'x': x, 'y': y}
+    dico_distance_sans_para[id_case+1] = dico_x_y
+  return dico_distance_sans_para 
+
+dico_coord_sans_para = enlever_parenthese(dico_coordonnee)
+
+
 #---------------------The way to find the cell from binary data----------------------------
+
 
 def trouver_salle(valeur):
   micro_plage = {'01': 'micro1', '10': 'micro2','11': 'micro3'}
@@ -187,9 +211,21 @@ def trouver_salle(valeur):
   micro = micro_plage.get(id_micro, 'inconnu')
   for case, value in dico_amplitude_binaire_id.items():
       if valeur in str(value):
-          return case, micro, binaire_a_amplitude(data)
+          return [case, micro, dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y'], binaire_a_amplitude(data)]
   return "La suite de caractères n'est pas trouvée dans le dictionnaire"
 
-print(trouver_salle('100011110101000010000000111010111110011110111001110101011000010110'))
+#print(trouver_salle('100011110101000010000000111010111110011110111001110101011000010110'))
+
+#-----------------------Table for pierre-------------------------------------------
+
+def tableau_pierre():
+  tableau_pierre = []
+  for id_case in range(1,65):
+    tableau_info = [id_case, dico_coord_sans_para[id_case]['x'], dico_coord_sans_para[id_case]['y'], dico_amplitude[id_case]['am_micro1'],dico_amplitude[id_case]['am_micro2'],dico_amplitude[id_case]['am_micro3']]
+    tableau_pierre.append(tableau_info)
+  return tableau_pierre
+  
+tableau_de_pierre = tableau_pierre()
+#print(tableau_de_pierre)
 
 
