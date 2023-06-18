@@ -226,6 +226,6 @@ def tableau_pierre():
   return tableau_pierre
   
 tableau_de_pierre = tableau_pierre()
-print(tableau_de_pierre)
+#print(tableau_de_pierre)
 
 

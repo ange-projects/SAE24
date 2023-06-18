@@ -1,6 +1,6 @@
 import time
 import paho.mqtt.client as mqtt
-import calcul_distance_cartographie_amplitude.py
+import calcul_distance_cartographie_amplitude
 
 #------------------------Mosquitto sub-------------------------
 
@@ -13,18 +13,18 @@ messages = []
 
 #------------------------
 
-def connection(client, rc): #rc for return code
+def connection(client,userdata,flag, rc): #rc for return code
     if rc == 0:
         print("Connexion réussie")
         client.subscribe(topic)  #subscription
     else:
         print(f"Erreur de connexion, code = {rc}")
 
-def message(client, msg):
+def message(client,userdata, msg):
     print(f"Topic: {msg.topic}, Message: {msg.payload.decode()}")
     messages.append(msg.payload.decode())
 
-def deconnection(client):
+def deconnection(client,userdata,rc):
     print("Déconnexion du broker")
 
 #----Callbacks----

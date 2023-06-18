@@ -189,7 +189,7 @@ def dico_amplitude_binaire_id():
 dico_amplitude_binaire_id = dico_amplitude_binaire_id()
 
 def get_random_case_values(dico):
-        case_aleatoire = random.choice(list(dico.items())) #récupère aléatoirement la clé qui correspond à une case du dictionnaire de salle
+        case_aleatoire = random.choice(list(dico.values())) #récupère aléatoirement la clé qui correspond à une case du dictionnaire de salle
         return case_aleatoire
 # print("\n \n")
 capteur_aleatoire = get_random_case_values(dico_amplitude_binaire_id)
@@ -206,7 +206,8 @@ client = mqtt.Client()
 client.connect("localhost", 1883, 60)
 
 # Publication du message aléatoire sur le topic
-client.publish("SAE24/capteur", capteur_aleatoire)
+client.publish("SAE24/capteur", str(capteur_aleatoire))
+print("C'est bon")
 
 # Déconnexion du broker MQTT
 client.disconnect()
