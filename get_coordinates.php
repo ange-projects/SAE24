@@ -15,6 +15,29 @@
         $coord['x'][] = $line['x'];
         $coord['y'][] = $line['y'];
     }
-    
+
+    $rand = (rand(0, 1));
+    $newID = $id_mesure + 1;
+    if($rand == 1){
+        $x = (rand(0, 7));
+        $y = (rand(0, 7));
+        $x .= ".5";
+        $y .= ".5";
+        $publish_content = "INSERT INTO `coord_points` (id_mesure, x, y) VALUES ('$newID','$x', '$y')";
+        mysqli_query($connexion, $publish_content);
+
+    }
+
+    $x = (rand(0, 7));
+    $y = (rand(0, 7));
+    $x .= ".5";
+    $y .= ".5";
+
+    $publish_content = "INSERT INTO `coord_points` (id_mesure, x, y) VALUES ('$newID', '$x', '$y')";
+    mysqli_query($connexion, $publish_content);
+
+    mysqli_close($connexion);
+
+
     echo json_encode($coord);
 ?>
