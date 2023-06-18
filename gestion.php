@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="GRID - Exemple pour la prochaine SAE">
     <link rel="stylesheet" href="./style/style_gestion.css">
-    <link rel="stylesheet" href="./style/style_consult.css">
     <link rel="shortcut icon" href="./img/icons8-favicon-16.png" type="image/x-icon">
     <title> Gestion de projet</title>
 </head>
@@ -20,8 +19,7 @@
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
                     <li><a href="login.php">Connectez-vous</a></li>
-                    <li><a href="#">Consultation</a></li>
-                    <li class="actif"><a href="#">Gestion de projet</a></li>
+                    <li><a href="gestion.php">Gestion de projet</a></li>
                     <li><a href="mentions.php">Mentions Légales</a></li>
                 </ul>
             </div>
@@ -134,19 +132,6 @@
         <p>
             Nous sommes extrêmement satisfaits du degré de réalisation de notre projet par rapport au cahier des charges initial. Malgré les défis rencontrés et les ajustements nécessaires, nous avons réussi à livrer un résultat qui répond à la majorité des spécifications et objectifs établis. Nous avons surmonté des difficultés techniques, résolu des problèmes complexes et trouvé des solutions adaptées tout au long du processus de développement. Bien que certains compromis aient été nécessaires, nous sommes fiers du travail accompli et de la qualité de notre produit final. Nous pensons avoir respecté l'essence du cahier des charges et avons pris des mesures pour fournir une expérience utilisateur agréable, une interface conviviale et des fonctionnalités fonctionnelles. Dans l'ensemble, nous estimons que notre projet a atteint un niveau de satisfaction élevé par rapport aux attentes initiales.</p>
     </section>
-
-    <div id="tempBanner" class="banner"> <!--Dynamic Banner-->
-        <h2>Consultation des dernières températures</h2>
-        <?php
-            foreach($liste as $capteur) {
-                if($ligne = mysqli_fetch_assoc($capteur)) {
-                    echo "<p>Capteur : " . $ligne['nom'] . " Valeur : " . $ligne['valeur'] . "° Date : " . $ligne['date'] . "</p>";      
-                }
-            }
-        ?>
-    </div>
     <script src="script_accueil.js"></script>
-
 </body>
-
 </html>

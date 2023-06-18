@@ -91,7 +91,6 @@ body {
 
 .bloca {
     padding: 1.5rem;
-    height: 400px;
     border-radius: 20px;
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: rgba(255, 255, 255, .3);
@@ -102,7 +101,6 @@ body {
 
 .blocb {
     padding: 1.5rem;
-    height: 410px;
     border-radius: 20px;
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: rgba(255, 255, 255, .3);
@@ -112,7 +110,6 @@ body {
 }
 .blocc {
     padding: 1.5rem;
-    height: 150px;
     border-radius: 20px;
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: rgba(255, 255, 255, .3);
