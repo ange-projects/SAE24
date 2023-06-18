@@ -1,0 +1,13 @@
+@import url("style_accueil.css");
+@import url("style_consult.css");
+
+
+div.consultation{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+svg {
+    background-color: #fff;
+}

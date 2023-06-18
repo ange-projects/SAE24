@@ -1,13 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Dynamic Plan with D3.js</title>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/consultation.css">
+    <link rel="shortcut icon" href="./img/icons8-favicon-16.png" type="image/x-icon">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <title>Login</title>
 </head>
 <body>
+<header>
+        <nav class="navbar"> <!--Navigation bar-->
+            <a href="#" class="logo">SAÉ 24 - Estimation de la position d'un objet</a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li class="actif"><a href="plan.php">Consultation</a></li>
+                    <li><a href="login.php">Connectez-vous</a></li>
+                    <li><a href="gestion.php">Gestion de projet</a></li>
+                    <li><a href="mentions.php">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </nav>
+</header>
   <h1>Dynamic Plan</h1>
 
+<div class="consultation">
   <svg id="plan" width="500" height="500"></svg>
+</div>
 
   <script>
     // Set up dimensions and variables
@@ -74,7 +95,8 @@
 
       // Define the point group (multiple possible positions)
     const possible_position_group = svg.append("g");
-
+    previousX = 0;
+    previousY = 0;
     // Function to update the point's position
     function updatePoint() {
       console.log("entering update point");
@@ -83,50 +105,45 @@
       fetch("get_coordinates.php")
         .then(response => response.json())
         .then(coord => {
-            //if there are multiple possible coordinates for the same measurment
-            if(coord['x'].length > 1){
-
+          //if there are multiple possible coordinates for the same measurment
+          if(coord['x'].length > 1){
               point.attr("opacity", 0); //remove the blue point
-              
               //for each element of the array, extract and store x and y values
               console.log("entering for loop");
               for (var i = 0; i < coord['x'].length; i++) {
-                if (typeof newX == 'undefined') {
-                newX = 0;
-                newY = 0;
-                }
-                console.log(i);
-                console.log("adding a point at "+coord['x'][i] +" ; "+ coord['y'][i])
                 //define the possible_points object as all the possible_position_group circles
                 possible_position_group
-                  .selectAll("circle")
+                .selectAll("circle")
                   //apply attributes to each circle
                   .data(coord['x'].map((x, i) => ({ x: x, y: coord['y'][i] })))
                   .join("circle")
                   .attr("r", pointRadius)
                   .style("fill", "grey")
-                  .attr("cx", xScale(newX))
-                  .attr("cy", yScale(newY))
+                  .attr("cx", xScale(previousX))
+                  .attr("cy", yScale(previousY))
                   .transition()
                   .attr("opacity", 1)
                   .duration(animationDuration)
                   .attr("cx", d => xScale(d.x))
                   .attr("cy", d => yScale(d.y));
-              }
-
-            } else {
-
+                }
+              } else {
               // Update the unique point position with animation
+              console.log("entering unique point animation");
               newX = (coord['x'][0]);
               newY = (coord['y'][0]);
-
-              console.log("entering unique point animation");
-              point.transition()
-                  .attr("opacity", 1)
-                  .duration(animationDuration)
-                  .attr("cx", xScale(newX))
-                  .attr("cy", yScale(newY))
-            }
+              point
+                .attr("cx", xScale(previousX))
+                .attr("cy", yScale(previousY))
+                .transition()
+                .attr("opacity", 1)
+                .duration(animationDuration)
+                .attr("cx", xScale(newX))
+                .attr("cy", yScale(newY))
+              }
+              //store the actual value of one point, it will be the starting point of the future one
+              previousX = (coord['x'][0]);
+              previousY = (coord['y'][0]);
         })
         .catch(error => console.error(error));
     }
