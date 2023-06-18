@@ -216,5 +216,16 @@ def trouver_salle(valeur):
 
 #print(trouver_salle('100011110101000010000000111010111110011110111001110101011000010110'))
 
+#-----------------------Table for pierre-------------------------------------------
+
+def tableau_pierre():
+  tableau_pierre = []
+  for id_case in range(1,65):
+    tableau_info = [id_case, dico_coord_sans_para[id_case]['x'], dico_coord_sans_para[id_case]['y'], dico_amplitude[id_case]['am_micro1'],dico_amplitude[id_case]['am_micro2'],dico_amplitude[id_case]['am_micro3']]
+    tableau_pierre.append(tableau_info)
+  return tableau_pierre
+  
+tableau_de_pierre = tableau_pierre()
+#print(tableau_de_pierre)
 
 
