@@ -37,7 +37,7 @@
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle> <!--https://iconsvg.xyz/-->
                         </svg>
-                        <span class="nav-item">Portail Gestionnaire</span>
+                        <span class="nav-item">Portail de Connexion</span>
                     </a>
                 </li>
                 <li>
@@ -70,7 +70,7 @@
     </header>
     <section id="zero">
         <article>
-            <img id="illustration_gauche" src="./img/temp.PNG" alt="Les données récupérées via nos capteurs.">    
+            <img id="illustration_gauche" src="./img/mic.jpg" alt="Les données récupérées via nos capteurs.">    
         </article>
         <article id="left">
             <span>Réseaux et Télécommunications | IUT de Blagnac</span>

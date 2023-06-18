@@ -12,9 +12,7 @@
         $pseudo_safe = htmlspecialchars($pseudo);
         $mdp = sha1($_POST["mdp"]);
 
-        // Utilisation d'une déclaration préparée
-        $stmt = $connexion->prepare("SELECT * FROM admin WHERE login ='$pseudo_safe'");
-        $requete = "SELECT mdp FROM admin WHERE login='$pseudo_safe'";
+        $requete = "SELECT mdp FROM admin WHERE login='$pseudo_safe' AND mdp='$mdp'";
         $resultat = mysqli_query($connexion, $requete);
 
         // Vérification du mot de passe
@@ -25,7 +23,7 @@
             header("Location: menu_admin.php"); 
             exit();  
         }else{
-            $error = "Identifiant ou mot de passe incorrect.";
+            $error = "Mot de passe incorrect.";
         }
     }
     // Fermeture de la connexion à la base de données

@@ -8,6 +8,7 @@
     $connexion = mysqli_connect($servername, $username, $password, $dbname)
         or die("Connexion impossible à la base de données");
 
+        // utilisation ange 
     // $servername="192.168.103.188";
     // $username="passroot";
     // $password="passroot";

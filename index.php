@@ -37,8 +37,9 @@
             <div class="bloc">
                 <h3>Objectif du projet</h3>
                 <ul>
-                    <li>&#8250; Section à éditer</li>
-
+                <li>&#8250; Exploiter un signal sonore (sinusoïdal) émis par un objet et reçu par trois microphones.</li>
+                <li>&#8250; Estimer la position en (x,y) de l’objet dans une pièce.</li>
+                <li>&#8250; Présenter l’estimation de la position sur une interface dédiée (site web).</li>
                 </ul>
             </div>
             <div class="bloc">
@@ -50,7 +51,15 @@
             <div class="bloc">
                 <h3>Contraintes techniques</h3>
                 <ul>
-                    <li>&#8250; Section à éditer</li>
+                    <li>&#8250; Environnement : machine virtuelle</li>
+                    <li>&#8250; Système d’exploitation : au choix</li>
+                    <li>&#8250; Langages autorisés : HTML5, CSS3, PHP, </li>
+                    <li>&#8250; Javascript, Bash, C, Python.</li>
+                    <li>&#8250; Stockage des données : BD MySQL et/ou InfluxDB</li>
+                    <li>&#8250; Codes documentés (commentaires pertinents dans le code) en anglais</li>
+                    <li>&#8250; Publication sur un serveur web dédié (xampp)</li>
+                    <li>&#8250; Gestion de version via Git et Github</li>
+                    
                 </ul>
             </div> <!--Building Condition Status-->
         </div>
