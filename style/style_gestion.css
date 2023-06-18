@@ -92,6 +92,8 @@ body {
 #intro img {
     width : 70%;
     height : 70%;
+    align-items: center;
+    padding: 20px;
 }
 /*Grille d'accueil*/
 
@@ -113,7 +115,6 @@ body {
 
 .bloc {
     padding: 1.5rem;
-    height: 620px;
     border-radius: 20px;
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: rgba(255, 255, 255, .3);
@@ -151,9 +152,9 @@ body {
     padding: 5px;
 }
 
+
 .blocb {
     padding: 1.5rem;
-    height: 675px;
     border-radius: 20px;
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: rgba(255, 255, 255, .3);

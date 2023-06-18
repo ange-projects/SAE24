@@ -54,8 +54,7 @@
                 <ul>
                     <li>&#8250; Environnement : machine virtuelle</li>
                     <li>&#8250; Système d’exploitation : au choix</li>
-                    <li>&#8250; Langages autorisés : HTML5, CSS3, PHP, </li>
-                    <li>&#8250; Javascript, Bash, C, Python.</li>
+                    <li>&#8250; Langages autorisés : HTML5, CSS3, PHP, Javascript, Bash, C, Python.</li>
                     <li>&#8250; Stockage des données : BD MySQL et/ou InfluxDB</li>
                     <li>&#8250; Codes documentés (commentaires pertinents dans le code) en anglais</li>
                     <li>&#8250; Publication sur un serveur web dédié (xampp)</li>
