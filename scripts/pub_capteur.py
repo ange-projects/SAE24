@@ -197,32 +197,16 @@ print(capteur_aleatoire)
 
 
 
-# Fonction de rappel pour la connexion au broker MQTT
-def on_connect(client, userdata, flags, rc):
-    print("Connecté au broker MQTT avec le code de retour : " + str(rc))
-    # Souscription à un topic
-    client.subscribe("topic/test")
 
-# Fonction de rappel pour la réception d'un message MQTT
-def on_message(client, userdata, msg):
-    print("Message reçu : " + msg.topic + " " + str(msg.payload))
 
 # Création d'un client MQTT
 client = mqtt.Client()
 
-# Définition des fonctions de rappel
-client.on_connect = on_connect
-client.on_message = on_message
-
 # Connexion au broker MQTT
 client.connect("localhost", 1883, 60)
 
-# Boucle de traitement des messages MQTT
-client.loop_start()
+# Publication du message aléatoire sur le topic
+client.publish("SAE24/capteur", capteur_aleatoire)
 
-# Publication d'un message
-client.publish("topic/test", "Hello, MQTT!")
-
-# Attente de 5 secondes avant de se déconnecter
-client.loop_stop()
+# Déconnexion du broker MQTT
 client.disconnect()
