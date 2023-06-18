@@ -24,6 +24,13 @@ def display_room_map (positions):
     for i, position in enumerate(positions):
         print(f"Case {i+1} : {position}")
 
+#The creation of a dictionary linking boxes and their positions
+def dico_coord(positions):
+  dico_pos = {}
+  for i, position in enumerate(positions):
+    dico_pos[i+1] = position
+  return dico_pos
+
 #Distance calculation function (Pythagoras)
 def pythagore (position1, position2):
     x1, y1 = position1
@@ -61,7 +68,7 @@ def display_distance_table(distance_case):
 
 positions = room_mapping(room_size)
 #display_room_map(positions)
-
+dico_coordonnee = dico_coord(positions)
 distance_case = distance(positions)
 #display_distance_table(distance_case)
 
