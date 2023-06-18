@@ -18,7 +18,7 @@
     squareSize = width/9;
     const pointColor = squareColor = "steelblue";
     const animationDuration = 1000;
-    const updateInterval = 5000;
+    const updateInterval = 10000;
     const gridSize = 9; // Number of rows and columns in the grid
 
     // Set up SVG container
@@ -72,44 +72,48 @@
       .attr("r", pointRadius)
       .style("fill", pointColor);
 
-    //define the rectangles
-    const squaresGroup = svg.append("g");
+      // Define the point group (multiple possible positions)
+      const possible_position_group = svg.append("g")
+
 
     // Function to update the point's position
     function updatePoint() {
-      squaresGroup.selectAll("rect") // Clear previous squares
-      .remove();
-      point.remove();
+      console.log("entering update point");
+      possible_position_group.selectAll("circle")
+      .remove(); // Clear previous squares
     fetch("get_coordinates.php")
         .then(response => response.json())
         .then(coord => {
             if(coord['x'].length > 1){
-
+              console.log(coord);
+              point.remove(); //remove the blue point
               var newX = [];
               var newY = [];
               for (var i = 0; i < coord['x'].length; i++) {
                 newX.push(coord['x'][i]);
                 newY.push(coord['y'][i]);
                 console.log("the line" + i + "values are " + newX + ' ; ' + newY)
-              }
-              const squares = squaresGroup.selectAll("circle")
-              .data(coord['x'])
-              .enter()
-              .append("rect")
-              .attr("x", (d, i) => xScale(coord['x'][i]) - squareSize / 2)
-              .attr("y", (d, i) => yScale(coord['y'][i]) - squareSize / 2)
-              .attr("width", squareSize)
-              .attr("height", squareSize)
-              .attr("fill", squareColor)
-              .attr("opacity", 0)
-              .transition()
-              .duration(animationDuration)
-              .attr("opacity", 1);
-              
-              rectangle.transition()
+
+                const possible_points = possible_position_group.selectAll("circle")
+                .data(coord['x'])
+                .enter()
+                .append("circle")
+                .attr("x", xScale(coord['x'][i]))
+                .attr("y", yScale(coord['y'][i]))
+                // .attr("x", (d, i) => xScale(coord['x'][i]) - squareSize / 2)
+                // .attr("y", (d, i) => yScale(coord['y'][i]) - squareSize / 2))
+                .attr("r", pointRadius)
+                .style("fill", "grey")
+                .attr("opacity", 0)
+                .transition()
                 .duration(animationDuration)
-                .attr("cx", xScale(newX[0]))
-                .attr("cy", yScale(newY[0]))
+                .attr("opacity", 1);
+              }
+
+              // possible_points.transition()
+              //   .duration(animationDuration)
+              //   .attr("cx", xScale(newX[0]))
+              //   .attr("cy", yScale(newY[0]))
 
               } else {
               
