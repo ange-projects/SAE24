@@ -181,12 +181,15 @@ dico_amplitude_binaire_id = dico_amplitude_binaire_id()
 #---------------------The way to find the cell from binary data----------------------------
 
 def trouver_salle(valeur):
+  micro_plage = {'01': 'micro1', '10': 'micro2','11': 'micro3'}
+  id_micro = valeur[0:2]
+  data = valeur[2:]
+  micro = micro_plage.get(id_micro, 'inconnu')
   for case, value in dico_amplitude_binaire_id.items():
       if valeur in str(value):
-          return case
+          return case, micro, binaire_a_amplitude(data)
   return "La suite de caractères n'est pas trouvée dans le dictionnaire"
 
-solution = trouver_salle('010011110101010111111111101110100011101110101010100010010110101011')
-#print(solution)
+print(trouver_salle('100011110101000010000000111010111110011110111001110101011000010110'))
 
 
