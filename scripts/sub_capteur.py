@@ -63,5 +63,5 @@ client.disconnect() #Disconnecting the broker
 for message in messages:
   print(message)
 
-for coordonnee in coordonnees:  
+for coordonnee in coordonnees_x_y:  
   print(coordonnee)
