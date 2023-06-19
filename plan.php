@@ -26,6 +26,13 @@
 </header>
   <h1>Dynamic Plan</h1>
 
+<form id="display_history">
+  <label for="interval">interval:</label>
+  <input type="text" name="interval" id="interval" />
+
+  <button type="submit">Submit</button>
+</form>
+
 <div class="consultation">
   <svg id="plan" width="500" height="500"></svg>
 </div>
