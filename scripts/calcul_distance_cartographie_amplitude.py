@@ -2,7 +2,8 @@ import math
 import struct
 import scipy.constants
 
-room_size = (8, 8)  #Permit to modify the size of the room further in project
+room_size = (16, 16)  #Permit to modify the size of the room further in project
+box_size = 0.25
 micro1 = (0.25, 0.25)   #Position of mic1
 micro2 = (0.25, 7.75)   #Position of mic2
 micro3 = (7.75, 7.75)   #Position of mic3
@@ -10,12 +11,12 @@ micro3 = (7.75, 7.75)   #Position of mic3
 #---------------Functions-----------------
 
 #Calculating all box of the room
-def room_mapping (room_size):
+def room_mapping(room_size, box_size):
     positions = []
-    for i in range(room_size[0]):
-        for j in range(room_size[1]):
-            x = i + 0.25
-            y = j + 0.25
+    for ligne in range(0,16):
+        for colonne in range(0,16):
+            x = (ligne/2) + 0.25
+            y = (colonne/2) + 0.25
             positions.append((x, y))
     return positions
 
@@ -66,8 +67,8 @@ def display_distance_table(distance_case):
 #----------------Main program------------------
 
 
-positions = room_mapping(room_size)
-#display_room_map(positions)
+positions = room_mapping(room_size, box_size)
+display_room_map(positions)
 dico_coordonnee = dico_coord(positions)
 distance_case = distance(positions)
 #display_distance_table(distance_case)

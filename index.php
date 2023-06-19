@@ -33,6 +33,7 @@
             Bienvenue sur le site de la SAÉ24 !
         </p>
     </section>
+    
     <section class="zero">
         <div class="grid"> <!--Implementation of HTML grid for the aesthetics of the page-->
             <div class="bloc">
