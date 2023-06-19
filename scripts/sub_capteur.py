@@ -98,7 +98,7 @@ if id_mesure is None:
 else:
   id_mesure += 1
 
-#resultat = [(3.25,2.25),(2.25,2.75)] : Example of what we get from the script that finds the coordinates from the amplitude of a microphone in binary form
+#resultat = [(3.25,2.25),(2.25,2.75),(2.25,2.75)] : Example of what we get from the script that finds the coordinates from the amplitude of a microphone in binary form
 
 # Executing an SQL query to insert data
 for element in resultat:
