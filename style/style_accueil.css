@@ -29,6 +29,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    backdrop-filter: blur(1px);
 }
 
 .navbar a {
@@ -36,7 +37,7 @@ body {
 }
 
 .navbar .logo {
-    font-size: 1.7em;
+    font-size: 100%;
     letter-spacing: 1.25px;
     font-weight: bolder;
 }
@@ -82,12 +83,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5%;
+    padding-bottom: 3%;
 }
 
 .grid {
     display: grid;
-    grid-gap: 5%;
+    grid-gap: 1%;
     grid-template-columns: repeat(2, 50%);
     grid-auto-rows: auto;
     list-style: inside;
