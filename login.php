@@ -20,6 +20,7 @@
             <div class="nav-links">
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
+                    <li><a href="plan.php">Consultation</a></li>
                     <li class="actif"><a href="login.php">Connectez-vous</a></li>
                     <li><a href="gestion.php">Gestion de projet</a></li>
                     <li><a href="mentions.php">Mentions Légales</a></li>
