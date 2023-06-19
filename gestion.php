@@ -32,7 +32,7 @@
     </section>   
 
     <section id="intro">
-        <h2 id='gantt'><a href='#gantt'>Diagramme de Gantt final</a></h2>
+        <h2 id='gantt'><a href='#gantt'>Diagramme de Gantt prévisionnel</a></h2>
         <p>Voici notre diagramme de Gantt prévisionnel réalisé à l'aide du logiciel <a href='https://ganttproject.fr.softonic.com/telecharger' target='_blank'>GanttProject</a> :</p>
         <img src='./img/Gantt_prev.png' alt='Diagramme de Gantt'>
     </section>  
