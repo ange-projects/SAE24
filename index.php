@@ -33,7 +33,7 @@
             Bienvenue sur le site de la SAÉ24 !
         </p>
     </section>
-    <section id="zero">
+    <section class="zero">
         <div class="grid"> <!--Implementation of HTML grid for the aesthetics of the page-->
             <div class="bloc">
                 <h3>Objectif du projet</h3>
@@ -43,12 +43,7 @@
                 <li>&#8250; Présenter l’estimation de la position sur une interface dédiée (site web).</li>
                 </ul>
             </div>
-            <div class="bloc">
-                <h3>Fonctionnalités du Projet</h3>
-                <ul class="index_dale">
-                    <li>&#8250; Section à éditer</li>
-                </ul>
-            </div>
+
             <div class="bloc">
                 <h3>Contraintes techniques</h3>
                 <ul class="index_dale">
@@ -64,6 +59,18 @@
             </div> <!--Building Condition Status-->
         </div>
     </section>
+
+    <section class="zero">
+        <div class="bloc">
+                <h3>Fonctionnalités du Projet</h3>
+                <ul class="index_dale">
+                    <li>&#8250; Section à éditer</li>
+                </ul>
+                <img id="img_fonctionnement" src="./img/sfonctionnement.png" alt="coucou" title="Schéma de fonctionnement de la solution SAE24"> 
+        <div>
+    </section>
+
+
     <script src="script_accueil.js"></script>
 </body>
 
