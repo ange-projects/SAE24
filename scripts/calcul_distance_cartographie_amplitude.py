@@ -82,7 +82,7 @@ micro = ["micro1","micro2","micro3"]
 coef_permittivite = scipy.constants.epsilon_0
 
 def dico_amplitude():
-  for id_case in range(1,65):
+  for id_case in range(1,257):
     amplitude_micro = {}
     for id_micro, microphone in enumerate(micro): #enumerate contains the index and the element traversed
       distance = distance_case[id_case][microphone]
@@ -154,7 +154,7 @@ amplitude_binaire  = {}
 micro_binaire = ["am_micro1","am_micro2","am_micro3"]
 
 def dico_amplitude_binaire():
-  for id_case in range(1,65):
+  for id_case in range(1,257):
     amplitude_micro_binaire = {}
     for id_micro, microphone in enumerate(micro_binaire): 
       valeur = dico_amplitude[id_case][microphone]
@@ -174,7 +174,7 @@ micro_binaire_id = ["am_micro_binaire1","am_micro_binaire2","am_micro_binaire3"]
 combinaison = ["01","10","11"]
 
 def dico_amplitude_binaire_id():
-  for id_case in range(1,65):
+  for id_case in range(1,257):
     liste_valeur = []
     for id_micro, microphone in enumerate(micro_binaire_id): 
       valeur = dico_amplitude_binaire[id_case][microphone]
@@ -221,7 +221,7 @@ def trouver_x_y(valeur):
 
 def tableau_pierre():
   tableau_pierre = []
-  for id_case in range(1,65):
+  for id_case in range(1,257):
     tableau_info = [id_case, dico_coord_sans_para[id_case]['x'], dico_coord_sans_para[id_case]['y'], dico_amplitude[id_case]['am_micro1'],dico_amplitude[id_case]['am_micro2'],dico_amplitude[id_case]['am_micro3']]
     tableau_pierre.append(tableau_info)
   return tableau_pierre
