@@ -66,6 +66,8 @@ resultat = []
 for message in messages:
   print(message)
   for element in message:
+    print("aiuzdfhhdaziuazhd")
+    print(element)
     valeur = trouver_x_y(element)
     resultat.append(valeur)
 
