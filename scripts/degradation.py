@@ -1,3 +1,5 @@
+import random
+
 def degradation_bit(valeur):
   id_micro, data = valeur[0:2], valeur[2:]
   liste_bit = list(data)
