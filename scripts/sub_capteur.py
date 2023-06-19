@@ -10,6 +10,8 @@ broker = "localhost"
 port = 1883  
 topic = "SAE24/capteur" 
 messages = []
+coordonnees_x_y = []
+message_count = 0
 
 #------------------------
 
@@ -23,6 +25,12 @@ def connection(client,userdata,flag, rc): #rc for return code
 def message(client,userdata, msg):
     print(f"Topic: {msg.topic}, Message: {msg.payload.decode()}")
     messages.append(msg.payload.decode())
+    message_count += 1
+    coordonnee = trouver_case(message)
+    if coordonnee:
+        coordonnees_x_y.append(coordonnee)
+    if message_count >= 1:
+        client.disconnect()
 
 def deconnection(client,userdata,rc):
     print("Déconnexion du broker")
@@ -46,14 +54,14 @@ except:
 
 client.loop_start() 
 
-try:
-    while True:
-        time.sleep(1) 
-except KeyboardInterrupt: 
-    pass 
+while client.is_connected(): 
+    time.sleep(1)
 
 client.loop_stop() #Stopping the MQTT loop 
 client.disconnect() #Disconnecting the broker
 
 for message in messages:
-    print(message)
+  print(message)
+
+for coordonnee in coordonnees_x_y:  
+  print(coordonnee)

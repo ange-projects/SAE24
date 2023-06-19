@@ -23,7 +23,7 @@
             header("Location: menu_admin.php"); 
             exit();  
         }else{
-            $error = "Mot de passe incorrect.";
+            $error = "Utilisateur ou mot de passe incorrect(s).";
         }
     }
     // Fermeture de la connexion à la base de données
