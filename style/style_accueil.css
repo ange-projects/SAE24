@@ -69,7 +69,8 @@ body {
 }
 
 #intro p {
-    font-size: medium;
+    margin-top: 5%;
+    font-size: 150%;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 0.5px;
     max-width: 75%;
@@ -87,8 +88,8 @@ body {
 
 .grid {
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(3, 325px);
+    grid-gap: 5%;
+    grid-template-columns: repeat(3, 30%);
     grid-auto-rows: auto;
     list-style: inside;
 }
@@ -110,6 +111,13 @@ body {
 .bloc ul {
     padding: 15px;
 }
+
+.index_dale li {
+    text-align: justify;
+    margin-top: 5%;
+}
+
+
 
 /*the reduced blocks of the grid*/
 

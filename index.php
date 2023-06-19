@@ -37,7 +37,7 @@
         <div class="grid"> <!--Implementation of HTML grid for the aesthetics of the page-->
             <div class="bloc">
                 <h3>Objectif du projet</h3>
-                <ul>
+                <ul class="index_dale">
                 <li>&#8250; Exploiter un signal sonore (sinusoïdal) émis par un objet et reçu par trois microphones.</li>
                 <li>&#8250; Estimer la position en (x,y) de l’objet dans une pièce.</li>
                 <li>&#8250; Présenter l’estimation de la position sur une interface dédiée (site web).</li>
@@ -45,13 +45,13 @@
             </div>
             <div class="bloc">
                 <h3>Fonctionnalités du Projet</h3>
-                <ul>
+                <ul class="index_dale">
                     <li>&#8250; Section à éditer</li>
                 </ul>
             </div>
             <div class="bloc">
                 <h3>Contraintes techniques</h3>
-                <ul>
+                <ul class="index_dale">
                     <li>&#8250; Environnement : machine virtuelle</li>
                     <li>&#8250; Système d’exploitation : au choix</li>
                     <li>&#8250; Langages autorisés : HTML5, CSS3, PHP, Javascript, Bash, C, Python.</li>
