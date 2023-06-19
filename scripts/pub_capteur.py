@@ -185,6 +185,7 @@ def dico_amplitude_binaire_id():
       liste_valeur.append(valeur)
     amplitude_binaire_id[id_case] = liste_valeur
   return amplitude_binaire_id
+print(dico_amplitude_binaire_id)
 
 dico_amplitude_binaire_id = dico_amplitude_binaire_id()
 

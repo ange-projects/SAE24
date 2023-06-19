@@ -8,7 +8,8 @@ def degradation_bit(valeur):
   id_micro, data = valeur[0:2], valeur[2:]
   liste_bit = list(data)
   
-  index1, index2 = random.sample(range(64), 2) #random index generation
+  index1, index2 = random.sample(range(14, 29), 2) 
+#the binary that is altered needs to be in range (1, 52) to exclude the mantisa and the sign number. However, to have a small mistake generated, we only want to modify the number by a magnitude that is high enough to generate some parasite. That is why we start the range later on.
 
   liste_bit[index1] = '1' if liste_bit[index1] == '0' else '0' #simulation of degradation
   liste_bit[index2] = '1' if liste_bit[index2] == '0' else '0' #ternary condition
