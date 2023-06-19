@@ -64,12 +64,12 @@ client.disconnect()  #Disconnecting the broker
 resultat = []
 
 for message in messages:
-  print(message)
-  for element in message:
-    print("aiuzdfhhdaziuazhd")
-    print(element)
-    valeur = trouver_x_y(element)
-    resultat.append(valeur)
+  liste = message.strip('][').replace("'", "").split(', ')
+
+for element in liste:
+    x, y = calcul_distance_cartographie_amplitude.trouver_x_y(element)
+    resultat.append((x, y)) 
 
 print(resultat)
+
 
