@@ -6,62 +6,68 @@ import calcul_distance_cartographie_amplitude
 
 #---Broker information---
 
-broker = "localhost"  
-port = 1883  
-topic = "SAE24/capteur" 
+broker = "localhost"
+port = 1883
+topic = "SAE24/capteur"
 messages = []
-coordonnees_x_y = []
-message_count = 0
+stop = True
 
 #------------------------
 
-def connection(client,userdata,flag, rc): #rc for return code
-    if rc == 0:
-        print("Connexion réussie")
-        client.subscribe(topic)  #subscription
-    else:
-        print(f"Erreur de connexion, code = {rc}")
 
-def message(client,userdata, msg):
-    print(f"Topic: {msg.topic}, Message: {msg.payload.decode()}")
-    messages.append(msg.payload.decode())
-    message_count += 1
-    coordonnee = trouver_case(message)
-    if coordonnee:
-        coordonnees_x_y.append(coordonnee)
-    if message_count >= 1:
-        client.disconnect()
+def connexion(client, userdata, flags, rc):  #rc for return code
+  if rc == 0:
+    print("Connexion réussie")
+    client.subscribe(topic)  #subscription
+  else:
+    print(f"Erreur de connexion, code = {rc}")
 
-def deconnection(client,userdata,rc):
-    print("Déconnexion du broker")
+
+def message(client, userdata, msg):
+  global stop
+  print(f"Topic: {msg.topic}, Message: {msg.payload.decode()}")
+  messages.append(msg.payload.decode())
+  stop = False
+
+
+def deconnexion(client, userdata, rc):
+  print("Déconnexion du broker")
+
 
 #----Callbacks----
 #A function which is passed as an argument to another function, and which is called at some point in the future
 
 client = mqtt.Client()  #client creation
-client.on_connect = connection 
-client.on_message = message  
-client.on_disconnect = deconnection  
+client.on_connect = connexion
+client.on_message = message
+client.on_disconnect = deconnexion
 
 #---Attempt to connect to the broker---
 
-try: 
-    client.connect(broker, port) 
+try:
+  client.connect(broker, port)
 except:
-    print("Erreur de connexion au broker")
+  print("Erreur de connexion au broker")
 
 #---Background MQTT loop---
 
-client.loop_start() 
+client.loop_start()
 
-while client.is_connected(): 
-    time.sleep(1)
+while stop:
+  time.sleep(1)
 
-client.loop_stop() #Stopping the MQTT loop 
-client.disconnect() #Disconnecting the broker
+client.loop_stop()  #Stopping the MQTT loop
+client.disconnect()  #Disconnecting the broker
+
+#--Information processing---
+
+resultat = []
 
 for message in messages:
   print(message)
+  for element in message:
+    valeur = trouver_x_y(element)
+    resultat.append(valeur)
 
-for coordonnee in coordonnees_x_y:  
-  print(coordonnee)
+print(resultat)
+
