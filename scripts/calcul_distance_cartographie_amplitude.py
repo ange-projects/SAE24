@@ -2,7 +2,8 @@ import math
 import struct
 import scipy.constants
 
-room_size = (8, 8)  #Permit to modify the size of the room further in project
+room_size = (16, 16)  #Permit to modify the size of the room further in project
+box_size = 0.25
 micro1 = (0.25, 0.25)   #Position of mic1
 micro2 = (0.25, 7.75)   #Position of mic2
 micro3 = (7.75, 7.75)   #Position of mic3
@@ -10,12 +11,12 @@ micro3 = (7.75, 7.75)   #Position of mic3
 #---------------Functions-----------------
 
 #Calculating all box of the room
-def room_mapping (room_size):
+def room_mapping(room_size, box_size):
     positions = []
-    for i in range(room_size[0]):
-        for j in range(room_size[1]):
-            x = i + 0.25
-            y = j + 0.25
+    for ligne in range(0,16):
+        for colonne in range(0,16):
+            x = (ligne/2) + 0.25
+            y = (colonne/2) + 0.25
             positions.append((x, y))
     return positions
 
@@ -66,8 +67,8 @@ def display_distance_table(distance_case):
 #----------------Main program------------------
 
 
-positions = room_mapping(room_size)
-#display_room_map(positions)
+positions = room_mapping(room_size, box_size)
+display_room_map(positions)
 dico_coordonnee = dico_coord(positions)
 distance_case = distance(positions)
 #display_distance_table(distance_case)
@@ -81,7 +82,7 @@ micro = ["micro1","micro2","micro3"]
 coef_permittivite = scipy.constants.epsilon_0
 
 def dico_amplitude():
-  for id_case in range(1,65):
+  for id_case in range(1,257):
     amplitude_micro = {}
     for id_micro, microphone in enumerate(micro): #enumerate contains the index and the element traversed
       distance = distance_case[id_case][microphone]
@@ -153,7 +154,7 @@ amplitude_binaire  = {}
 micro_binaire = ["am_micro1","am_micro2","am_micro3"]
 
 def dico_amplitude_binaire():
-  for id_case in range(1,65):
+  for id_case in range(1,257):
     amplitude_micro_binaire = {}
     for id_micro, microphone in enumerate(micro_binaire): 
       valeur = dico_amplitude[id_case][microphone]
@@ -173,7 +174,7 @@ micro_binaire_id = ["am_micro_binaire1","am_micro_binaire2","am_micro_binaire3"]
 combinaison = ["01","10","11"]
 
 def dico_amplitude_binaire_id():
-  for id_case in range(1,65):
+  for id_case in range(1,257):
     liste_valeur = []
     for id_micro, microphone in enumerate(micro_binaire_id): 
       valeur = dico_amplitude_binaire[id_case][microphone]
@@ -220,7 +221,7 @@ def trouver_x_y(valeur):
 
 def tableau_pierre():
   tableau_pierre = []
-  for id_case in range(1,65):
+  for id_case in range(1,257):
     tableau_info = [id_case, dico_coord_sans_para[id_case]['x'], dico_coord_sans_para[id_case]['y'], dico_amplitude[id_case]['am_micro1'],dico_amplitude[id_case]['am_micro2'],dico_amplitude[id_case]['am_micro3']]
     tableau_pierre.append(tableau_info)
   return tableau_pierre

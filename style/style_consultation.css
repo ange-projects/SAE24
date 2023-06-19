@@ -1,0 +1,14 @@
+@import url("style_accueil.css");
+@import url("style_consult.css");
+
+
+div.consultation{
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+svg {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}

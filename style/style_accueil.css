@@ -17,10 +17,8 @@
 
 body {
     font-family: "Poppins";
-    background-image: url(../img/connexion-mondiale.avif);
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    background-image: url(../img/bground.jpg);
+    background-size: 100%;
 }
 
 /*Navigation bar*/
@@ -31,6 +29,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    backdrop-filter: blur(1px);
 }
 
 .navbar a {
@@ -38,7 +37,7 @@ body {
 }
 
 .navbar .logo {
-    font-size: 1.7em;
+    font-size: 100%;
     letter-spacing: 1.25px;
     font-weight: bolder;
 }
@@ -62,6 +61,7 @@ body {
 
 #intro {
     display: flex;
+    font-size: large;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -69,8 +69,7 @@ body {
 }
 
 #intro p {
-    margin-top: 5%;
-    font-size: 150%;
+    font-size: 200%;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 0.5px;
     max-width: 75%;
@@ -79,17 +78,25 @@ body {
 
 /*welcome grid*/
 
-#zero {
+.zero {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 3%;
 }
 
 .grid {
     display: grid;
-    grid-gap: 5%;
-    grid-template-columns: repeat(3, 30%);
+    grid-gap: 1%;
+    grid-template-columns: repeat(2, 50%);
+    grid-auto-rows: auto;
+    list-style: inside;
+}
+
+.grid_2 {
+    display: grid;
+    grid-template-columns: repeat(1, 140%);
     grid-auto-rows: auto;
     list-style: inside;
 }
@@ -117,7 +124,9 @@ body {
     margin-top: 5%;
 }
 
-
+#img_fonctionnement { 
+    width: 90%;
+}
 
 /*the reduced blocks of the grid*/
 
