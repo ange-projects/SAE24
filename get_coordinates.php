@@ -21,8 +21,8 @@
     if($rand == 1){
         $x = (rand(0, 7));
         $y = (rand(0, 7));
-        $x .= ".5";
-        $y .= ".5";
+        $x .= ".25";
+        $y .= ".25";
         $publish_content = "INSERT INTO `coord_points` (id_mesure, x, y) VALUES ('$newID','$x', '$y')";
         mysqli_query($connexion, $publish_content);
 
@@ -30,8 +30,8 @@
 
     $x = (rand(0, 7));
     $y = (rand(0, 7));
-    $x .= ".5";
-    $y .= ".5";
+    $x .= ".25";
+    $y .= ".25";
 
     $publish_content = "INSERT INTO `coord_points` (id_mesure, x, y) VALUES ('$newID', '$x', '$y')";
     mysqli_query($connexion, $publish_content);

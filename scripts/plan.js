@@ -9,9 +9,9 @@ const animationDuration = 1000;
 const updateInterval = 3000;
 
 //variables for the grid creation
-const gridSize = 52.5; //size of each cell
-const gridWidth = 8;
-const gridHeight = 8;
+const gridSize = 26.25; //size of each cell
+const gridWidth = 16;
+const gridHeight = 16;
 
 // Set up SVG container
 const svg = d3.select("#plan")
@@ -56,60 +56,49 @@ for (let i = 0; i <= gridHeight; i++) {
     .attr("stroke", "lightgray");
 }
 
-// Define the point
-const point = svg.append("circle")
-  .attr("r", pointRadius)
-  .style("fill", pointColor)
-  .attr("opacity", 0);
 
-  // Define the point group (multiple possible positions)
-const possible_position_group = svg.append("g");
+  // Define the points group (multiple possible positions)
+const points = svg.append("g");
     previousX = 0;
     previousY = 0;
 
 // Function to update the point's position
 function updatePoint() {
   console.log("entering update point");
-  possible_position_group.selectAll("circle")
-  .remove(); // Clear previous circles
   fetch("get_coordinates.php")
     .then(response => response.json())
     .then(coord => {
       //if there are multiple possible coordinates for the same measurment
       if(coord['x'].length > 1){
-          point.attr("opacity", 0); //remove the blue point
           //for each element of the array, extract and store x and y values
           console.log("entering for loop");
           for (var i = 0; i < coord['x'].length; i++) {
             //define the possible_points object as all the possible_position_group circles
-            possible_position_group
+            points
             .selectAll("circle")
               //apply attributes to each circle
               .data(coord['x'].map((x, i) => ({ x: x, y: coord['y'][i] })))
               .join("circle")
               .attr("r", pointRadius)
               .style("fill", "lightgrey")
-              .attr("cx", xScale(previousX))
-              .attr("cy", yScale(previousY))
               .transition()
               .duration(animationDuration)
               .attr("cx", d => xScale(d.x))
               .attr("cy", d => yScale(d.y));
             }
           } else {
-          // Update the unique point position with animation
-          console.log("entering unique point animation");
-          newX = (coord['x'][0]);
-          newY = (coord['y'][0]);
-          point
-          .attr("opacity", 1) 
-          .attr("cx", xScale(previousX))
-          .attr("cy", yScale(previousY))
+            // Update the unique point position with animation
+            console.log("entering unique point animation");
+            newX = (coord['x'][0]);
+            newY = (coord['y'][0]);
+            points
+            .selectAll("circle")
             .transition()
             .duration(animationDuration)
-            .attr("cx", xScale(newX))
-            .attr("cy", yScale(newY))
-          }
+            .style("fill", "lightblue")
+            .attr("cx", d => xScale(newX))
+            .attr("cy", d => yScale(newY));
+        }
           //store the actual value of one point, it will be the starting point of the future one
           previousX = (coord['x'][0]);
           previousY = (coord['y'][0]);
