@@ -73,7 +73,7 @@
   <svg id="plan" width="500" height="500"></svg>
 </div>
 
-<script src="./scripts/plan.js"></script>
+<script src="./scripts/history.js"></script>
 </body>
 </html>
 

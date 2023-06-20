@@ -1,18 +1,3 @@
-// ---------------------- form handling ---------------------------
-let interval = 0;
-// Get the form element
-const form = document.getElementById('display_history');
-console.log(form);
-// Attach an event listener to the form's submit event
-form.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Access the form elements and retrieve their values
-  const intervalInput = document.getElementById('interval');
-  interval = intervalInput.value;
-  console.log('interval found is' + interval);
-
-});
 // --------------------- plan generation --------------------------
 // Set up dimensions and variables
 const width = 500;
@@ -80,48 +65,60 @@ points.append("circle");
 
 // Function to update the point's position
 async function updatePoint() {
-    const response = await fetch("get_history.php");
+    const response = await fetch("get_history.php?interval=" + interval);
     const coord = await response.json();
+    let add = 0;
+    let filteredData;
+    console.log("starting");
+    for (let i = 0; i <= coord['id'].length; i += add) {
 
-    //if there are multiple possible coordinates for the same measurement
-    if (coord['x'].length > 1) {
-          // Filter data to only contain the two points we want to display
-          const filteredData = [
-          { x: coord['x'][0], y: coord['y'][0] },
-          { x: coord['x'][1], y: coord['y'][1] }
-          ];
-          console.log (coord['x'][0] + " ; " + coord['y'][0]);
-          console.log (coord['x'][1] + " ; " +  coord['y'][1]);
-          points
-          .selectAll("circle")
-          .data(filteredData) // Pass the filtered data here
-          .join("circle")
-          .attr("r", pointRadius)
-          .style("fill", multiple_color)
-          .transition()
-          .duration(animationDuration)
-          .attr("cx", d => xScale(d.x))
-          .attr("cy", d => yScale(d.y));
-
-    } else {
-        // Update the unique point position with animation
-        const filteredData = [
-            { x: coord['x'][0], y: coord['y'][0] },
-            { x: coord['x'][0], y: coord['y'][0] }
+        if (coord['id'][i] === coord['id'][i+1]) {
+        // Filter data to only contain the two points we want to display
+            filteredData = [
+            { x: coord['x'][i], y: coord['y'][i] },
+            { x: coord['x'][i + 1], y: coord['y'][i + 1] }
             ];
-        console.log("entering unique point animation");
+            add = 2;
+        } else {
+            // Update the unique point position with animation
+            filteredData = [
+                { x: coord['x'][i], y: coord['y'][i] },
+                { x: coord['x'][i], y: coord['y'][i] }
+                ]; + 1
+            add = 1;
+        }
+        console.log (coord['x'][0] + " ; " + coord['y'][0]);
+        console.log (coord['x'][1] + " ; " +  coord['y'][1]);
         points
         .selectAll("circle")
-        .data(filteredData)
+        .data(filteredData) // Pass the filtered data here
+        .join("circle")
         .attr("r", pointRadius)
-        .style("fill", pointColor)
+        .style("fill", multiple_color)
         .transition()
         .duration(animationDuration)
         .attr("cx", d => xScale(d.x))
         .attr("cy", d => yScale(d.y));
-    }
-    interval = 0;
 
-}
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 5 seconds
+
+    }
+    }
+// ---------------------- form handling ---------------------------
+let interval = 10;
+// Get the form element
+const form = document.getElementById('display_history');
+console.log(form);
+// Attach an event listener to the form's submit event
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Access the form elements and retrieve their values
+  const intervalInput = document.getElementById('interval');
+  interval = intervalInput.value;
+  console.log('interval found is' + interval);
+
+  updatePoint() ;
+});
 // Automatically update the point's position at regular intervals
-setInterval(updatePoint, updateInterval);
+// setInterval(updatePoint, updateInterval);
