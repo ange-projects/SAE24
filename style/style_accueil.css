@@ -57,6 +57,11 @@ body {
     font-weight: 900;
 }
 
+.actif a {
+    background-color: yellow;
+  }
+  
+
 /*Welcome paragraph*/
 
 #intro {

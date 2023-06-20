@@ -14,20 +14,11 @@
     <title>Login</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar"> <!--Navigation bar-->
-            <a href="#" class="logo">SAÉ 24 - Estimation de la position d'un objet</a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="plan.php">Consultation</a></li>
-                    <li class="actif"><a href="login.php">Connectez-vous</a></li>
-                    <li><a href="gestion.php">Gestion de projet</a></li>
-                    <li><a href="mentions.php">Mentions Légales</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    
+    <?php
+        require('header.php');
+    ?>
+    
     <section> <!--Login window in glass morphism-->
         <form class="container" name="identification" action="" method="post">
             <p class="accueil">Bienvenue</p>
@@ -41,6 +32,8 @@
             ?>
         </form> <!--If the identification is incorrect, an error message appears-->
     </section>
+    
     <script src="script_accueil.js"></script>
+    
 </body>
 </html>

@@ -12,3 +12,7 @@ svg {
     background-color: transparent;
     backdrop-filter: blur(10px);
 }
+
+h1 {
+    text-align: center;
+}

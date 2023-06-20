@@ -11,15 +11,15 @@
     box-sizing: border-box;
 }
 
+/*box-sizing = the width and height of the elements are calculated taking into account the content, borders and margins.*/
+
 body {
     font-family: "Poppins";
-    background-image: url(../img/connexion-mondiale.avif);
-    background-size: cover;
-    height: 200vh;
-    width: 100vw;
+    background-image: url(../img/bground.jpg);
+    background-size: 100%;
 }
 
-/*navbar*/
+/*Navigation bar*/
 
 .navbar {
     padding: 40px;
@@ -27,6 +27,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    backdrop-filter: blur(1px);
 }
 
 .navbar a {
@@ -34,7 +35,7 @@ body {
 }
 
 .navbar .logo {
-    font-size: 1.7em;
+    font-size: 100%;
     letter-spacing: 1.25px;
     font-weight: bolder;
 }
@@ -53,7 +54,6 @@ body {
     color: #6dd5ed;
     font-weight: 900;
 }
-
 /*paragraphe d'accueil*/
 
 #intro {
