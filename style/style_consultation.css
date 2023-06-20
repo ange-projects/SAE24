@@ -17,8 +17,66 @@ svg {
     background-color: #ffffff;
     border-style: solid;
     border-width: 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
+
+.center{
+width: 100%;
+text-align: center;
+}
+
+/* Styles for the floating bubble */
+#intervalValue {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+#interval{
+    width: 100%;
+    color: #000;
+}
+
 
 h1 {
     text-align: center;
 }
+
+/* Button style */
+.submit-button {
+    display: inline-block;
+    background-color: #494949e1;
+    color: #FFFFFF;
+    padding: 6px 8px;
+    border-radius: 5px;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .submit-button:hover {
+    background-color: #494949;
+  }
+
+  .submit-button:focus {
+    outline: none;
+  }
+  
+  /* Optional: Center the button */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  

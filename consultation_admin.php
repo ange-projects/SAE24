@@ -28,14 +28,6 @@
 
     <h1>Dynamic Plan</h1>
 
-
-    <form id="display_history">
-        <label for="interval">interval:</label>
-        <input type="text" name="interval" id="interval" />
-        <button type="submit">Submit</button>
-    </form>
-
-
     <form action="degradation.php" method="POST"> 
         <p> En utilisant les champs de sélection suivants, indiquez vos paramètres d'estimation. </p>
         <p> Nombre de bits erronés lors de l'envoi : 
@@ -63,12 +55,28 @@
         <input type="submit" value="Soumettre">
     </form>
 
+    <script>
+        function updateValue(newValue) {
+            document.getElementById("intervalValue").textContent = newValue;
+        }
+    </script>
+
+
+
     <div class="consultation">
         <svg id="plan" width="500" height="500"></svg>
     </div>
 
     <div class="consultation">
         <svg id="history_plan" width="500" height="500"></svg>
+        <div class="center">
+            <h3>Remonter dans le temps : </h3>
+            <span id="intervalValue">0</span>
+            <form id="display_history">
+            <input type="range" name="interval" id="interval" min="-500" max="0" value="0" oninput="updateValue(this.value)">
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        </div>
     </div>
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
