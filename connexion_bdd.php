@@ -6,7 +6,7 @@
     $mysql_port="3306";
 
     $connexion = mysqli_connect($servername, $username, $password, $dbname)
-      or die("Connexion impossible à la base de données");
+        or die("Connexion impossible à la base de données");
 
         // utilisation ange 
     // $servername="192.168.160.45";

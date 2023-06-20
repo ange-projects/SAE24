@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style_accueil.css">
+    <link rel="stylesheet" href="style/style_consultation.css">
     <link rel="shortcut icon" href="./img/icons8-favicon-16.png" type="image/x-icon">
     <title>Menu admin</title>
 </head>
@@ -68,10 +68,11 @@
     </div>
 
     <div class="consultation">
-        <svg id="plan" width="500" height="500"></svg>
+        <svg id="history_plan" width="500" height="500"></svg>
     </div>
 
+    <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="./scripts/plan.js"></script>
-
+    <script src="./scripts/history.js"></script>
 </body>
 </html>
