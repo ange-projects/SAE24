@@ -13,20 +13,10 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar"> <!--Navigation bar-->
-            <a href="#" class="logo">SAÉ 24 - Estimation de la position d'un objet</a>
-            <div class="nav-links">
-                <ul>
-                    <li class="actif"><a href="index.php">Accueil</a></li>
-                    <li><a href="plan.php">Consultation</a></li>
-                    <li><a href="login.php">Connectez-vous</a></li>
-                    <li><a href="gestion.php">Gestion de projet</a></li>
-                    <li><a href="mentions.php">Mentions Légales</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    
+    <?php
+        require('header.php');
+    ?>
 
     <section id="intro"> <!--Introduction-->
         <p>
@@ -71,8 +61,13 @@
         <div>
     </section>
 
-
+   <!-- <script src="surlignage.js"></script> -->
+    <script>
+    surlignerElementActif('acc_js');
+     
+    </script>
     <script src="script_accueil.js"></script>
+    
 </body>
 
 </html>

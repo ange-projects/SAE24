@@ -11,21 +11,10 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">Suivez les variations de température grâce à nos capteurs</a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="plan.php">Consultation</a></li>
-                    <li><a href="login.php">Connectez-vous</a></li>
-                    <li><a href="gestion.php">Gestion de projet</a></li>
-                    <li><a href="mentions.php">Mentions Légales</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
+    
+    <?php
+        require('header.php');
+    ?>
 
     <section id="intro">
         <p>Bienvenue sur la page de gestion de projet ! Cette section regroupe toutes les informations essentielles relatives à notre projet, et en particulier à sa planification.</p> 

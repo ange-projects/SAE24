@@ -12,20 +12,10 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">Suivez les variations de température grâce à nos capteurs</a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="plan.php">Consultation</a></li>
-                    <li><a href="login.php">Connectez-vous</a></li>
-                    <li><a href="gestion.php">Gestion de projet</a></li>
-                    <li class="actif"><a href="#">Mentions Légales</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    
+    <?php
+        require('header.php');
+    ?>
 
     <section id="intro">
         <h2>Mentions légales</h2> 

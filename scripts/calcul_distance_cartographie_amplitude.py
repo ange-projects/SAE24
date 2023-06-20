@@ -231,16 +231,4 @@ def trouver_x_y(liste_valeur):
 #print(trouver_x_y(['010011110101000100011010000010110011110010000000100000111110000100', '100011110101000011001000111110101010011000110101011100101101110111', '110011110101100011001011001110110001110000101001010011111100100010']))
 
 
-#-----------------------Table for pierre-------------------------------------------
-
-def tableau_pierre():
-  tableau_pierre = []
-  for id_case in range(1,257):
-    tableau_info = [id_case, dico_coord_sans_para[id_case]['x'], dico_coord_sans_para[id_case]['y'], dico_amplitude[id_case]['am_micro1'],dico_amplitude[id_case]['am_micro2'],dico_amplitude[id_case]['am_micro3']]
-    tableau_pierre.append(tableau_info)
-  return tableau_pierre
-  
-tableau_de_pierre = tableau_pierre()
-#print(tableau_de_pierre)
-
 

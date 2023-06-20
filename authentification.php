@@ -20,7 +20,7 @@
             // Enregistrement du nom d'utilisateur après vérification
             $_SESSION["login"] = $pseudo_safe;
             // Redirection vers la page correspondante
-            header("Location: menu_admin.php"); 
+            header("Location: consultation_admin.php"); 
             exit();  
         }else{
             $error = "Utilisateur ou mot de passe incorrect(s).";
