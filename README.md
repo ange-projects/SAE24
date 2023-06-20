@@ -14,8 +14,8 @@
     - [Pierre CHAVEROUX](#pierre-chaveroux)
     - [Ange GIUNTINI](#ange-giuntini)
     - [Corentin PRADIER](#corentin-pradier)
-    - [Gaspard BERSOUL](#gaspard-bersoul)
-    - [Yoann FRANCOIS](#yoann-francois)
+    - [Gaspard BERSOULLÉ](#gaspard-bersoullé)
+    - [Yoann FRANÇOIS](#yoann-françois)
   - [Synthèse groupée](#synthèse-groupée)
     - [Heures passées sur le projet](#heures-passées-sur-le-projet)
     - [Problèmes rencontrés](#problèmes-rencontrés)
@@ -37,13 +37,13 @@
 ## SAÉ24 : Fonctionnalités du projet
    ### Permettre à une personne de retrouver un objet en lui faisant émettre un son.
    ### Objectifs minimaux :
-       * 1 salle gérée
-       * Affichage de la position de l’objet
-       * Configuration de scénario de déplacements
-       * Simulation de déplacement de l’objet en environnement non perturbé
-       * Affichage du déplacement estimé de l’objet
+   * 1 salle gérée
+   * Affichage de la position de l’objet
+   * Configuration de scénario de déplacements
+   * Simulation de déplacement de l’objet en environnement non perturbé
+   * Affichage du déplacement estimé de l’objet
 
-<img src="/img/sfonctionnement.png" alt="Schéma de fonctionnement général du projet" title="Schéma de fonctionnement général du projet">
+![Schéma de fonctionnement général du projet](./img/sfonctionnement.png)
 
 # Gestion de projet
 
@@ -61,7 +61,7 @@ Voici notre diagramme de Gantt prévisionnel réalisé à l'aide du logiciel [Ga
 
 - [GitHub](https://github.com/) est une plateforme de développement logiciel permettant le travail codage collaboratif. Basé sur le système de contrôle de version Git, cet outil nous a permis de travailler localement, de manière indépendante, puis de centraliser l'intégralité de notre travail afin de la partager à nos collègues au sein d'une version cohérente. Cet outil présente des vertus en matière de résolution de conflit puisqu'il permet d'assurer la compatibilité des différentes parties du projet codées par les différents membres du groupe. À l'aide de la version de bureau GitHub Desktop et de la compatibilité accrue avec l'IDE VSCode, nous avons pu efficacement nous répartir les tâches sans perdre en coordination ni cohérence.
 
-    ![Repository GitHub](./img/github1.PNG)
+    ![Repository GitHub](./img/github1.png)
 
 ## Synthèse personnelle de chaque membre
 
@@ -83,17 +83,18 @@ Voici notre diagramme de Gantt prévisionnel réalisé à l'aide du logiciel [Ga
 - Solutions apportées: Insérer solutions.
 - Notation individuelle des membres du groupe: Pierre : ; Corentin : ; Ange : ; Gaspard :
 
-### Gaspard BERSOUL
+### Gaspard BERSOULLÉ
 - Nombre d'heures passées sur le projet: X h
 - Problèmes rencontrés: Insérer problèmes.
 - Solutions apportées: Insérer solutions.
 - Notation individuelle des membres du groupe: Pierre : ; Corentin : ; Ange : ; Gaspard :
 
-### Yoann FRANCOIS
+### Yoann FRANÇOIS
 - Nombre d'heures passées sur le projet: X h
 - Problèmes rencontrés: Insérer problèmes.
 - Solutions apportées: Insérer solutions.
-- Notation individuelle des membres du groupe: Pierre : ; Corentin : ; Ange : ; Gaspard :
+- Notation individuelle des membres du groupe: 
+- Pierre : ; Corentin : ; Ange : ; Gaspard :
 
 ## Synthèse groupée
 
