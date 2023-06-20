@@ -1,5 +1,6 @@
 import random
-import calcul_distance_cartographie_amplitude
+from math import sqrt
+
 
 #-----------------------Bit degradation----------------------
 
@@ -45,11 +46,17 @@ def degradation_bit(valeur,bit, pourcentage):
 #print(degradation_bit('111111111111111111111111111111111111111111111111111111111111111111',2,2))
 
 def degradation(tableau, choix, pourcentage):
-  for element in tableau:
+  dico_amplitude_errone, dico_distance = {}, {}
+  
+  for index, element in enumerate(tableau):
     valeur_errone = degradation_bit(element, choix,pourcentage)
     id_micro,data_errone = valeur_errone[0:2],valeur_errone[2:]
     amplitude_errone = binaire_a_amplitude(data_errone)
-    print(amplitude_errone)
-    
+    dico_amplitude_errone['am_errone_mic' + str(index+1)] = amplitude_errone
+    valeur_distance = sqrt(coef_permittivite/amplitude_errone)
+    dico_distance["distance_mic" + str(index+1)] = valeur_distance
+  print(dico_amplitude_errone)
+  print(dico_distance)
+
 print(degradation(['010011110101000101100010000110011111101011111100001000010011100110','010011110101000101100010000110011111101011111100001000010011100110','010011110101000101100010000110011111101011111100001000010011100110'],1,0.01))
 
