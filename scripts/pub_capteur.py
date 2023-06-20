@@ -16,12 +16,12 @@ position_x, position_y = dico_pos_x_y[case_aleatoire]
 # Affichage des résultats
 #print("Case aléatoire sélectionnée :", case_aleatoire)
 #print("Amplitude binaire :", amplitude_aleatoire)
-#print("Position réele (x, y) :", (position_x, position_y))
+#print("Position réele (x, y) :", [position_x, position_y])
 
 #définition de la payload à envoyer sur le bus MQTT
 payload = {
     "Amplitude_binaire": amplitude_aleatoire,
-    "x,y": (position_x, position_y)
+    "x,y": [position_x, position_y]
 }
 
 print (payload)

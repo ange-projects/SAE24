@@ -225,7 +225,7 @@ def trouver_x_y(liste_valeur):
           if dico_amplitude_binaire[case][micro] == data_binaire:
             liste_final.append(case)
   for case in liste_final:
-       coord_list.append((dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y']))
+       coord_list.append([dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y']])
   return coord_list
 
 #print(trouver_x_y(['010011110101000100011010000010110011110010000000100000111110000100', '100011110101000011001000111110101010011000110101011100101101110111', '110011110101100011001011001110110001110000101001010011111100100010']))
