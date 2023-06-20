@@ -4,11 +4,12 @@
 
 div.consultation{
     padding-top: 5%;
-    display: flex;
-    justify-content: center;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    display: block;
+    float: left;
 }
 
 svg {
     background-color: white;
-    backdrop-filter: blur(10px);
 }

@@ -1,46 +1,22 @@
-// --------------------- plan generation --------------------------
-// Set up dimensions and variables
-const width = 500;
-const height = 500;
-const padding = 40;
-const pointRadius = 8;
-let pointColor = "lightblue";
-let multiple_color = "lightgrey";
-const animationDuration = 1000;
-const updateInterval = 5000;
-
-//variables for the grid creation
-const gridSize = 26.25; //size of each cell
-const gridWidth = 16;
-const gridHeight = 16;
-
-// Set up SVG container
-const svg = d3.select("#plan")
+// Set up svg_history container
+const svg_history = d3.select("#history_plan")
   .attr("width", width)
   .attr("height", height);
 
-// Set up scales for x and y axes
-const xScale = d3.scaleLinear()
-  .domain([0, 8])
-  .range([padding, width - padding]);
-
-const yScale = d3.scaleLinear()
-  .domain([8, 0])
-  .range([padding, height - padding]);
 
 // Draw x axis
-svg.append("g")
+svg_history.append("g")
   .attr("transform", "translate(0," + (height - padding) + ")")
   .call(d3.axisBottom(xScale));
 
 // Draw y axis
-svg.append("g")
+svg_history.append("g")
   .attr("transform", "translate(" + padding + ",0)")
   .call(d3.axisLeft(yScale));
 
   // Generate grid lines
 for (let i = 0; i <= gridWidth; i++) {
-  svg.append("line")
+  svg_history.append("line")
     .attr("x1", i * gridSize + padding)
     .attr("y1", 0 + padding)
     .attr("x2", i * gridSize + padding)
@@ -49,7 +25,7 @@ for (let i = 0; i <= gridWidth; i++) {
 }
 
 for (let i = 0; i <= gridHeight; i++) {
-  svg.append("line")
+  svg_history.append("line")
     .attr("x1", 0 + padding)
     .attr("y1", i * gridSize + padding)
     .attr("x2", gridWidth * gridSize + padding)
@@ -58,9 +34,9 @@ for (let i = 0; i <= gridHeight; i++) {
 }
 
 
-  // Define the points group (multiple possible positions)
-const points = svg.append("g");
-points.append("circle");
+  // Define the history_points group (multiple possible positions)
+const history_points = svg_history.append("g");
+history_points.append("circle");
 
 
 // Function to update the point's position
@@ -73,7 +49,7 @@ async function updatePoint() {
     for (let i = 0; i <= coord['id'].length; i += add) {
 
         if (coord['id'][i] === coord['id'][i+1]) {
-        // Filter data to only contain the two points we want to display
+        // Filter data to only contain the two history_points we want to display
             filteredData = [
             { x: coord['x'][i], y: coord['y'][i] },
             { x: coord['x'][i + 1], y: coord['y'][i + 1] }
@@ -89,23 +65,22 @@ async function updatePoint() {
         }
         console.log (coord['x'][0] + " ; " + coord['y'][0]);
         console.log (coord['x'][1] + " ; " +  coord['y'][1]);
-        points
+        history_points
         .selectAll("circle")
         .data(filteredData) // Pass the filtered data here
         .join("circle")
         .attr("r", pointRadius)
-        .style("fill", multiple_color)
+        .style("fill", "#fc5353")
         .transition()
         .duration(animationDuration)
         .attr("cx", d => xScale(d.x))
         .attr("cy", d => yScale(d.y));
 
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 5 seconds
-
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 5 seconds
     }
     }
 // ---------------------- form handling ---------------------------
-let interval = 10;
+let interval = 0;
 // Get the form element
 const form = document.getElementById('display_history');
 console.log(form);
@@ -119,6 +94,5 @@ form.addEventListener('submit', function(event) {
   console.log('interval found is' + interval);
 
   updatePoint() ;
+  console.log("history exec");
 });
-// Automatically update the point's position at regular intervals
-// setInterval(updatePoint, updateInterval);

@@ -1,18 +1,4 @@
-// ---------------------- form handling ---------------------------
-let interval = 0;
-// Get the form element
-const form = document.getElementById('display_history');
-console.log(form);
-// Attach an event listener to the form's submit event
-form.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
 
-  // Access the form elements and retrieve their values
-  const intervalInput = document.getElementById('interval');
-  interval = intervalInput.value;
-  console.log('interval found is' + interval);
-
-});
 // --------------------- plan generation --------------------------
 // Set up dimensions and variables
 const width = 500;

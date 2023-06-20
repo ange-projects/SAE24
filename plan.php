@@ -70,9 +70,11 @@
 </div>
 
 <div class="consultation">
-  <svg id="plan" width="500" height="500"></svg>
+  <svg id="history_plan" width="500" height="500"></svg>
 </div>
 
+<!-- <script src="./scripts/plan_generation.js"></script> -->
+<script src="./scripts/plan.js"></script>
 <script src="./scripts/history.js"></script>
 </body>
 </html>
