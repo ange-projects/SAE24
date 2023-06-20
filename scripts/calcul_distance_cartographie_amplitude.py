@@ -68,7 +68,7 @@ def display_distance_table(distance_case):
 
 
 positions = room_mapping(room_size, box_size)
-display_room_map(positions)
+#display_room_map(positions)
 dico_coordonnee = dico_coord(positions)
 distance_case = distance(positions)
 #display_distance_table(distance_case)
@@ -202,20 +202,34 @@ def enlever_parenthese(dico):
 dico_coord_sans_para = enlever_parenthese(dico_coordonnee)
 
 
-#---------------------The way to find the cell from binary data----------------------------
+#---------------------The way to find (x,y) from binary data----------------------------
 
 
-def trouver_x_y(valeur):
-  micro_plage = {'01': 'micro1', '10': 'micro2','11': 'micro3'}
-  id_micro = valeur[0:2]
-  data = valeur[2:]
-  micro = micro_plage.get(id_micro, 'inconnu')
-  for case, value in dico_amplitude_binaire_id.items():
-      if valeur in str(value):
-          return [dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y']] #can add : "case micro, binaire_a_amplitude(data)"
-  return "La suite de caractères n'est pas trouvée dans le dictionnaire"
+def trouver_x_y(liste_valeur):
+  micro_plage = {'01': 'am_micro_binaire1', '10': 'am_micro_binaire2','11': 'am_micro_binaire3'}
+  liste_case, liste_case_2, liste_final, coord_list = [], [], [], []
+  for element in liste_valeur:
+    id_micro, data_binaire = element[0:2], element[2:]
+    micro = micro_plage.get(id_micro, 'inconnu')
+    if not liste_case: #première valeur
+      for case, sous_dico in dico_amplitude_binaire.items():
+        if sous_dico[micro] == data_binaire:
+          liste_case.append(case)
+    else:
+      if not liste_case_2:
+        for case in liste_case: 
+          if dico_amplitude_binaire[case][micro] == data_binaire:
+            liste_case_2.append(case)
+      else:
+        for case in liste_case_2:
+          if dico_amplitude_binaire[case][micro] == data_binaire:
+            liste_final.append(case)
+  for case in liste_final:
+       coord_list.append([dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y']])
+  return coord_list
 
-#print(trouver_x_y('100011110101000010000000111010111110011110111001110101011000010110'))
+#print(trouver_x_y(['010011110101000100011010000010110011110010000000100000111110000100', '100011110101000011001000111110101010011000110101011100101101110111', '110011110101100011001011001110110001110000101001010011111100100010']))
+
 
 #-----------------------Table for pierre-------------------------------------------
 

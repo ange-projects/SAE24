@@ -25,7 +25,48 @@
         <svg id="plan" width="500" height="500"></svg>
     </div>
 
-    <script src="./scripts/plan.js"></script>
+  <button type="submit">Submit</button>
+</form>
+
+
+  <form action="degradation.php" method="POST"> 
+    <p> En utilisant les champs de sélection suivants, indiquez vos paramètres d'estimation. </p>
+    <p> Nombre de bits erronés lors de l'envoi : 
+        <select name="bits_errones">
+            <option value="0">0 bits</option>
+            <option value="1">1 bit</option>
+            <option value="2">2 bits</option>
+        </select>
+    </p>
+      
+    <p> Nombre de micros en fonction lors de l'envoi : 
+        <select name="micros_en_marche">
+            <option value="3">3 micros</option>
+            <option value="2">2 micros</option>
+            <option value="1">1 micro</option>
+        </select>
+    </p>
+
+    <p> Indiquez la vitesse de déplacement de l'onde sonore : 
+        <select name="micros_en_marche">
+            <option value="3"> Rapide </option>
+            <option value="2"> Moyenne </option>
+            <option value="1"> Faible </option>
+        </select>
+    </p>
+
+    <input type="submit" value="Soumettre">
+</form>
+
+<div class="consultation">
+  <svg id="plan" width="500" height="500"></svg>
+</div>
+
+<div class="consultation">
+  <svg id="plan" width="500" height="500"></svg>
+</div>
+
+<script src="./scripts/history.js"></script>
 </body>
 </html>
 
