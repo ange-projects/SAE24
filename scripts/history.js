@@ -36,7 +36,7 @@ for (let i = 0; i <= gridHeight; i++) {
 
   // Define the history_points group (multiple possible positions)
 const history_points = svg_history.append("g");
-history_points.append("circle");
+
 
 
 // Function to update the point's position
@@ -47,7 +47,7 @@ async function updatePoint() {
     let filteredData;
     console.log("starting");
     for (let i = 0; i <= coord['id'].length; i += add) {
-
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 seconds
         if (coord['id'][i] === coord['id'][i+1]) {
         // Filter data to only contain the two history_points we want to display
             filteredData = [
@@ -75,9 +75,10 @@ async function updatePoint() {
         .duration(animationDuration)
         .attr("cx", d => xScale(d.x))
         .attr("cy", d => yScale(d.y));
-
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 5 seconds
     }
+    history_points
+      .selectAll("circle")
+      .remove();
     }
 // ---------------------- form handling ---------------------------
 let interval = 0;
