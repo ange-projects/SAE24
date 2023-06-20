@@ -68,7 +68,7 @@ def display_distance_table(distance_case):
 
 
 positions = room_mapping(room_size, box_size)
-display_room_map(positions)
+#display_room_map(positions)
 dico_coordonnee = dico_coord(positions)
 distance_case = distance(positions)
 #display_distance_table(distance_case)

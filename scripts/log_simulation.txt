@@ -1,0 +1,9 @@
+Script subscribe exécuté à : 20-06-2023 13:35:24
+Script publication exécuté à : 20-06-2023 13:35:26
+Fin de la boucle
+-----------------------------------------------------------
+Script subscribe exécuté à : 20-06-2023 13:35:31
+Script publication exécuté à : 20-06-2023 13:35:33
+Fin de la boucle
+-----------------------------------------------------------
+Script subscribe exécuté à : 20-06-2023 13:35:38
