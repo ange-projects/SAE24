@@ -11,4 +11,5 @@ while true; do
     # Attend 5 secondes avant la prochaine itration
     sleep 5
 
+    echo $(date +"%d-%m-%Y %H:%M:%S") >> log_simulation.txt
 done
