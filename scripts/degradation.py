@@ -2,6 +2,7 @@ import random
 from math import sqrt
 
 
+
 #-----------------------Bit degradation----------------------
 
 
@@ -50,13 +51,29 @@ def degradation(tableau, choix, pourcentage):
   
   for index, element in enumerate(tableau):
     valeur_errone = degradation_bit(element, choix,pourcentage)
-    id_micro,data_errone = valeur_errone[0:2],valeur_errone[2:]
+    id_micro,data_errone = valeur_errone[0:2], valeur_errone[2:]
+    
     amplitude_errone = binaire_a_amplitude(data_errone)
-    dico_amplitude_errone['am_errone_mic' + str(index+1)] = amplitude_errone
     valeur_distance = sqrt(coef_permittivite/amplitude_errone)
+
+    dico_amplitude_errone['am_errone_mic' + str(index+1)] = amplitude_errone
     dico_distance["distance_mic" + str(index+1)] = valeur_distance
+
+    ecart_min, case_min = 10000, 0
+    
+    for case, distances in distance_case.items():
+      a_comparer = distance_case[case]['micro'+str(index+1)]
+      distance_mic = dico_distance['distance_mic'+str(index+1)]
+      ecart = abs(a_comparer - distance_mic)
+      if ecart < ecart_min:
+        ecart_min = ecart
+        case_min = case
+    print(ecart_min, case)
+      
+    
+
   print(dico_amplitude_errone)
   print(dico_distance)
 
-print(degradation(['010011110101000101100010000110011111101011111100001000010011100110','010011110101000101100010000110011111101011111100001000010011100110','010011110101000101100010000110011111101011111100001000010011100110'],1,0.01))
+print(degradation(['010011110101010100100111100011100000000000110111101100010110000111', '100011110110000011011110010111110000011011000010001001011001010000', '110011110101000100101100000011101110110000011111011010110011011101'],1,0.01))
 

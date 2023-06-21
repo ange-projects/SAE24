@@ -62,14 +62,14 @@ client.loop_stop()  # Stopping the MQTT loop
 client.disconnect()  # Disconnecting the broker
 
 #--Information processing---
-print(payload)  # {'Amplitude_binaire': ['010011110101010100011010000010110011110010000000100000111110000100', '100011110110000010010100100111111110111111001111101000101000101110', '110011110101000111100000001100111100100001010100011101001001010000'], 'x,y': [0.75, 5.75]}
+#print(payload)  # {'Amplitude_binaire': ['010011110101010100011010000010110011110010000000100000111110000100', '100011110110000010010100100111111110111111001111101000101000101110', '110011110101000111100000001100111100100001010100011101001001010000'], 'x,y': [0.75, 5.75]}
 data = eval(payload)  # Évaluation de la chaîne de caractères représentant le dictionnaire
 
 resultat_reel=[]
 amplitude_list = data['Amplitude_binaire']
 resultat_reel.append(data['x,y'])
 
-print("liste : ",amplitude_list)
+#print("liste : ",amplitude_list)
 
 resultat_estimation = calcul_distance_cartographie_amplitude.trouver_x_y(amplitude_list)
 
@@ -81,7 +81,7 @@ print("réel : ",resultat_reel)
 
 # Connexion to database
 connexion = mysql.connector.connect(
-    host='192.168.1.78',
+    host='192.168.102.239',
     port='3306',
     database='bd_micros',
     user='brulix',
