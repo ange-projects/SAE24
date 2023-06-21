@@ -99,13 +99,22 @@ def choix_amplitude(tableau, choix_micro, choix_bit, pourcentage):
 
   return tableau_nouvelles_valeurs
      
-
+def compter_occurrences(liste):
+    dico_occurence = {}
+    for element in liste:
+        if element in dico_occurence:
+            dico_occurence[element] += 1
+        else:
+            dico_occurence[element] = 1
+    return dico_occurence
 
 def principal(tab, choix_micro, choix_bit, pourcentage):
   tableau_valeur_errone = []
   tableau_valeur_errone = choix_amplitude(tab, choix_micro, choix_bit, pourcentage)
-  estimation_case(tableau_valeur_errone)
-
+  tableau_final = estimation_case(tableau_valeur_errone)
+  dico_occurences = compter_occurrences(tableau_final)
+  print(dico_occurences)
+  
 tab = ['010011110100111011000001011000011101101110010110110000000100100000', '100011110101000101010000000101100100101101011101001110011110001101', '110011110110010001010011100110101010000111101110000101111001000011']
 
 principal(tab, [1,3], 1, 0.1)
