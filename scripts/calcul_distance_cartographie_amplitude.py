@@ -5,7 +5,7 @@ with open('dico/dico_amplitude_binaire.txt', 'r') as file:
 with open('dico/dico_coord_sans_para.txt', 'r') as file: 
     contenu = file.read()
     dico_coord_sans_para = eval(contenu)
-    
+
 
 
 #---------------------The way to find (x,y) from binary data----------------------------

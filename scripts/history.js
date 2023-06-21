@@ -42,31 +42,43 @@ const history_points = svg_history.append("g");
 
 // Function to update the point's position
 async function updatePoint() {
-    running = 1;
-    const response = await fetch("get_history.php?interval=" + interval);
+    const response = await fetch("get_coordinates.php?interval=" + interval);
     const coord = await response.json();
+    running = 1;
     let add = 0;
     let filteredData;
     console.log("starting");
     for (let i = 0; i <= coord['id'].length; i += add) {
       await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 seconds
         if (coord['id'][i] === coord['id'][i+1]) {
+          console.log("coord['id'][i]");
         // Filter data to only contain the two history_points we want to display
+        if (coord['id'][i] === coord['id'][i+2]) {
+          filteredData = [
+            { x: coord['x'][i], y: coord['y'][i] },
+            { x: coord['x'][i + 1], y: coord['y'][i + 1] },
+            { x: coord['x'][i + 2], y: coord['y'][i + 2] }
+          ];
+          add = 3;
+        } else {
             filteredData = [
             { x: coord['x'][i], y: coord['y'][i] },
+            { x: coord['x'][i + 1], y: coord['y'][i + 1] },
             { x: coord['x'][i + 1], y: coord['y'][i + 1] }
             ];
             add = 2;
+        }
+
         } else {
             // Update the unique point position with animation
             filteredData = [
                 { x: coord['x'][i], y: coord['y'][i] },
+                { x: coord['x'][i], y: coord['y'][i] },
                 { x: coord['x'][i], y: coord['y'][i] }
-                ]; + 1
+                ];
             add = 1;
         }
-        console.log (coord['x'][0] + " ; " + coord['y'][0]);
-        console.log (coord['x'][1] + " ; " +  coord['y'][1]);
+        console.log ("history update");
         history_points
         .selectAll("circle")
         .data(filteredData) // Pass the filtered data here
@@ -100,5 +112,7 @@ form.addEventListener('submit', function(event) {
   if (running == 0){
     updatePoint() ;
     console.log("history exec");
+  } else {
+    console.log("not executing, running = 1");
   }
 });
