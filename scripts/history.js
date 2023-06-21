@@ -52,25 +52,28 @@ async function updatePoint() {
       await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 seconds
         if (coord['id'][i] === coord['id'][i+1]) {
           console.log("coord['id'][i]");
-        // Filter data to only contain the two history_points we want to display
-        if (coord['id'][i] === coord['id'][i+2]) {
-          filteredData = [
-            { x: coord['x'][i], y: coord['y'][i] },
-            { x: coord['x'][i + 1], y: coord['y'][i + 1] },
-            { x: coord['x'][i + 2], y: coord['y'][i + 2] }
-          ];
-          add = 3;
-        } else {
+            // If there are 3 points to display, their position will be the ones at the index i, i+1, i+2
+          if (coord['id'][i] === coord['id'][i+2]) {
             filteredData = [
-            { x: coord['x'][i], y: coord['y'][i] },
-            { x: coord['x'][i + 1], y: coord['y'][i + 1] },
-            { x: coord['x'][i + 1], y: coord['y'][i + 1] }
+              { x: coord['x'][i], y: coord['y'][i] },
+              { x: coord['x'][i + 1], y: coord['y'][i + 1] },
+              { x: coord['x'][i + 2], y: coord['y'][i + 2] }
             ];
-            add = 2;
-        }
+            add = 3;
+            
+            // If there are 2 points to display, their position will be the ones at the index i and i+1
+            // 2 points will be sent to i+1 so it will look like, there are only 2 points
+          } else {
+              filteredData = [
+              { x: coord['x'][i], y: coord['y'][i] },
+              { x: coord['x'][i + 1], y: coord['y'][i + 1] },
+              { x: coord['x'][i + 1], y: coord['y'][i + 1] }
+              ];
+              add = 2;
+          }
 
         } else {
-            // Update the unique point position with animation
+            // If there is only one point to display, all the points are sent to one position
             filteredData = [
                 { x: coord['x'][i], y: coord['y'][i] },
                 { x: coord['x'][i], y: coord['y'][i] },
@@ -78,17 +81,18 @@ async function updatePoint() {
                 ];
             add = 1;
         }
+
         console.log ("history update");
         history_points
-        .selectAll("circle")
-        .data(filteredData) // Pass the filtered data here
-        .join("circle")
-        .attr("r", pointRadius)
-        .style("fill", "#fc5353")
-        .transition()
-        .duration(animationDuration)
-        .attr("cx", d => xScale(d.x))
-        .attr("cy", d => yScale(d.y));
+          .selectAll("circle")
+          .data(filteredData) // Pass the filtered data here
+          .join("circle")
+          .attr("r", pointRadius)
+          .style("fill", "#fc5353")
+          .transition()
+          .duration(animationDuration)
+          .attr("cx", d => xScale(d.x))
+          .attr("cy", d => yScale(d.y));
     }
     history_points
       .selectAll("circle")
