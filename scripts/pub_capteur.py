@@ -36,13 +36,6 @@ result = cursor.fetchone()
 placement = result[0]
 #print(placement)
 
-border_positions = {
-    "top": [1, 2, 3, 4, 5, 6, 7, 8],
-    "bottom": [249, 250, 251, 252, 253, 254, 255, 256],
-    "left": [1, 17, 33, 49, 65, 81, 97, 113, 129, 145, 161, 177, 193, 209, 225, 241],
-    "right": [16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256]
-}
-
 # Validate the transaction
 connexion.commit()
 
@@ -51,43 +44,27 @@ connexion.close()
 
 #ETABLISSEMENT D'UNE LISTE DES VOISINS DE LA CASE DE LA POSITION ACTUELLE
 def get_voisin(pos):
-    lig = pos // 16
-    col = pos % 16
-    voisin = []
-    # Check up
-    if lig > 0:
-        voisin.append(pos - 16)
-    # Check up-right
-    if lig > 0 and col < 15:
-        voisin.append(pos - 15)
-    # Check right
-    if col < 15:
-        voisin.append(pos + 1)
-    # Check down-right
-    if lig < 15 and col < 15:
-        voisin.append(pos + 17)
-    # Check down
-    if lig < 15:
-        voisin.append(pos + 16)
-    # Check down-left
-    if lig < 15 and col > 0:
-        voisin.append(pos + 15)
-    # Check left
-    if col > 0:
-        voisin.append(pos - 1)
-    # Check up-left
-    if lig > 0 and col > 0:
-        voisin.append(pos - 17)
+    row = (pos - 1) // 16
+    col = (pos - 1) % 16
 
-    if pos in border_positions["top"]:
-        voisin = [v for v in voisin if v not in border_positions["top"] or v == pos + 16]
-    if pos in border_positions["bottom"]:
-        voisin = [v for v in voisin if v not in border_positions["bottom"] or v == pos - 16]
-    if pos in border_positions["left"]:
-        voisin = [v for v in voisin if v not in border_positions["left"] or v == pos + 1]
-    if pos in border_positions["right"]:
-        voisin = [v for v in voisin if v not in border_positions["right"] or v == pos - 1]
+    # Calculate the possible neighboring positions
+    voisin = [
+        pos - 17, pos - 16, pos - 15,
+        pos - 1, pos + 1,
+        pos + 15, pos + 16, pos + 17
+    ]
 
+    # Exclude positions on the leftmost and rightmost edges
+    if col == 0:
+        voisin = [v for v in voisin if (v - 1) % 16 != 15]
+    elif col == 15:
+        voisin = [v for v in voisin if v % 16 != 0]
+
+    # Exclude positions on the top and bottom edges
+    if row == 0:
+        voisin = [v for v in voisin if v > 16]
+    elif row == 15:
+        voisin = [v for v in voisin if v < 241]
     return voisin
 
 voisin = get_voisin(placement)
