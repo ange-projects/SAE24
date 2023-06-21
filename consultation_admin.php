@@ -22,57 +22,54 @@
         <article id="left">
             <!-- <span>Réseaux et Télécommunications | IUT de Blagnac</span> -->
             <h1>Page d'administration</h1>
-            <h2>Bonjour <?php echo $_SESSION["login"]; ?> </h2> <!--Welcome banner-->
             <p>En tant qu'administrateur, vous avez accès à des fonctionnalités avancées pour surveiller et analyser les données en temps réel.</p>
         </article>
     </section>
 
-
+<div id="globalDiv">
     <div class="consultation">
         <svg id="plan" width="500" height="500"></svg>
-        <div class="center">
-            <form action="degradation.php" method="POST"> 
-                <h3> Indiquez vos paramètres d'estimation. </h3>
-                <br>
-                <p> Nombre de bits erronés : 
-                    <select name="bits_errones">
-                        <option value="0">0 bits</option>
-                        <option value="1">1 bit</option>
-                        <option value="2">2 bits</option>
-                    </select>
-                </p>
-                <p> Nombre de micros en fonction  : 
-                    <select name="micros_en_marche">
-                        <option value="3">3 micros</option>
-                        <option value="2">2 micros</option>
-                        <option value="1">1 micro</option>
-                    </select>
-                </p>
-                <p> Vitesse de déplacement de l'objet:
-            <select name="micros_en_marche">
-                <option value="3"> Rapide </option>
-                <option value="2"> Moyenne </option>
-                <option value="1"> Faible </option>
-            </select>
-                </p>
-                <br>
-                <button type="submit" class="submit-button">Submit</button>
-            </form>
-    </div>
+        <form action="degradation.php" method="POST"> 
+            <h3> Indiquez vos paramètres d'estimation. </h3>
+            <br>
+            <p> Nombre de bits erronés : 
+                <select name="bits_errones">
+                    <option value="0">0 bits</option>
+                    <option value="1">1 bit</option>
+                    <option value="2">2 bits</option>
+                </select>
+            </p>
+            <p> Nombre de micros en fonction  : 
+                <select name="micros_en_marche">
+                    <option value="3">3 micros</option>
+                    <option value="2">2 micros</option>
+                    <option value="1">1 micro</option>
+                </select>
+            </p>
+            <p> Vitesse de déplacement de l'objet:
+                <select name="micros_en_marche">
+                    <option value="3"> Rapide </option>
+                    <option value="2"> Moyenne </option>
+                    <option value="1"> Faible </option>
+                </select>
+            </p>
+            <br>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
     </div>
 
     <div class="consultation">
         <svg id="history_plan" width="500" height="500"></svg>
-        <div class="center">
+        <form id="display_history">
             <h3>Remonter dans le temps : </h3>
-            <span id="intervalValue">0</span>
-            <form id="display_history">
+            <span id="intervalValue">0 minutes</span>
+            <br>
             <input type="range" name="interval" id="interval" min="-500" max="0" value="0" oninput="updateValue(this.value)">
             <br>
             <button type="submit" class="submit-button">Submit</button>
-             </form>
-        </div>
+        </form>
     </div>
+</div>
 
     <script>
         function updateValue(newValue) {

@@ -31,6 +31,7 @@ def get_voisin(pos):
 def update_placement():
     global placement
     print(placement)
+    print(get_voisin(placement))
     voisin = get_voisin(placement)
     placement = random.choice(voisin) #RANDOM CHOICE BETWEEN PREVIOUSLY DEFINED POSSIBILITIES
     time.sleep(1) #PUBLISHING SPEED

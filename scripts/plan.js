@@ -66,7 +66,7 @@ points.append("circle");
 
 // Function to update the point's position
 async function updatePoint() {
-    const response = await fetch("get_history.php");
+    const response = await fetch("get_coordinates.php");
     const coord = await response.json();
 
     //if there are multiple possible coordinates for the same measurement
@@ -76,8 +76,8 @@ async function updatePoint() {
           { x: coord['x'][0], y: coord['y'][0] },
           { x: coord['x'][1], y: coord['y'][1] }
           ];
-          console.log (coord['x'][0] + " ; " + coord['y'][0]);
-          console.log (coord['x'][1] + " ; " +  coord['y'][1]);
+          // console.log (coord['x'][0] + " ; " + coord['y'][0]);
+          // console.log (coord['x'][1] + " ; " +  coord['y'][1]);
           points
           .selectAll("circle")
           .data(filteredData) // Pass the filtered data here
