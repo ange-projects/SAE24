@@ -73,19 +73,17 @@ def estimation_case(tableau_errone):
     liste_case_min.append(case_min)
     liste_case_min2.append(case_min_2)
     
-  #print(liste_case_min)
-  #print(liste_case_min2)
+  print(liste_case_min)
+  print(liste_case_min2)
 
       
     
 
-  #print(dico_amplitude_errone)
-  #print(dico_distance)
-
-#print(estimation_case(['010011110100111011000001011000011101101110010110110000000100100000', '100011110101000101010000000101100100101101011101001110011110001101', '110011110110010001010011100110101010000111101110000101111001000011']))
+  print(dico_amplitude_errone)
+  print(dico_distance)
 
 
-def choix_micro(tableau, choix_micro, choix_bit, pourcentage):
+def choix_amplitude(tableau, choix_micro, choix_bit, pourcentage):
 
   choix_micro.sort()
   tableau_nouvelles_valeurs = []
@@ -100,11 +98,15 @@ def choix_micro(tableau, choix_micro, choix_bit, pourcentage):
       tableau_nouvelles_valeurs.append(tableau[index-1])  
 
   return tableau_nouvelles_valeurs
+     
 
 
+def principal(tab, choix_micro, choix_bit, pourcentage):
+  tableau_valeur_errone = []
+  tableau_valeur_errone = choix_amplitude(tab, choix_micro, choix_bit, pourcentage)
+  estimation_case(tableau_valeur_errone)
 
-tab = choix_micro(['010011110100111011000001011000011101101110010110110000000100100000', '100011110101000101010000000101100100101101011101001110011110001101', '110011110110010001010011100110101010000111101110000101111001000011'],[1,2],1,0.1)     
+tab = ['010011110100111011000001011000011101101110010110110000000100100000', '100011110101000101010000000101100100101101011101001110011110001101', '110011110110010001010011100110101010000111101110000101111001000011']
 
-print(tab)
-
-
+principal(tab, [1,3], 1, 0.1)
+  
