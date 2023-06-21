@@ -9,7 +9,7 @@ while true; do
     python /home/pi/Desktop/SAE24/scripts/pub_capteur.py &
     echo "Script publication exécuté à : "$(date +"%d-%m-%Y %H:%M:%S") >> /home/pi/Desktop/SAE24/scripts/log_simulation.txt
     # Attend 5 secondes avant la prochaine itration
-    sleep 5
+    sleep 2
     echo "Fin de la boucle" >> /home/pi/Desktop/SAE24/scripts/log_simulation.txt
     echo "-----------------------------------------------------------" >> /home/pi/Desktop/SAE24/scripts/log_simulation.txt
 done

@@ -36,8 +36,6 @@ result = cursor.fetchone()
 placement = result[0]
 #print(placement)
 
-
-
 # Validate the transaction
 connexion.commit()
 
@@ -46,36 +44,34 @@ connexion.close()
 
 #ETABLISSEMENT D'UNE LISTE DES VOISINS DE LA CASE DE LA POSITION ACTUELLE
 def get_voisin(pos):
-    lig = pos // 16
-    col = pos % 16
+    row = (pos - 1) // 16
+    col = (pos - 1) % 16
 
-    voisin = []
+    # Calculate the possible neighboring positions
+    voisin = [
+        pos - 17, pos - 16, pos - 15,
+        pos - 1, pos + 1,
+        pos + 15, pos + 16, pos + 17
+    ]
 
-    if lig > 0:
-        voisin.append(pos - 16)
-        if col < 15:
-            voisin.append(pos - 15)
-        if col > 0:
-            voisin.append(pos - 17)
-    if lig < 15:
-        voisin.append(pos + 16)
-        if col < 15:
-            voisin.append(pos + 17)
-        if col > 0:
-            voisin.append(pos + 15)
-    if col < 15:
-        voisin.append(pos + 1)
-    if col > 0:
-        voisin.append(pos - 1)
+    # Exclude positions on the leftmost and rightmost edges
+    if col == 0:
+        voisin = [v for v in voisin if (v - 1) % 16 != 15]
+    elif col == 15:
+        voisin = [v for v in voisin if v % 16 != 0]
+
+    # Exclude positions on the top and bottom edges
+    if row == 0:
+        voisin = [v for v in voisin if v > 16]
+    elif row == 15:
+        voisin = [v for v in voisin if v < 241]
     return voisin
-    
-    
-voisin = get_voisin(placement)
 
+voisin = get_voisin(placement)
+print("Voici les cases possibles: ",voisin)
 case_aleatoire = random.choice(voisin)
 amplitude_aleatoire = dico_amplitude_binaire_id[case_aleatoire]
 position_x, position_y = dico_pos_x_y[case_aleatoire]
-
 # Affichage des résultats
 #print("Case aléatoire sélectionnée :", case_aleatoire)
 #print("Amplitude binaire :", amplitude_aleatoire)
