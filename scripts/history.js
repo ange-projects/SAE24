@@ -23,6 +23,7 @@ for (let i = 0; i <= gridWidth; i++) {
     .attr("y2", gridHeight * gridSize + padding)
     .attr("stroke", "lightgray");
 }
+let running = 0;
 
 for (let i = 0; i <= gridHeight; i++) {
   svg_history.append("line")
@@ -41,6 +42,7 @@ const history_points = svg_history.append("g");
 
 // Function to update the point's position
 async function updatePoint() {
+    running = 1;
     const response = await fetch("get_history.php?interval=" + interval);
     const coord = await response.json();
     let add = 0;
@@ -79,6 +81,7 @@ async function updatePoint() {
     history_points
       .selectAll("circle")
       .remove();
+      running = 0;
     }
 // ---------------------- form handling ---------------------------
 let interval = 0;
@@ -94,6 +97,8 @@ form.addEventListener('submit', function(event) {
   interval = intervalInput.value;
   console.log('interval found is' + interval);
 
-  updatePoint() ;
-  console.log("history exec");
+  if (running == 0){
+    updatePoint() ;
+    console.log("history exec");
+  }
 });

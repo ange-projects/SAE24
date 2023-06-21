@@ -8,7 +8,7 @@ const pointRadius = 8;
 let pointColor = "lightblue";
 let multiple_color = "lightgrey";
 const animationDuration = 1000;
-const updateInterval = 5000;
+const updateInterval = 2000;
 
 //variables for the grid creation
 const gridSize = 26.25; //size of each cell
