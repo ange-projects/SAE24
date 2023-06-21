@@ -44,7 +44,7 @@ connexion.commit()
 # Closing the connection
 connexion.close()
 
-#ETABKISSEMENT D'UNE LISTE DES VOISINS DE LA CASE DE LA POSITION ACTUELLE
+#ETABLISSEMENT D'UNE LISTE DES VOISINS DE LA CASE DE LA POSITION ACTUELLE
 def get_voisin(pos):
     lig = pos // 16
     col = pos % 16
@@ -53,25 +53,20 @@ def get_voisin(pos):
 
     if lig > 0:
         voisin.append(pos - 16)
-    if lig > 0 and col < 15:
-        voisin.append(pos - 15)
-    if col < 15:
-        voisin.append(pos + 1)
-    if lig < 15 and col < 15:
-        voisin.append(pos + 17)
+        if col < 15:
+            voisin.append(pos - 15)
+        if col > 0:
+            voisin.append(pos - 17)
     if lig < 15:
         voisin.append(pos + 16)
-    if lig < 15 and col > 0:
-        voisin.append(pos + 15)
+        if col < 15:
+            voisin.append(pos + 17)
+        if col > 0:
+            voisin.append(pos + 15)
+    if col < 15:
+        voisin.append(pos + 1)
     if col > 0:
         voisin.append(pos - 1)
-    if lig > 0 and col > 0:
-        voisin.append(pos - 17)
-
-    return voisin
-
-
-
 voisin = get_voisin(placement)
 
 case_aleatoire = random.choice(voisin)
