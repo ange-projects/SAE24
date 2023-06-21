@@ -76,11 +76,11 @@ def estimation_case(tableau_errone):
   print(liste_case_min)
   print(liste_case_min2)
 
-      
+  return liste_case_min + liste_case_min2  
     
 
-  print(dico_amplitude_errone)
-  print(dico_distance)
+  #print(dico_amplitude_errone)
+  #print(dico_distance)
 
 
 def choix_amplitude(tableau, choix_micro, choix_bit, pourcentage):
