@@ -18,19 +18,38 @@
         require('header.php');
     ?>
     
-    <section> <!--Login window in glass morphism-->
-        <form class="container" name="identification" action="" method="post">
-            <p class="accueil">Bienvenue</p>
-            <input type="text" name="login" placeholder="Pseudonyme" required><br>
-            <input type="password" name="mdp" placeholder="Mot de passe" required><br>
-            <input type="submit" name="connexion" value="Connexion"><br>
-            <?php
-                if(!empty($error)){
-                    echo "<p class='erreur'>$error</p>";
-                }
+    <section>
+        
+        <div class="box">
+        <div class="container"> 
+            <div class="form"> 
+            <h2>Bienvenue</h2>
+            <form name="identification" action="" method="post">
+                <div class="inputBx">
+                    <input type="text" name="login" required>
+                    <span>Login</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="inputBx password">
+                    <input type="password" name="mdp" required>
+                    <span>Password</span>
+                    <i class="fas fa-key"></i>
+                </div>
+                <div class="inputBx">
+                    <input type="submit" name="connexion" value="Connexion"> 
+                </div>
+                <?php
+            if(!empty($error)){
+                echo "<p class='erreur'>$error</p>";
+            }
             ?>
-        </form> <!--If the identification is incorrect, an error message appears-->
+            </form>
+            </div>
+        </div>
+          
+        </div>
     </section>
+      
     
     <script src="script_accueil.js"></script>
     
