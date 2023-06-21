@@ -1,18 +1,20 @@
 @import url("style_accueil.css");
 @import url("style_consult.css");
 
-
+/* consultation webpages div */
 div.consultation{
     padding-top: 5%;
     margin-left: 5%;
     margin-bottom: 1%;
+    text-align: center;
     display: block;
     float: left;
 }
+
 div.unique{
     margin-left: 34%;
 }
-
+/* plan style */
 svg {
     background-color: #ffffff;
     border-style: solid;
@@ -24,10 +26,20 @@ svg {
     -o-border-radius: 10px;
 }
 
-.center{
-width: 100%;
-text-align: center;
+div.center{
+    margin-top: 20px;
+    text-align: center;
+    background-color: #ffffff89;
+    padding: 20px 0;
+    backdrop-filter: blur(1px);
+    box-shadow: 3px 3px 50px rgba(0, 0, 0, 0.636);    width: 100%;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
 }
+
 
 /* Styles for the floating bubble */
 #intervalValue {
@@ -35,10 +47,14 @@ text-align: center;
     color: white;
     border-radius: 5px;
     padding: 0 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 #interval{
-    width: 100%;
+    width: 80%;
     color: #000;
 }
 
@@ -71,7 +87,7 @@ h1 {
   .submit-button:focus {
     outline: none;
   }
-  
+
   /* Optional: Center the button */
   .container {
     display: flex;
@@ -79,4 +95,3 @@ h1 {
     align-items: center;
     height: 100vh;
   }
-  
