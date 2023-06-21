@@ -14,7 +14,7 @@
         require('header.php');
     ?>
 
-    <h1>Dynamic Plan</h1>
+    <h1>Page de consultation</h1>
 
     <div class="unique consultation">
         <svg id="plan" width="500" height="500"></svg>

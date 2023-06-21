@@ -27,7 +27,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    backdrop-filter: blur(1px);
+    background: rgb(161,161,161);
+    background: linear-gradient(0deg, rgba(161,161,161,0) 0%, rgba(227,227,227,1) 100%);
 }
 
 .navbar a {
@@ -190,4 +191,33 @@ body {
 
 .blocb li {
     padding: 5px;
+}
+
+
+/* Images style */
+
+.blockgest {
+    max-width:100%;
+    height:auto;
+    display:flex; 
+  }
+  
+.left, .right
+{
+    width: 48%;
+    margin: 1%;
+    text-align: justify;
+}
+
+#gantt_prev {
+     width: 100%;
+}
+
+#gantt_fin {
+    width: 100%;
+}
+
+.contener {
+    display: flex;
+    justify-content: end;
 }
