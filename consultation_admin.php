@@ -68,6 +68,14 @@
             <br>
             <button type="submit" class="submit-button">Submit</button>
         </form>
+        <form id="display_history">
+            <h3>Vitesse d'execution : </h3>
+            <span id="intervalValue">Pas vraiment très vite</span>
+            <br>
+            <input type="range" name="interval" id="interval" min="-500" max="0" value="0" oninput="updateValue(this.value)">
+            <br>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
     </div>
 </div>
 

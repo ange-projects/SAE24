@@ -27,7 +27,7 @@ div.consultation{
 }
 
 /* div containing */
-form {
+div.consultation form {
     max-width: 75%;
     margin-top: 20px;
     margin-bottom: 20px;
