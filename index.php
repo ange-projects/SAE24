@@ -39,11 +39,11 @@
                 <h3>Contraintes techniques</h3>
                 <ul class="index_dale">
                     <li>&#8250; Environnement : machine virtuelle</li>
-                    <li>&#8250; Système d’exploitation : au choix</li>
-                    <li>&#8250; Langages autorisés : HTML5, CSS3, PHP, Javascript, Bash, C, Python.</li>
-                    <li>&#8250; Stockage des données : BD MySQL et/ou InfluxDB</li>
-                    <li>&#8250; Codes documentés (commentaires pertinents dans le code) en anglais</li>
-                    <li>&#8250; Publication sur un serveur web dédié (xampp)</li>
+                    <li>&#8250; Système d’exploitation : Raspbian</li>
+                    <li>&#8250; Langages autorisés : HTML5, CSS3, PHP, Javascript, Python</li>
+                    <li>&#8250; Stockage des données : BD MySQL</li>
+                    <li>&#8250; Codes documentés en anglais</li>
+                    <li>&#8250; Publication sur un serveur web dédié    </li>
                     <li>&#8250; Gestion de version via Git et Github</li>
                     
                 </ul>
