@@ -1,7 +1,8 @@
 <?php
     require_once("connexion_bdd.php");
     if(isset($_GET['interval'])){
-        $interval = $_GET['interval'];
+        //store the absolute value of the interval
+        $interval = abs($_GET['interval']);
         // Calculate the date and time 30 minutes ago
         $date_start = date('Y-m-d H:i:s', strtotime('-'.$interval.' minutes'));
         $request_content = "SELECT id_mesure FROM coord_points WHERE time >= '$date_start'";
@@ -29,7 +30,6 @@
             $coord['y'][] = $line['y'];
         }
         $coord['id'] = $ID_array;
-
 
     mysqli_close($connexion);
     echo json_encode($coord);
