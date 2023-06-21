@@ -21,10 +21,22 @@
     </section>   
 
     <section id="intro">
-        <h2 id='gantt'><a href='#gantt'>Diagramme de Gantt prévisionnel</a></h2>
-        <p>Voici notre diagramme de Gantt prévisionnel réalisé à l'aide du logiciel <a href='https://ganttproject.fr.softonic.com/telecharger' target='_blank'>GanttProject</a> :</p>
-        <img src='./img/Gantt_prev.png' alt='Diagramme de Gantt'>
-    </section>  
+        <h2 id='gantt'><a href='#gantt'>Diagramme de Gantt prévisionnel et final</a></h2>
+        <p>Voici nos diagrammes de Gantt réalisés à l'aide du logiciel <a href='https://ganttproject.fr.softonic.com/telecharger' target='_blank'>GanttProject</a> :</p>
+    </section>
+
+    <section class="contener">
+        <div class="blockgest">
+            <div class="right">
+                <img src='./img/Gantt_prev.png' id="gantt_prev"  alt='Diagramme de Gantt prévisionnel'>
+            </div>
+            <div class="left">
+                <img id="gantt_fin" src='./img/Gantt_prev.png' alt='Diagramme de Gantt final'>
+            </div>
+        </div>
+    </section>
+
+     
 
     <section id="intro">
         <h2 id='github'><a href='#github'>Outils collaboratifs utilisés</a></h2> 

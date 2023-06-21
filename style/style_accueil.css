@@ -29,7 +29,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    backdrop-filter: blur(1px);
+    background: rgb(161,161,161);
+    background: linear-gradient(0deg, rgba(161,161,161,0) 0%, rgba(227,227,227,1) 100%);
 }
 
 .navbar a {
