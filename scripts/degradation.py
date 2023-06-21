@@ -73,8 +73,8 @@ def estimation_case(tableau_errone):
     liste_case_min.append(case_min)
     liste_case_min2.append(case_min_2)
     
-  print(liste_case_min)
-  print(liste_case_min2)
+  #print(liste_case_min)
+  #print(liste_case_min2)
 
   return liste_case_min + liste_case_min2  
     
