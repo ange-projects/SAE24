@@ -15,7 +15,7 @@ with open('dico/dico_pos_x_y.txt', 'r') as file:
 
 # Connexion to database
 connexion = mysql.connector.connect(
-    host='192.168.1.78',
+    host='192.168.102.239',
     port='3306',
     database='bd_micros',
     user='brulix',
@@ -29,12 +29,12 @@ cursor.execute("SELECT x, y FROM coord_points_reel WHERE ID = (SELECT MAX(ID) FR
 result = cursor.fetchone()
 x_coord = result[0]
 y_coord = result[1]
-print(cursor, x_coord, y_coord)
+#print(cursor, x_coord, y_coord)
 
 cursor.execute(f"SELECT num_case FROM coord_cases WHERE x = {x_coord} AND y = {y_coord}")
 result = cursor.fetchone()
 placement = result[0]
-print(placement)
+#print(placement)
 
 
 
@@ -67,6 +67,9 @@ def get_voisin(pos):
         voisin.append(pos + 1)
     if col > 0:
         voisin.append(pos - 1)
+    return voisin
+    
+    
 voisin = get_voisin(placement)
 
 case_aleatoire = random.choice(voisin)
@@ -84,7 +87,7 @@ payload = {
     "x,y": [position_x, position_y]
 }
 
-print (payload)
+#print (payload)
 
 # Création d'un client MQTT
 client = mqtt.Client()
@@ -94,7 +97,7 @@ client.connect("localhost", 1883, 60)
 
 # Publication du message aléatoire sur le topic
 client.publish("SAE24/capteur", str(payload))
-print("C'est bon")
+#print("C'est bon")
 
 # Déconnexion du broker MQTT
 client.disconnect()
