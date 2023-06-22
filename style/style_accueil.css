@@ -17,8 +17,8 @@
 
 body {
     font-family: "Poppins";
-    background-image: url(../img/bground.jpg);
-    background-size: 100%;
+    background-image: url(../img/nouveau_fond_ecran_2.jpg);
+    background-size: cover;
 }
 
 /*Navigation bar*/
@@ -29,8 +29,9 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: rgb(161,161,161);
-    background: linear-gradient(0deg, rgba(161,161,161,0) 0%, rgb(169 169 169) 100%);}
+    background: rgb(161, 161, 161);
+    background: linear-gradient(0deg, rgba(161, 161, 161, 0) 0%, rgb(169 169 169) 100%);
+}
 
 .navbar a {
     color: rgb(0, 0, 0);
@@ -59,8 +60,8 @@ body {
 
 .actif a {
     background-color: yellow;
-  }
-  
+}
+
 
 /*Welcome paragraph*/
 
@@ -129,7 +130,7 @@ body {
     margin-top: 5%;
 }
 
-#img_fonctionnement { 
+#img_fonctionnement {
     width: 90%;
 }
 

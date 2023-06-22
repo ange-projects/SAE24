@@ -1,198 +1,198 @@
 /*-----------import font------------*/
 
 @font-face {
-    font-family: "Poppins";
-    src: url(../police/Poppins-Medium.ttf);
+  font-family: "Poppins";
+  src: url(../police/Poppins-Medium.ttf);
 }
 
 /*To prevent browsers from imposing their own margin*/
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-    font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Poppins";
 }
 
 body {
-    background-image: url(../img/bg2.webp);
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
+  background-image: url(../img/nouveau_fond_ecran.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
 /*----------Navigation Bar----------*/
 
 .navbar {
-    padding: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background: rgb(225, 225, 225);
-    background: linear-gradient(0deg, rgba(161,161,161,0) 0%, rgba(227,227,227,1) 100%);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: rgb(225, 225, 225);
+  background: linear-gradient(0deg, rgba(161, 161, 161, 0) 0%, rgba(227, 227, 227, 1) 100%);
 }
 
 .navbar a {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .navbar .logo {
-    font-size: 100%;
-    letter-spacing: 1.25px;
-    font-weight: bolder;
+  font-size: 100%;
+  letter-spacing: 1.25px;
+  font-weight: bolder;
 }
 
 .navbar .nav-links ul {
-    display: flex;
+  display: flex;
 }
 
 .navbar .nav-links li {
-    margin: 0 30px;
-    letter-spacing: 1.25px;
+  margin: 0 30px;
+  letter-spacing: 1.25px;
 }
 
 
 .navbar .nav-links .actif a {
-    color: #6dd5ed;
-    font-weight: 900;
+  color: #6dd5ed;
+  font-weight: 900;
 }
 
 .actif a {
-    background-color: yellow;
-  }
+  background-color: yellow;
+}
 
 /*-----Form-----*/
 section {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.box {
-    position: relative;
-    
-  }
-    
-  .box .container {
-    position: relative;
-    padding: 50px;
-    width: 400px;
-    min-height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
-  }
-  
-  .box .container::after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    bottom: 5px;
-    left: 5px;
-    border-radius: 5px;
-    pointer-events: none;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 2%);
-  }
-  
-  .box .form {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .box .form h2 {
-    color: #fff;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-  }
-  
-  .box .form .inputBx {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .box .form .inputBx input {
-    width: 100%;
-    height: 45px;
-    outline: none;
-    border: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.2);
-    padding: 8px 10px;
-    padding-left: 40px;
-    border-radius: 15px;
-    color: #fff;
-    font-size: 16px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 
-  }
-  
-  .box .form .inputBx .fas {
-    position: absolute;
-    top: 13px;
-    left: 13px;
-  }
-  
-  .box .form .inputBx input[type="submit"] {
-    background: #fff;
-    color: #111;
-    max-width: 50%;
-    padding: 8px 10px;
-    box-shadow: none;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: 1.5s;
-  }
-  
-  .box .form .inputBx input[type="submit"]:hover {
-    background: linear-gradient(115deg, rgba(0, 0, 0, 0.10), rgba(255, 255, 255, 0.25));
-    color: #fff;
-    transition: 0.5s;
-  }
-  
-  .box .form .inputBx input::placeholder {
-    color: #fff;
-  }
-  
-  .box .form .inputBx span {
-    position: absolute;
-    left: 30px;
-    padding: 10px;
-    display: inline-block;
-    color: #fff;
-    transition: 0.5s;
-    pointer-events: none;
-  }
-  
-  .box .form .inputBx input:focus ~ span,
-  .box .form .inputBx input:valid ~ span {
-    transform: translateX(-30px) translateY(-25px);
-    font-size: 12px;
-  }
-  
-  .box .form p {
-    color: #fff;
-    font-size: 15px;
-    margin-top: 5px;
-  }
-  
-  .box .form p a {
-    color: #fff;
-  }
-  
-  .box .form p a:hover {
-    background-color: #000;
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
+.box {
+  position: relative;
+
+}
+
+.box .container {
+  position: relative;
+  padding: 50px;
+  width: 400px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.box .container::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 2%);
+}
+
+.box .form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.box .form h2 {
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.box .form .inputBx {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.box .form .inputBx input {
+  width: 100%;
+  height: 45px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  padding-left: 40px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+}
+
+.box .form .inputBx .fas {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+}
+
+.box .form .inputBx input[type="submit"] {
+  background: #fff;
+  color: #111;
+  max-width: 50%;
+  padding: 8px 10px;
+  box-shadow: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 1.5s;
+}
+
+.box .form .inputBx input[type="submit"]:hover {
+  background: linear-gradient(115deg, rgba(0, 0, 0, 0.10), rgba(255, 255, 255, 0.25));
+  color: #fff;
+  transition: 0.5s;
+}
+
+.box .form .inputBx input::placeholder {
+  color: #fff;
+}
+
+.box .form .inputBx span {
+  position: absolute;
+  left: 30px;
+  padding: 10px;
+  display: inline-block;
+  color: #fff;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.box .form .inputBx input:focus~span,
+.box .form .inputBx input:valid~span {
+  transform: translateX(-30px) translateY(-25px);
+  font-size: 12px;
+}
+
+.box .form p {
+  color: #fff;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.box .form p a {
+  color: #fff;
+}
+
+.box .form p a:hover {
+  background-color: #000;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

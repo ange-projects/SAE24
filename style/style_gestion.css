@@ -27,8 +27,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: rgb(161,161,161);
-    background: linear-gradient(0deg, rgba(161,161,161,0) 0%, rgba(227,227,227,1) 100%);
+    background: rgb(161, 161, 161);
+    background: linear-gradient(0deg, rgba(161, 161, 161, 0) 0%, rgba(227, 227, 227, 1) 100%);
 }
 
 .navbar a {
@@ -55,6 +55,7 @@ body {
     color: #6dd5ed;
     font-weight: 900;
 }
+
 /*paragraphe d'accueil*/
 
 #intro {
@@ -80,7 +81,7 @@ body {
     color: rgb(36, 50, 247);
 }
 
-#intro h2 a{
+#intro h2 a {
     letter-spacing: 1.25px;
     color: rgb(36, 50, 247);
 }
@@ -91,11 +92,12 @@ body {
 }
 
 #intro img {
-    width : 70%;
-    height : 70%;
+    width: 70%;
+    height: 70%;
     align-items: center;
     padding: 20px;
 }
+
 /*Grille d'accueil*/
 
 #zero {
@@ -197,20 +199,20 @@ body {
 /* Images style */
 
 .blockgest {
-    max-width:100%;
-    height:auto;
-    display:flex; 
-  }
-  
-.left, .right
-{
+    max-width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.left,
+.right {
     width: 48%;
     margin: 1%;
     text-align: justify;
 }
 
 #gantt_prev {
-     width: 100%;
+    width: 100%;
 }
 
 #gantt_fin {
