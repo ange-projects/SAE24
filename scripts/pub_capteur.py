@@ -14,11 +14,11 @@ with open('dico/dico_pos_x_y.txt', 'r') as file:
 
 # Connexion to database
 connexion = mysql.connector.connect(
-    host='localhost',
+    host='192.168.102.239',
     port='3306',
     database='bd_micros',
-    user='root',
-    password='root'
+    user='brulix',
+    password='brul1goat'
 )
 # Creating a cursor for executing SQL queries
 cursor = connexion.cursor()

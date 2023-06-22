@@ -44,8 +44,8 @@ client.on_disconnect = deconnexion
 #---Attempt to connect to the broker---
 try:
     client.connect(broker, port)
-    with open('/home/pi/Desktop/SAE24/scripts/connecte.lock', 'w') as file:
-        pass
+    # with open('/home/pi/Desktop/SAE24/scripts/connecte.lock', 'w') as file:
+    #     pass
 except:
     print("Erreur de connexion au broker")
 
@@ -138,10 +138,14 @@ if degre_deg == 2:
     value_deg = 2
 if degre_deg == 3:
     value_deg = 4
+print(resultat_estimation)
+
 
 if methode == 2:
+    print(f"resultat_estimation  : {resultat_estimation}")
     resultat_estimation = principal(amplitude_list, mic_mod_tab, nb_bit_deg, value_deg)
-
+    print(f"resultat_estimation  : {resultat_estimation}")
+    
     def calcul_deg(dico):
         dico_new = {}
         for case in dico    :
@@ -182,11 +186,14 @@ print(resultat_estimation)
 for element in resultat_estimation:
     x = element[0]
     y = element[1]
-
-    if methode == 1 or methode == 2: 
-        poids = resultat_estimation[element]
-    else :
+    print(f"x : {x}")
+    print(f"y : {y}")
+    if methode == 0: 
         poids = 6
+    if methode == 1: 
+        poids = 3
+    if methode == 2: 
+        poids = resultat_estimation[element]
 
     cursor.execute("INSERT INTO coord_points (ID_mesure, poids, x, y) VALUES (%s, %s, %s, %s)", (ID_mesure, poids, x, y))
 
