@@ -11,6 +11,10 @@ with open('dico/dico_amplitude_bin_id.txt', 'r') as file:
 with open('dico/dico_pos_x_y.txt', 'r') as file: 
     contenu = file.read()
     dico_pos_x_y = eval(contenu)
+    
+with open('dico/dico_grille.txt', 'r') as file: 
+    contenu = file.read()
+    grille = eval(contenu)
 
 # Connexion to database
 connexion = mysql.connector.connect(
@@ -55,27 +59,37 @@ connexion.close()
 
 #ETABLISSEMENT D'UNE LISTE DES VOISINS DE LA CASE DE LA POSITION ACTUELLE
 def get_voisin(pos):
-    row = (pos - 1) // 16
-    col = (pos - 1) % 16
-
-    # Calculate the possible neighboring positions
-    voisin = [
-        pos - 17, pos - 16, pos - 15,
-        pos - 1, pos + 1,
-        pos + 15, pos + 16, pos + 17
-    ]
-
-    # Exclude positions on the leftmost and rightmost edges
-    if col == 0:
-        voisin = [v for v in voisin if (v - 1) % 16 != 15]
-    elif col == 15:
-        voisin = [v for v in voisin if v % 16 != 0]
-
-    # Exclude positions on the top and bottom edges
-    if row == 0:
-        voisin = [v for v in voisin if v > 16]
-    elif row == 15:
-        voisin = [v for v in voisin if v < 241]
+    voisin = []
+    row_count = len(grille)
+    col_count = len(grille[0])
+    for i in range(row_count):
+        for j in range(col_count):
+            if grille[i][j] == pos:
+                # Check left neighbor
+                if j > 0:
+                    voisin.append(grille[i][j - 1])
+                # Check right neighbor
+                if j < col_count - 1:
+                    voisin.append(grille[i][j + 1])
+                # Check top neighbor
+                if i > 0:
+                    voisin.append(grille[i - 1][j])
+                # Check bottom neighbor
+                if i < row_count - 1:
+                    voisin.append(grille[i + 1][j])
+                # Check top-left neighbor
+                if i > 0 and j > 0:
+                    voisin.append(grille[i - 1][j - 1])
+                # Check top-right neighbor
+                if i > 0 and j < col_count - 1:
+                    voisin.append(grille[i - 1][j + 1])
+                # Check bottom-left neighbor
+                if i < row_count - 1 and j > 0:
+                    voisin.append(grille[i + 1][j - 1])
+                # Check bottom-right neighbor
+                if i < row_count - 1 and j < col_count - 1:
+                    voisin.append(grille[i + 1][j + 1])
+    print("Voisin exclu :", voisin)
     return voisin
 
 voisin = get_voisin(placement)
