@@ -41,32 +41,6 @@
 
         <div id="menu">
             <div class="center">
-                <h3> Changer la vitesse </h3>
-            <br>
-            <button class='accordion' onclick="Show_And_Hide(this.nextElementSibling)">Vitesse</button>
-            <div class="hidden">
-                <br>
-            <form id="vitesse" method="POST" action="degradation.php">
-                <fieldset id="degrad">
-                    <legend>Sélectionner la vitesse de l'objet :</legend>
-                    <div>
-                        <input type="radio" id="vitesse" name="vitesse" value="1" >
-                        <label for="r">Rapide</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="vitesse" name="vitesse" value="2">
-                        <label for="m">Moyen</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="vitesse" name="vitesse" value="3">
-                        <label for="l">Lent</label>
-                    </div>
-                </fieldset>
-                <br>
-            <button type="submit" class="submit-button">Submit</button>
-            </form>
-            </div>
-            <br>
             <h3> Paramètres de dégradation </h3>
             <br>
             <button class='accordion' onclick="Show_And_Hide(this.nextElementSibling)">Dégradation</button>

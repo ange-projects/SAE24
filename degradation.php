@@ -10,11 +10,13 @@
 
         // Check if each microphone checkbox is selected
         $micros_mod = array();
-        $micros_mod[] = isset($_POST['Degrademic1']) ? '1' : 0;
-        $micros_mod[] = isset($_POST['Degrademic2']) ? '2' : 0;
-        $micros_mod[] = isset($_POST['Degrademic3']) ? '3' : 0;
+        $micros_mod[] = isset($_POST['Degrademic1']) ? '1' : '';
+        $micros_mod[] = isset($_POST['Degrademic2']) ? '2' : '';
+        $micros_mod[] = isset($_POST['Degrademic3']) ? '3' : '';
 
-        $micros_mod = implode('', $micros_mod);
+        $implode_result = implode('', $micros_mod);
+        // If all values are empty, set the result to 0
+        $micros_mod = $implode_result !== '' ? $implode_result : '0';
 
         // Set the default value to 0 if 'bit' is not set
         $nb_bit_deg = isset($_POST['nb_bit_deg']) ? $_POST['nb_bit_deg'] : 0;
@@ -36,12 +38,12 @@
             $requete = "UPDATE degradation SET methode = 0, micro_sup = 0, micro_mod = 0, nb_bit_deg = 0, degre_deg = 0";
         } elseif ($micro_sup == 0) {
             echo  "2, $micros_mod, $nb_bit_deg, $degre_deg";
-            $requete = "INSERT INTO degradation SET methode = 2, micro_mod = $micros_mod, nb_bit_deg = $nb_bit_deg, degre_deg = $degre_deg, micro_sup = 0";
+            $requete = "UPDATE degradation SET methode = 2, micro_mod = $micros_mod, nb_bit_deg = $nb_bit_deg, degre_deg = $degre_deg, micro_sup = 0";
         } else {
-            $requete = "INSERT INTO degradation SET methode = 1, micro_mod = 0, nb_bit_deg = 0, degre_deg = 0, micro_sup = $micro_sup";
+            $requete = "UPDATE degradation SET methode = 1,micro_sup = $micro_sup, micro_mod = 0, nb_bit_deg = 0, degre_deg = 0";
         }
         echo $requete;
-        // $result = mysqli_query($connexion, $requete);
+        $result = mysqli_query($connexion, $requete);
 
 
     }
