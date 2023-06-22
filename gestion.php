@@ -28,7 +28,7 @@
     <section class="contener">
         <div class="blockgest">
             <div class="right">
-                <img src='./img/Gantt_prev.png' id="gantt_prev"  alt='Diagramme de Gantt prévisionnel'>
+                <img src='./img/gant-initial.png' id="gantt_prev"  alt='Diagramme de Gantt prévisionnel'>
             </div>
             <div class="left">
                 <img id="gantt_fin" src='./img/Gantt-Final-SAE24.png' alt='Diagramme de Gantt final'>
