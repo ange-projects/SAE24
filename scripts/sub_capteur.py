@@ -142,42 +142,37 @@ else:
 	value_deg = 0.01
 
 print(resultat_estimation)
-
+def calcul_deg(dico):
+    dico_new = {}
+    for case in dico    :
+            x = bible[case]['x']
+            y = bible[case]['y']
+            couple = (x,y)
+            dico_new [couple] = dico[case] 
+    return dico_new
+def reduire(dico):
+    dico2 = {}
+    while len(dico2) < 3 and dico:
+        max_occur = 0
+        max_key = None
+        keys = list(dico.keys())  # Create a copy of the keys
+        for element in keys:
+            if dico[element] > max_occur:
+                max_occur = dico[element]
+                max_key = element
+        if max_key is not None:
+            dico2[max_key] = max_occur
+            del dico[max_key]
+    return dico2
 
 if methode == 2:
     print(f"resultat_estimation  : {resultat_estimation}")
     resultat_estimation = principal(amplitude_list, mic_mod_tab, nb_bit_deg, value_deg)
     print(f"resultat_estimation  : {resultat_estimation}")
-    
-	def calcul_deg(dico):
-		dico_new = {}
-		for case in dico    :
-        		x = bible[case]['x']
-        		y = bible[case]['y']
-        		couple = (x,y)
-        		dico_new [couple] = dico[case] 
-    		return dico_new
-
-	resultat_estimation = calcul_deg(resultat_estimation)
-	print(resultat_estimation)
-
-	def reduire(dico):
-   		dico2 = {}
-    		while len(dico2) < 3 and dico:  # Continuer jusqu'à ce que dico2 atteigne 3 éléments ou que dico soit vide
-        		max_occur = 0
-        		max_key = None
-        		for element in dico:
-            			if dico[element] > max_occur:
-                			max_occur = dico[element]
-                			max_key = element
-        			if max_key is not None:
-            				dico2[max_key] = max_occur
-            				del dico[max_key]  # Supprimer l'élément du dictionnaire original
-    			return dico2
-
-
-	resultat_estimation = reduire(resultat_estimation)
-	print(resultat_estimation)
+    resultat_estimation = calcul_deg(resultat_estimation)
+    print(resultat_estimation)
+    resultat_estimation = reduire(resultat_estimation)
+    print(resultat_estimation)
 
 
 print("Position estimée : ",resultat_estimation)
