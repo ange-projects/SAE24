@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style_consultation.css">
     <link rel="shortcut icon" href="./img/icons8-favicon-16.png" type="image/x-icon">
+
     <title>Menu admin</title>
 </head>
 <body>
@@ -31,10 +32,57 @@
     <div class="consultation">
         <svg id="plan" width="500" height="500"></svg>
         <div class="center">
-            <form action="degradation.php" method="POST"> 
-                <h3> Indiquez vos paramètres d'estimation. </h3>
-                <br>
-                <p> Nombre de bits erronés : 
+    <h3> Paramètres de dégradation </h3>
+    <form method="POST" action="degradation.php">
+        <fieldset>
+            <legend>Sélectionner le(s) micro(s) à dégrader :</legend>
+            <div>
+                <input type="checkbox" id="mic1" name="mic1" value="1" >
+                <label for="mic1">Microphone n°1</label>
+            </div>
+            <div>
+                <input type="checkbox" id="mic2" name="mic2" value="2">
+                <label for="mic2">Microphone n°2</label>
+            </div>
+            <div>
+                <input type="checkbox" id="mic3" name="mic3" value="3">
+                <label for="mic3">Microphone n°3</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Sélectionner le degré de dégradation du signal :</legend>
+            <div>
+                <input type="radio" id="fo" name="force_mic" value="3" >
+                <label for="fo">Fort (2%)</label>
+            </div>
+            <div>
+                <input type="radio" id="mo" name="force_mic" value="2">
+                <label for="mo">Moyen (0.5%)</label>
+            </div>
+            <div>
+                <input type="radio" id="fa" name="force_mic" value="1"> 
+                <label for="fa">Faible (0.1%)</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Sélectionner la vitesse de l'objet :</legend>
+            <div>
+                <input type="radio" id="r" name="vitesse" value="3" >
+                <label for="r">Rapide</label>
+            </div>
+            <div>
+                <input type="radio" id="m" name="vitesse" value="2">
+                <label for="m">Moyen</label>
+            </div>
+            <div>
+                <input type="radio" id="l" name="vitesse" value="1"> 
+                <label for="l">Lent</label>
+            </div>
+        </fieldset>
+        <br>
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+<!--                <p> Nombre de bits erronés : 
                     <select name="bits_errones">
                         <option value="0">0 bits</option>
                         <option value="1">1 bit</option>
@@ -57,7 +105,7 @@
                 </p>
                 <br>
                 <button type="submit" class="submit-button">Submit</button>
-            </form>
+            </form>-->
     </div>
     </div>
 
