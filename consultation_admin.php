@@ -23,12 +23,11 @@
         <article id="left">
             <!-- <span>Réseaux et Télécommunications | IUT de Blagnac</span> -->
             <h1>Page d'administration</h1>
-            <h2>Bonjour <?php echo $_SESSION["login"]; ?> </h2> <!--Welcome banner-->
             <p>En tant qu'administrateur, vous avez accès à des fonctionnalités avancées pour surveiller et analyser les données en temps réel.</p>
         </article>
     </section>
 
-
+<div id="globalDiv">
     <div class="consultation">
         <svg id="plan" width="500" height="500"></svg>
         <div class="center">
@@ -107,26 +106,41 @@
                 <button type="submit" class="submit-button">Submit</button>
             </form>-->
     </div>
-    </div>
 
     <div class="consultation">
         <svg id="history_plan" width="500" height="500"></svg>
-        <div class="center">
-            <h3>Remonter dans le temps : </h3>
-            <span id="intervalValue">0</span>
+        <div class="form">
             <form id="display_history">
-            <input type="range" name="interval" id="interval" min="-500" max="0" value="0" oninput="updateValue(this.value)">
+                <h3 class="space_under">Remonter dans le temps : </h3>
+                <span id="intervalDisplay">0 minutes</span>
+                <br>
+                <input type="range" name="interval" id="intervalBar" min="-500" max="0" value="0" oninput="updateValue(this.value)"></input>
+                <br>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
             <br>
-            <button type="submit" class="submit-button">Submit</button>
-             </form>
+            <form id="speed">
+                <h3 class="space_under">Temps de transition entre chaque position :</h3>
+                <span id="speedDisplay">2000 ms</span>
+                <br>
+                <input type="range" name="speed" id="speedBar" min="100" max="5000" value="1000" oninput="GetSpeed(this.value)"></input>
+                <br>
+            </form>
         </div>
     </div>
+</div>
 
-    <script>
-        function updateValue(newValue) {
-            document.getElementById("intervalValue").textContent = newValue + " minutes";
-        }
-    </script>
+
+<script>
+    function updateValue(newValue) {
+        document.getElementById("intervalDisplay").textContent = newValue + " minutes";
+    }
+
+    function GetSpeed(speed) {
+        document.getElementById("speedDisplay").textContent = speed + " ms";
+        change_speed(speed);
+    }
+</script>
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="./scripts/plan.js"></script>

@@ -45,7 +45,7 @@ def degradation_bit(valeur,bit, pourcentage):
     
 #print(degradation_bit('111111111111111111111111111111111111111111111111111111111111111111',2,2))
 
-def degradation(tableau_errone):
+def estimation_case(tableau_errone):
   liste_case_min, liste_case_min2 = [], []
   dico_amplitude_errone, dico_distance = {}, {}
   
@@ -73,14 +73,49 @@ def degradation(tableau_errone):
     liste_case_min.append(case_min)
     liste_case_min2.append(case_min_2)
     
-  print(liste_case_min)
-  print(liste_case_min2)
+  #print(liste_case_min)
+  #print(liste_case_min2)
 
-      
+  return liste_case_min + liste_case_min2  
     
 
-  print(dico_amplitude_errone)
-  print(dico_distance)
+  #print(dico_amplitude_errone)
+  #print(dico_distance)
 
-print(degradation(['010011110100111011000001011000011101101110010110110000000100100000', '100011110101000101010000000101100100101101011101001110011110001101', '110011110110010001010011100110101010000111101110000101111001000011'],1,5))
 
+def choix_amplitude(tableau, choix_micro, choix_bit, pourcentage):
+
+  choix_micro.sort()
+  tableau_nouvelles_valeurs = []
+  dico_micro = {'01': 1, '10': 2, '11': 3}
+  
+  for element in tableau:
+    id_micro = element[0:2]
+    index = dico_micro[id_micro]
+    if index in choix_micro:
+      tableau_nouvelles_valeurs.append(degradation_bit(tableau[index-1], choix_bit, pourcentage))
+    else:
+      tableau_nouvelles_valeurs.append(tableau[index-1])  
+
+  return tableau_nouvelles_valeurs
+     
+def compter_occurrences(liste):
+    dico_occurence = {}
+    for element in liste:
+        if element in dico_occurence:
+            dico_occurence[element] += 1
+        else:
+            dico_occurence[element] = 1
+    return dico_occurence
+
+def principal(tab, choix_micro, choix_bit, pourcentage):
+  tableau_valeur_errone = []
+  tableau_valeur_errone = choix_amplitude(tab, choix_micro, choix_bit, pourcentage)
+  tableau_final = estimation_case(tableau_valeur_errone)
+  dico_occurences = compter_occurrences(tableau_final)
+  print(dico_occurences)
+  
+tab = ['010011110100111011000001011000011101101110010110110000000100100000', '100011110101000101010000000101100100101101011101001110011110001101', '110011110110010001010011100110101010000111101110000101111001000011']
+
+principal(tab, [1,3], 1, 0.1)
+  

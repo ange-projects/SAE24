@@ -1,33 +1,40 @@
 @import url("style_accueil.css");
-@import url("style_consult.css");
 
-/* consultation webpages div */
-div.consultation{
-    padding-top: 5%;
-    margin-left: 5%;
-    margin-bottom: 1%;
+h1, p {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+h3.space_under {
+    margin-bottom: 16px;
+}
+
+#globalDiv {
+    margin-top: 50px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+/* div containing the SVG and forms */
+div.consultation{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     display: block;
     float: left;
+    text-align: center;
+    align-items: center;
 }
 
-div.unique{
-    margin-left: 34%;
-}
-/* plan style */
-svg {
-    background-color: #ffffff;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-
-div.center{
+/* div containing */
+div.consultation .form {
+    max-width: 75%;
     margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     background-color: #ffffff89;
     padding: 20px 0;
@@ -40,9 +47,27 @@ div.center{
     -o-border-radius:10px;
 }
 
+/* div of the unique plan (consultation.php) */
+div.unique{
+    margin-left: 34%;
+}
 
-/* Styles for the floating bubble */
-#intervalValue {
+/* plan style */
+svg {
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/* ------------------  forms style ---------------------*/
+
+/* Style for slider value (time rewind, speed) */
+#intervalDisplay, #speedDisplay {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border-radius: 5px;
@@ -53,17 +78,13 @@ div.center{
     -o-border-radius: 5px;
 }
 
-#interval{
+/* style of the slidder */
+#intervalBar, #speedBar{
     width: 80%;
     color: #000;
 }
 
-
-h1 {
-    text-align: center;
-}
-
-/* Button style */
+/* Submit buttons style */
 .submit-button {
     display: inline-block;
     background-color: #494949e1;
@@ -78,20 +99,12 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .submit-button:hover {
+}
+
+.submit-button:hover {
     background-color: #494949;
-  }
+}
 
-  .submit-button:focus {
+.submit-button:focus {
     outline: none;
-  }
-
-  /* Optional: Center the button */
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+}
