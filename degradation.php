@@ -47,7 +47,7 @@
     }
     // Close connection to BDD
     mysqli_close($connexion);
-    // header('Location: consultation_admin.php');
+    header('Location: consultation_admin.php');
     exit();
 
 ?>

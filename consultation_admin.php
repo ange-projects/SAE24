@@ -169,7 +169,7 @@
                     <h3 class="space_under">Remonter dans le temps : </h3>
                     <span id="intervalDisplay">0 minutes</span>
                     <br>
-                    <input type="range" name="interval" id="intervalBar" min="-99999999999" max="0" value="0" oninput="updateValue(this.value)"></input>
+                    <input type="range" name="interval" id="intervalBar" min="-500" max="0" value="0" oninput="updateValue(this.value)"></input>
                     <br>
                     <button type="submit" class="submit-button">Submit</button>
                 </form>
