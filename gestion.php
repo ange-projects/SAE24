@@ -71,7 +71,7 @@
                 <h3 id="Ange"><a href="#Ange">Ange GIUNTINI</a></h3>
                 <ul>
                     <h4>Nombre d'heures passées sur le projet</h4>
-                    <li>&#8250; X h</li>
+                    <li>&#8250; 60 h</li>
                     <h4>Problèmes rencontrés</h4>
                     <li>&#8250; Insérer problèmes.</li>
                     <h4>Solutions apportées</h4>
@@ -84,20 +84,18 @@
                 <h3 id="Corentin"><a href="#Corentin">Corentin PRADIER</a></h3>
                 <ul>
                     <h4>Nombre d'heures passées sur le projet</h4>
-                    <li>&#8250; X h</li>
-                    <h4>Problèmes rencontrés</h4>
-                    <li>&#8250; Insérer problèmes.</li>
-                    <h4>Solutions apportées</h4>
-                    <li>&#8250; Insérer solutions.</li>
+                    <li>&#8250; 60 h</li>
+                    <h4>Problèmes rencontrés et Solutions apportées</h4>
+                    <li>&#8250; L’utilisation de la bibliothèque “struct” permettant la manipulation de données agrégées sous forme binaire comme une séquence d'octets a été complexe au regard du peu de ressources disponibles sur le net. Mais, dans l’ensemble, les avantages des divers langages de programmation et bibliothèques utilisés lors de cette SAÉ ont permis de vous proposer un travail de précision et de qualité.</li>
                     <h4>Notation individuelle des membres du groupe :</h4>
-                    <p>Pierre : ; Corentin : ; Ange : ; Gaspard :</p>
+                    <p>Pierre : 5; Yoann : 5; Ange : 5; Gaspard : 5</p>
                 </ul>
             </div>
             <div class="blocb">
                 <h3 id="Gaspard"><a href="#Gaspard">Gaspard BERSOUL</a></h3>
                 <ul>
                     <h4>Nombre d'heures passées sur le projet</h4>
-                    <li>&#8250; X h</li>
+                    <li>&#8250; 60 h</li>
                     <h4>Problèmes rencontrés</h4>
                     <li>&#8250; Insérer problèmes.</li>
                     <h4>Solutions apportées</h4>
@@ -110,7 +108,7 @@
                 <h3 id="Yoann"><a href="#Yoann">Yoann FRANCOIS</a></h3>
                 <ul>
                     <h4>Nombre d'heures passées sur le projet</h4>
-                    <li>&#8250; X h</li>
+                    <li>&#8250; 60 h</li>
                     <h4>Problèmes rencontrés</h4>
                     <li>&#8250; Insérer problèmes.</li>
                     <h4>Solutions apportées</h4>
@@ -124,19 +122,35 @@
 
     <section id="intro">
         <h2>~Synthèse groupée~</h2>
-        <h2 id='heur'><a href='#heur'>Heures passées sur le projet</a></h2>
-        <p>Insérer heures</p>
+        <h2 id='heur'><a href='#heur'>Heures passées sur le projet : 300</a></h2>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nous avons commencé à travailler au moment du début des créneaux de cette SAÉ bien que notre attention soit davantage dirigée sur les trois autres SAÉ ces dernières arrivant presque à échéance. Le travail de la semaine 23 était donc centré sur des tâches plus légères que sont la réflexion et la documentation sur les outils que nous allions utiliser ainsi que la réalisation du premier livrable et la fondation de la structure de notre projet (diagramme de flux, fonctionnement des scripts principaux à créer…)
+            À partir de la semaine 24, après le passage des SAÉ21 et 23, nous nous sommes mis à temps plein sur la réalisation de la SAÉ24. Regroupés tantôt au sein de l’IUT, tantôt dans un appartement, nous avons enchaîné les séances jusqu’au passage à l’oral, dimanche inclus. Nous estimons le travail abattu à 50h par personne, moyennant quelques variations individuelles : imprévus, travail sur le temps personnel, etc. 
+        </p>
         <h2 id='prob'><a href='#prob'>Problèmes rencontrés</a></h2> 
-        <p>Insérer pb</p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;De nombreux problèmes furent rencontrés dans la réalisation de ce projet. Le premier d’entre-eux relevait de l’architecture du processeur du Raspberry Pi. En effet, de nombreux problèmes de compatibilité ont dû être résolus, qu’il s’agisse d’images de conteneurs particulières comme de l'impossibilité de configurer un serveur xampp les installeurs ne fonctionnant qu’en 64 bits.
+	        Un autre problème rencontré venait de l’apprentissage et de la découverte au moins partielle de certains langages. Le Python et le JavaScript sont au centre de ce problème, en particulier le second pour son côté orienté objet nécessaire à la conception de la grille dynamique au sein de laquelle notre personne simulée se déplace. Ce problème d’apprentissage est en partie de notre faute car nous avons décidé de nous répartir chacun sur nos points faibles de sorte à transmettre nos connaissances aux autres tout en comblant nos propres lacunes.
+	        Une autre série de problèmes est liée au manque de planification, notamment en lien avec la dégradation du signal. En effet, nous avons sous-estimé la difficulté engendrée par cette contrainte supplémentaire. Entre la réalisation tardive, les multiples réorientations (manières différentes de dégrader le signal ; approche statistique initiale opposée à l’approche réelle que nous devions simuler), et l’incompatibilité du code, voire des tables précédemment créées, ont demandé plusieurs heures de restructuration tant des scripts que de la base de données.
+        </p>
         <h2 id='sol'><a href='#sol'>Solutions apportées</a></h2> 
-        <p>Insérer sol</p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La solution commune à ces différents problèmes s’est avérée être du temps supplémentaire passé sur le projet au global (en lecture de documentation et discussions/réflexions essentiellement.) La communication, l’utilisation de tableaux, de schémas, ou encore d’outils de collaboration : VCS (GitHub), Trello, etc. ont été des pierres angulaires dans la structuration du projet et le dépassement des différentes difficultés énumérées plus haut.
+        </p>
         <h2 id='dif'><a href='#dif'>Difficulté ressentie</a></h2> 
-        <p>Insérer diff</p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce projet était de loin le plus difficile après comparaison avec nos camarades des autres groupes. Bien qu’extrêmement formateur de par sa difficulté et le nombre de langages différents utilisés, ce travail s’est avéré harassant, notamment en raison du caractère rapproché des différentes séances. À la lumière du nombre de problèmes rencontrés, nous décidons d’évaluer la difficulté ressentie à 5/5.
+        </p>
     </section>
 
     <section id="intro">
         <h2 id='conclu'><a href='#conclu'>Conclusion</a></h2> 
-        <p>Insérer cl</p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cette SAÉ est une expérience formatrice pour l’ensemble du groupe. Nous avons pû renforcer nos compétences sur un large spectre de langages et d’outils. 
+	        Nous regrettons seulement de n’avoir pas pû implémenter plus de fonctionnalités et parfaire le projet de la manière dont nous pouvions l’espérer à son commencement.
+	        Nous sommes globalement satisfaits, notamment de la synergie et de la coopération au sein du groupe : tout le monde a été productif à son échelle, et la communication fût au centre de notre progression.
+        	Nous espérons avoir affaire à davantage de projets de la sorte à l’avenir, en n’oubliant pas cette fois de planifier même les fonctionnalités optionnelles dès le départ du projet ! Nous ressortons malgré tout satisfaits du travail accompli.
+        </p>
     </section>
     <script src="script_accueil.js"></script>
 </body>
