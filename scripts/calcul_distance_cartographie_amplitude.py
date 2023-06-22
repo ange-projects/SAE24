@@ -37,5 +37,34 @@ def trouver_x_y(liste_valeur):
 #print(trouver_x_y(['010011110101000100011010000010110011110010000000100000111110000100', '100011110101000011001000111110101010011000110101011100101101110111', '110011110101100011001011001110110001110000101001010011111100100010']))
 
 
+def trouver_x_y_2(liste_valeur):
+
+  micro_plage = {'01': 'am_micro_binaire1', '10': 'am_micro_binaire2','11': 'am_micro_binaire3'}
+  liste_case, liste_final, coord_list = [], [], []
+
+  position_micro_supp = liste_valeur.index('0') 
+  
+  for i in range(len(liste_valeur)):
+    valeur = liste_valeur[i]
+    id_micro, data_binaire = valeur[0:2], valeur[2:]
+    micro = micro_plage.get(id_micro, 'inconnu')
+    if i == position_micro_supp:
+      continue
+    elif not liste_case:
+      for case, sous_dico in dico_amplitude_binaire.items():
+        if sous_dico[micro] == data_binaire:
+          liste_case.append(case)
+    else:
+      for case in liste_case:
+        if dico_amplitude_binaire[case][micro] == data_binaire:
+          liste_final.append(case)
+
+  for case in liste_final:
+       coord_list.append([dico_coord_sans_para[case]['x'], dico_coord_sans_para[case]['y']])
+  return coord_list
+    
+    
+
+#print(trouver_x_y_2(['010011110101000100011010000010110011110010000000100000111110000100', '0', '110011110101100011001011001110110001110000101001010011111100100010']))
 
 
