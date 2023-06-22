@@ -44,7 +44,7 @@ while true; do
     end_time=$(date +%s.%N)
     # Calculer le temps d'exécution
     execution_time=$(echo "$end_time - $start_time" | bc)
-	sleep 1
+	sleep 5
     echo "Fin de la boucle a : $(date +"%d-%m-%Y %H:%M:%S")" >> log_simulation.txt
     echo "Temps d'exécution : $execution_time secondes" >> log_simulation.txt
     echo "-----------------------------------------------------------" >> log_simulation.txt

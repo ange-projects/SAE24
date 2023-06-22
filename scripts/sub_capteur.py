@@ -45,7 +45,7 @@ client.on_disconnect = deconnexion
 try:
     client.connect(broker, port)
     with open('/home/pi/Desktop/SAE24/scripts/connecte.lock', 'w') as file:
-    	 pass
+         pass
 except:
     print("Erreur de connexion au broker")
 
@@ -92,7 +92,7 @@ nb_bit_deg = selection[4]
 print(f"bit : {nb_bit_deg}")
 print(nb_bit_deg)
 degre_deg = selection[5]
-#vitesse = selection[6]
+vitesse = selection[6]
 
 #------------------------------------------------Information processing------------------------------------------------
 
@@ -138,8 +138,9 @@ if degre_deg == 2:
     value_deg = 2
 if degre_deg == 3:
     value_deg = 4
-else :
+else:
 	value_deg = 0.01
+
 print(resultat_estimation)
 
 
@@ -148,17 +149,36 @@ if methode == 2:
     resultat_estimation = principal(amplitude_list, mic_mod_tab, nb_bit_deg, value_deg)
     print(f"resultat_estimation  : {resultat_estimation}")
     
-    def calcul_deg(dico):
-        dico_new = {}
-        for case in dico    :
-            x = bible[case]['x']
-            y = bible[case]['y']
-            couple = (x,y)
-            dico_new [couple] = dico[case] 
-        return dico_new
+	def calcul_deg(dico):
+		dico_new = {}
+		for case in dico    :
+        		x = bible[case]['x']
+        		y = bible[case]['y']
+        		couple = (x,y)
+        		dico_new [couple] = dico[case] 
+    		return dico_new
 
-    resultat_estimation = calcul_deg(resultat_estimation)
-    print(resultat_estimation)
+	resultat_estimation = calcul_deg(resultat_estimation)
+	print(resultat_estimation)
+
+	def reduire(dico):
+   		dico2 = {}
+    		while len(dico2) < 3 and dico:  # Continuer jusqu'à ce que dico2 atteigne 3 éléments ou que dico soit vide
+        		max_occur = 0
+        		max_key = None
+        		for element in dico:
+            			if dico[element] > max_occur:
+                			max_occur = dico[element]
+                			max_key = element
+        			if max_key is not None:
+            				dico2[max_key] = max_occur
+            				del dico[max_key]  # Supprimer l'élément du dictionnaire original
+    			return dico2
+
+
+	resultat_estimation = reduire(resultat_estimation)
+	print(resultat_estimation)
+
 
 print("Position estimée : ",resultat_estimation)
 
@@ -199,12 +219,9 @@ for element in resultat_estimation:
 
     cursor.execute("INSERT INTO coord_points (ID_mesure, poids, x, y) VALUES (%s, %s, %s, %s)", (ID_mesure, poids, x, y))
 
-
-
-
-
 # Validate the transaction
 connexion.commit()
 
 # Closing the connection
 connexion.close()
+
