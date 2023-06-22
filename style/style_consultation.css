@@ -108,3 +108,27 @@ svg {
 .submit-button:focus {
     outline: none;
 }
+
+fieldset#degrad {
+    border: none;
+    font-family: "Poppins";
+}
+
+div.center{
+    max-width: 45%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #ffffff89;
+    padding: 20px 0;
+    backdrop-filter: blur(1px);
+    box-shadow: 3px 3px 50px rgba(0, 0, 0, 0.636);    
+    width: 100%;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;  
+}
