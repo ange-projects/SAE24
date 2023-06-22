@@ -20,3 +20,13 @@ def afficher_grille(grille):
 #Generate and print the grid
 grille = generer_grille(16)
 afficher_grille(grille)
+
+def dico_grille(grille, file):
+    for ligne in grille:
+        for case in ligne:
+            file.write(f"{case:4}")
+        file.write("\n")
+
+# Open the file in write mode
+with open("dico/dico_grille.txt", "w") as file:
+    dico_grille(grille, file)

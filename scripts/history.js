@@ -1,3 +1,5 @@
+wait_time = 1000;
+
 // Set up svg_history container
 const svg_history = d3.select("#history_plan")
   .attr("width", width)
@@ -49,7 +51,7 @@ async function updatePoint() {
     let filteredData;
     console.log("starting");
     for (let i = 0; i <= coord['id'].length; i += add) {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 seconds
+      await new Promise(resolve => setTimeout(resolve, wait_time)); // Wait for 1 seconds
         if (coord['id'][i] === coord['id'][i+1]) {
           console.log("coord['id'][i]");
             // If there are 3 points to display, their position will be the ones at the index i, i+1, i+2
@@ -90,7 +92,7 @@ async function updatePoint() {
           .attr("r", pointRadius)
           .style("fill", "#fc5353")
           .transition()
-          .duration(animationDuration)
+          .duration(wait_time)
           .attr("cx", d => xScale(d.x))
           .attr("cy", d => yScale(d.y));
     }
@@ -99,7 +101,17 @@ async function updatePoint() {
       .remove();
       running = 0;
     }
+
+
 // ---------------------- form handling ---------------------------
+
+// --- speed changer form ---
+// Get the form element
+function change_speed(speed){
+  wait_time = speed;
+}
+
+// --- Starting form ---
 let interval = 0;
 // Get the form element
 const form = document.getElementById('display_history');
@@ -109,14 +121,10 @@ form.addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the default form submission
 
   // Access the form elements and retrieve their values
-  const intervalInput = document.getElementById('interval');
+  const intervalInput = document.getElementById('intervalBar');
   interval = intervalInput.value;
-  console.log('interval found is' + interval);
 
   if (running == 0){
     updatePoint() ;
-    console.log("history exec");
-  } else {
-    console.log("not executing, running = 1");
   }
 });

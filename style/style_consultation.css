@@ -5,7 +5,9 @@ h1, p {
     margin-bottom: 20px;
 }
 
-
+h3.space_under {
+    margin-bottom: 16px;
+}
 
 #globalDiv {
     margin-top: 50px;
@@ -27,7 +29,7 @@ div.consultation{
 }
 
 /* div containing */
-div.consultation form {
+div.consultation .form {
     max-width: 75%;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -64,8 +66,8 @@ svg {
 
 /* ------------------  forms style ---------------------*/
 
-/* Style for slider value (time rewind) */
-#intervalValue {
+/* Style for slider value (time rewind, speed) */
+#intervalDisplay, #speedDisplay {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border-radius: 5px;
@@ -77,7 +79,7 @@ svg {
 }
 
 /* style of the slidder */
-#interval{
+#intervalBar, #speedBar{
     width: 80%;
     color: #000;
 }
@@ -105,4 +107,28 @@ svg {
 
 .submit-button:focus {
     outline: none;
+}
+
+fieldset#degrad {
+    border: none;
+    font-family: "Poppins";
+}
+
+div.center{
+    max-width: 45%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #ffffff89;
+    padding: 20px 0;
+    backdrop-filter: blur(1px);
+    box-shadow: 3px 3px 50px rgba(0, 0, 0, 0.636);    
+    width: 100%;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;  
 }
