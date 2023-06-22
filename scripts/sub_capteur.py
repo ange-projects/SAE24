@@ -44,8 +44,8 @@ client.on_disconnect = deconnexion
 #---Attempt to connect to the broker---
 try:
     client.connect(broker, port)
-    # with open('/home/pi/Desktop/SAE24/scripts/connecte.lock', 'w') as file:
-    #     pass
+    with open('/home/pi/Desktop/SAE24/scripts/connecte.lock', 'w') as file:
+    	 pass
 except:
     print("Erreur de connexion au broker")
 
@@ -63,7 +63,7 @@ client.disconnect()  # Disconnecting the broker
 
 # Connexion to database
 connexion = mysql.connector.connect(
-    host='192.168.102.239',
+    host='192.168.1.26',
     port='3306',
     database='bd_micros',
     user='brulix',
@@ -92,7 +92,7 @@ nb_bit_deg = selection[4]
 print(f"bit : {nb_bit_deg}")
 print(nb_bit_deg)
 degre_deg = selection[5]
-vitesse = selection[6]
+#vitesse = selection[6]
 
 #------------------------------------------------Information processing------------------------------------------------
 
@@ -138,6 +138,8 @@ if degre_deg == 2:
     value_deg = 2
 if degre_deg == 3:
     value_deg = 4
+else :
+	value_deg = 0.01
 print(resultat_estimation)
 
 

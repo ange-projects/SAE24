@@ -18,7 +18,7 @@ with open('dico/dico_grille.txt', 'r') as file:
 
 # Connexion to database
 connexion = mysql.connector.connect(
-    host='192.168.102.239',
+    host='192.168.1.26',
     port='3306',
     database='bd_micros',
     user='brulix',
@@ -27,13 +27,6 @@ connexion = mysql.connector.connect(
 # Creating a cursor for executing SQL queries
 cursor = connexion.cursor()
 
-# Fetching the "vitesse" value from the "degradation" table
-cursor.execute("SELECT vitesse FROM degradation ORDER BY id DESC")
-result = cursor.fetchone()
-vitesse = result[0]
-print(vitesse)
-
-cursor.fetchall()
 # Closing the cursor
 cursor.close()
 
@@ -116,21 +109,8 @@ client = mqtt.Client()
 # Connexion au broker MQTT
 client.connect("localhost", 1883, 60)
 
-# Calculating the sleep duration based on the vitesse value
-if vitesse == 1:
-    sleep_duration = 0
-elif vitesse == 2:
-    sleep_duration = 2
-elif vitesse == 3:
-    sleep_duration = 10
-else:
-    sleep_duration = 0
-
-# Sleeping for the calculated duration
-time.sleep(sleep_duration)
 # Publication du message aléatoire sur le topic
 client.publish("SAE24/capteur", str(payload))
-#print("C'est bon")
 
 # Déconnexion du broker MQTT
 client.disconnect()
