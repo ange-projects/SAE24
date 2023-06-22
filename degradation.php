@@ -2,53 +2,52 @@
 
     require_once('connexion_bdd.php');
 
+    // Retrieving informations from plan.php's form
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        // Retrieving informations from plan.php's form
 
-
-        $degre_deg = $_POST['degre_deg'];
-        $vitesse = $_POST['vitesse'];
-        if (isset($_POST['mic1'])) {
-            $vitesse = $_POST['vitesse'];
-        }
+        // Check if 'EnleverMic' is set
+        $micro_sup = isset($_POST['EnleverMic']) ? $_POST['EnleverMic'] : 0;
 
         // Check if each microphone checkbox is selected
-        if (isset($_POST['mic1'])) {
-            $micro_sup[] = '1';
+        $micros_mod = array();
+        $micros_mod[] = isset($_POST['Degrademic1']) ? '1' : 0;
+        $micros_mod[] = isset($_POST['Degrademic2']) ? '2' : 0;
+        $micros_mod[] = isset($_POST['Degrademic3']) ? '3' : 0;
+
+        $micros_mod = implode('', $micros_mod);
+
+        // Set the default value to 0 if 'bit' is not set
+        $nb_bit_deg = isset($_POST['nb_bit_deg']) ? $_POST['nb_bit_deg'] : 0;
+
+        // Set the default value to 0 if 'degre_deg' is not set
+        $degre_deg = isset($_POST['degre_deg']) ? $_POST['degre_deg'] : 0;
+
+        // $statement = mysqli_prepare($connexion, $requete);
+        
+        // Set the default value to 0 if 'vitesse' is not set
+        $vitesse = isset($_POST['vitesse']) ? $_POST['vitesse'] : null;
+        
+        // if the user requests perfect conditions
+        if (isset($vitesse)){
+            $requete = "UPDATE degradation SET vitesse = $vitesse ORDER BY id DESC LIMIT 1";
         }
-
-        if (isset($_POST['mic2'])) {
-            $micro_sup[] = '2';
-        }
-
-        if (isset($_POST['mic3'])) {
-            $micro_sup[] = '3';
-        }
-
-        $micro_sup = implode($micro_sup);
-        echo("VALEURS RECUPEREES :");
-        var_dump($micro_sup);
-        echo($vitesse);
-        echo($degre_deg);
-
-        // Execution of insertion request
-        $requete = "INSERT INTO degradation (micro_sup, degre_deg, vitesse) VALUES (?, ?, ?)";
-        $statement = mysqli_prepare($connexion, $requete);
-        mysqli_stmt_bind_param($statement, 'sii', $micro_sup, $degre_deg, $vitesse);
-        mysqli_stmt_execute($statement);
-
-        // Verification of execution
-        if ($statement) {
-            echo "Données insérées avec succès.";
-            mysqli_stmt_close($statement);
+        elseif (isset($_POST['parfait'])) {
+            echo  "0, $micro_sup, $micros_mod, $nb_bit_deg, $degre_deg";
+            $requete = "INSERT INTO degradation (methode, micro_sup, micro_mod, nb_bit_deg, degre_deg) VALUES (0, 0, 0, 0, 0)";
+        } elseif ($micro_sup == 0) {
+            echo  "2, $micro_sup, $micros_mod, $nb_bit_deg, $degre_deg";
+            $requete = "INSERT INTO degradation (methode, micro_mod, nb_bit_deg, degre_deg) VALUES (2, $micros_mod, $nb_bit_deg, $degre_deg)";
         } else {
-            echo "Erreur lors de l'insertion des données : " . mysqli_error($connexion);
+            $requete = "INSERT INTO degradation (methode, micro_sup) VALUES (1, $micro_sup)";
         }
-    }
+        echo $requete;
+        $result = mysqli_query($connexion, $requete);
 
+
+    }
     // Close connection to BDD
     mysqli_close($connexion);
-    header('Location: consultation_admin.php');
+    // header('Location: consultation_admin.php');
     exit();
 
 ?>

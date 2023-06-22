@@ -44,19 +44,19 @@
             <div class="center">
                 <h3> Changer la vitesse </h3>
             <br>
-            <form id="degradation" method="POST" action="degradation.php">
-            <fieldset id="degrad">
+            <form id="vitesse" method="POST" action="degradation.php">
+                <fieldset id="degrad">
                     <legend>Sélectionner la vitesse de l'objet :</legend>
                     <div>
-                        <input type="radio" id="r" name="vitesse" value="3" >
+                        <input type="radio" id="vitesse" name="vitesse" value="3" >
                         <label for="r">Rapide</label>
                     </div>
                     <div>
-                        <input type="radio" id="m" name="vitesse" value="2">
+                        <input type="radio" id="vitesse" name="vitesse" value="2">
                         <label for="m">Moyen</label>
                     </div>
                     <div>
-                        <input type="radio" id="l" name="vitesse" value="1"> 
+                        <input type="radio" id="vitesse" name="vitesse" value="1"> 
                         <label for="l">Lent</label>
                     </div>
                 </fieldset>
@@ -67,7 +67,7 @@
             <h3> Paramètres de dégradation </h3>
             <br>
             <form id="degradation" method="POST" action="degradation.php">
-                <input type="radio" id="switch" name="parfait" value="1" > Conditions parfaites </intput>
+                <input type="radio" id="parfait" name="parfait" value="1" > Conditions parfaites </intput>
                 <br>
                 <button type="submit" class="submit-button">Submit</button>
             </form>
@@ -77,15 +77,15 @@
                 <fieldset id="degrad">
                     <legend>Sélectionner le micro à désactiver :</legend>
                     <div>
-                        <input type="radio" id="EnleverMic1" name="mic" value="1" >
+                        <input type="radio" id="EnleverMic" name="EnleverMic" value="1">
                         <label for="EnleverMic1">Microphone n°1</label>
                     </div>
                     <div>
-                        <input type="radio" id="EnleverMic2" name="mic" value="2">
+                        <input type="radio" id="EnleverMic" name="EnleverMic" value="2">
                         <label for="EnleverMic2">Microphone n°2</label>
                     </div>
                     <div>
-                        <input type="radio" id="EnleverMic3" name="mic" value="3">
+                        <input type="radio" id="EnleverMic" name="EnleverMic" value="3">
                         <label for="EnleverMic3">Microphone n°3</label>
                     </div>
                 </fieldset>
@@ -94,51 +94,47 @@
             </form>
             <br>
             <button class='accordion' onclick="Show_And_Hide(this.nextElementSibling)">Dégradation avancée</button>
-            <form id="degradation" method="POST" action="degradation.php">
+            <form id="degradationAvancee" method="POST" action="degradation.php">
                 <fieldset id="degrad">
-                    <legend>Sélectionner le nombre de bits à dégrader :</legend>
+                    <legend>Sélectionner les micros à dégrader :</legend>
                     <div>
-                        <input type="checkbox" id="mic1" name="mic1" value="1" >
+                        <input type="checkbox" id="Degrademic1" name="Degrademic1" >
                         <label for="mic1">Microphone n°1</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="mic2" name="mic2" value="2">
+                        <input type="checkbox" id="Degrademic2" name="Degrademic2">
                         <label for="mic2">Microphone n°2</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="mic3" name="mic3" value="3">
+                        <input type="checkbox" id="Degrademic3" name="Degrademic3">
                         <label for="mic3">Microphone n°3</label>
                     </div>
                 </fieldset>
                 <br>
                 <fieldset id="degrad">
-                    <legend>Sélectionner le(s) micro(s) à dégrader :</legend>
+                <legend>Sélectionner le nombre de bits à dégrader :</legend>
                     <div>
-                        <input type="checkbox" id="Checkmic1" name="Checkmic1" value="1" >
-                        <label for="Checkmic1">Microphone n°1</label>
+                        <input type="radio" id="nb_bit_deg" name="nb_bit_deg" value="1" >
+                        <label for="Checkmic1">1</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="Checkmic2" name="Checkmic2" value="2">
-                        <label for="Checkmic2">Microphone n°2</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="Checkmic3" name="Checkmic3" value="3">
-                        <label for="Checkmic3">Microphone n°3</label>
+                        <input type="radio" id="nb_bit_deg" name="nb_bit_deg" value="2">
+                        <label for="Checkmic2">2</label>
                     </div>
                 </fieldset>
                 <br>
                 <fieldset id="degrad">
                     <legend>Sélectionner le degré de dégradation du signal :</legend>
                     <div>
-                        <input type="radio" id="fo" name="force_mic" value="3" >
+                        <input type="radio" id="fo" name="degre_deg" value="3" >
                         <label for="fo">Fort (2%)</label>
                     </div>
                     <div>
-                        <input type="radio" id="mo" name="force_mic" value="2">
+                        <input type="radio" id="mo" name="degre_deg" value="2">
                         <label for="mo">Moyen (0.5%)</label>
                     </div>
                     <div>
-                        <input type="radio" id="fa" name="force_mic" value="1"> 
+                        <input type="radio" id="fa" name="degre_deg" value="1"> 
                         <label for="fa">Faible (0.1%)</label>
                     </div>
                 </fieldset>
