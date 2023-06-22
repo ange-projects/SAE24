@@ -28,7 +28,9 @@
     </section>
 
 <div id="globalDiv">
-        <svg id="plan" width="500" height="500"></svg>
+    <svg id="RealPosition" width="500" height="500"></svg>
+
+    <svg id="plan" width="500" height="500"></svg>
     <div class="degradation">
         <div class="center">
             <h3> Paramètres de dégradation </h3>

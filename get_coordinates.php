@@ -11,8 +11,16 @@
         while ($line = mysqli_fetch_assoc($SQL_data)) {
             $ID_array[] = $line['id_mesure'];
         }
-    }
-    else {
+
+    } elseif(isset($_GET['type']) && ($_GET['type']) == "real"){
+        $request_content = "SELECT x, y FROM real_coord_points ORDER BY id DESC LIMIT 1";
+        $SQL_data = mysqli_query($connexion, $request_content);
+        $ID_array = [];
+        while ($line = mysqli_fetch_assoc($SQL_data)) {
+            $ID_array[] = $line['id_mesure'];
+        }
+
+    } else {
         $request_content = "SELECT id_mesure FROM coord_points ORDER BY id DESC LIMIT 1";
         $SQL_data = mysqli_query($connexion, $request_content);
         $ID_array[0] = mysqli_fetch_assoc($SQL_data)['id_mesure'];

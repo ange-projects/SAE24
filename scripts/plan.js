@@ -6,6 +6,7 @@ const height = 500;
 const padding = 40;
 const pointRadius = 8;
 let pointColor = "lightblue";
+let RealpointColor = "blue";
 const animationDuration = 1000;
 const updateInterval = 2000;
 
@@ -17,10 +18,15 @@ const gridHeight = 16;
 // set the deault DB name (normal)
 let bdd = "coord_points";
 
-// Set up SVG container
+// Set up SVG containers
 const svg = d3.select("#plan")
   .attr("width", width)
   .attr("height", height);
+
+const Realsvg = d3.select("#RealPosition")
+  .attr("width", width)
+  .attr("height", height);
+
 
 // Set up scales for x and y axes
 const xScale = d3.scaleLinear()
@@ -32,17 +38,32 @@ const yScale = d3.scaleLinear()
   .range([padding, height - padding]);
 
 // Draw x axis
+Realsvg.append("g")
+  .attr("transform", "translate(0," + (height - padding) + ")")
+  .call(d3.axisBottom(xScale));
+
 svg.append("g")
   .attr("transform", "translate(0," + (height - padding) + ")")
   .call(d3.axisBottom(xScale));
 
 // Draw y axis
+Realsvg.append("g")
+  .attr("transform", "translate(" + padding + ",0)")
+  .call(d3.axisLeft(yScale));
+
 svg.append("g")
   .attr("transform", "translate(" + padding + ",0)")
   .call(d3.axisLeft(yScale));
 
-  // Generate grid lines
+// Generate grid lines
 for (let i = 0; i <= gridWidth; i++) {
+  Realsvg.append("line")
+    .attr("x1", i * gridSize + padding)
+    .attr("y1", 0 + padding)
+    .attr("x2", i * gridSize + padding)
+    .attr("y2", gridHeight * gridSize + padding)
+    .attr("stroke", "lightgray");
+
   svg.append("line")
     .attr("x1", i * gridSize + padding)
     .attr("y1", 0 + padding)
@@ -52,6 +73,13 @@ for (let i = 0; i <= gridWidth; i++) {
 }
 
 for (let i = 0; i <= gridHeight; i++) {
+  Realsvg.append("line")
+    .attr("x1", 0 + padding)
+    .attr("y1", i * gridSize + padding)
+    .attr("x2", gridWidth * gridSize + padding)
+    .attr("y2", i * gridSize + padding)
+    .attr("stroke", "lightgray");
+
   svg.append("line")
     .attr("x1", 0 + padding)
     .attr("y1", i * gridSize + padding)
@@ -59,7 +87,7 @@ for (let i = 0; i <= gridHeight; i++) {
     .attr("y2", i * gridSize + padding)
     .attr("stroke", "lightgray");
 }
- 
+
 function updateTable(coords) {
   // Get a reference to the table body
   var tableBody = document.querySelector('table tbody');
@@ -100,10 +128,33 @@ function updateTable(coords) {
 
   // Define the points group (multiple possible positions)
 const points = svg.append("g");
+const Realpoint = Realsvg.append("g");
 points.append("circle");
 
-
 // Function to update the point's position
+async function updateRealPoint() {
+  // const response = await fetch("get_coordinates.php?type=real");
+  const response = await fetch("get_coordinates.php");
+  const Realcoord = await response.json();
+    // Update the unique point position with animation
+    filteredData = [
+      { x: Realcoord['x'][0], y: Realcoord['y'][0] }
+      ];
+      console.log("real point filtered data is " + filteredData.x);
+      pointColor = "lightblue";
+      Realpoint
+      .selectAll("circle")
+      .data(filteredData) // Pass the filtered data here
+      .join("circle")
+      .attr("r", pointRadius)
+      .style("fill", RealpointColor)
+      .transition()
+      .duration(animationDuration)
+      .attr("cx", d => xScale(d.x))
+      .attr("cy", d => yScale(d.y));
+}
+
+// Function to update the estimated point's position
 async function updatePoint() {
   const response = await fetch("get_coordinates.php");
   const coord = await response.json();
@@ -118,6 +169,7 @@ async function updatePoint() {
       { x: coord['x'][1], y: coord['y'][1] },
       { x: coord['x'][2], y: coord['y'][2] }
     ];
+    
     // If there are 2 points to display, their position will be the ones at the index i and i+1
     // 2 points will be sent to i+1 so it will look like, there are only 2 points
   } else if(coord['x'].length == 2) {
@@ -125,15 +177,15 @@ async function updatePoint() {
       { x: coord['x'][0], y: coord['y'][0] },
       { x: coord['x'][1], y: coord['y'][1] },
       { x: coord['x'][1], y: coord['y'][1] }
-      ];
+    ];
   } else {
     // Update the unique point position with animation
     filteredData = [
       { x: coord['x'][0], y: coord['y'][0] },
       { x: coord['x'][0], y: coord['y'][0] },
       { x: coord['x'][0], y: coord['y'][0] }
-      ];
-      pointColor = "lightblue";
+    ];
+    pointColor = "lightblue";
   }
       points
       .selectAll("circle")
@@ -179,3 +231,6 @@ formDeg.addEventListener('submit', function(event) {
 
 // Automatically update the point's position at regular intervals
 setInterval(updatePoint, updateInterval);
+
+// Automatically update the real point's position at regular intervals
+setInterval(updateRealPoint, updateInterval);
