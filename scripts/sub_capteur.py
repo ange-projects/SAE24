@@ -7,14 +7,15 @@ import ast
 
 #------------------------------------------------Mosquitto sub------------------------------------------------
 
-#---Broker information---
+
+#----- Broker information -----
 broker = "localhost"
 port = 1883
 topic = "SAE24/capteur"
 stop = True
 payload = None
 
-#------------------------
+#-------------------------------------------------------------------------------------------------------------
 
 def connexion(client, userdata, flags, rc):  # rc for return code
     if rc == 0:
@@ -32,7 +33,7 @@ def message(client, userdata, msg):
 def deconnexion(client, userdata, rc):
     print("Déconnexion du broker")
 
-#----Callbacks----
+#----- Callbacks -----
 # A function which is passed as an argument to another function, and which is called at some point in the future
 
 client = mqtt.Client()  # client creation
@@ -56,31 +57,67 @@ client.loop_stop()  # Stopping the MQTT loop
 client.disconnect()  # Disconnecting the broker
 
 
+#------------------------------ Extracting form information from table degradation ------------------------------------
 
+# Connexion to database
+connexion = mysql.connector.connect(
+    host='192.168.102.239',
+    port='3306',
+    database='bd_micros',
+    user='brulix',
+    password='brul1goat'
+)
 
+cursor = connexion.cursor() # Creating a cursor for executing SQL queries
 
+# Extracting the ID used in degradation reel to get the last quesry from user
+cursor.execute("SELECT MAX(ID) FROM degradation")
+result = cursor.fetchone()
+ID_last = result[0]
 
-
-
-
+cursor.execute("SELECT * FROM degradation WHERE ID = %(id)s", {'id': ID_last})
+selection = cursor.fetchone()
+print(selection)
+methode = selection[1]
+print(f"methode : {methode}")
+mic_sup = selection[2]
+print(f"mic_sup : {mic_sup}")
+mic_mod = selection[3]
+mic_mod_tab = [int(mic) for mic in mic_mod]
+print(mic_mod_tab)
+print(f"mic moc : { mic_mod}")
+nb_bit_deg = selection[4]
+print(f"bit : {nb_bit_deg}")
+print(nb_bit_deg)
+degre_deg = selection[5]
+vitesse = selection[6]
 
 #------------------------------------------------Information processing------------------------------------------------
 
-data = eval(payload)  # Évaluation de la chaîne de caractères représentant le dictionnaire
-
 resultat_reel=[]
-resultat_estimation_clean = []
+resultat_estimation=[]
 
-resultat_estimation_deg = []
+#Process for recovering the actual and estimated positions (without degradation) of the square 
+data = eval(payload)  # Évaluation de la chaîne de caractères représentant le dictionnaire
 amplitude_list = data['Amplitude_binaire']
-resultat_estimation_clean = calcul_distance_cartographie_amplitude.trouver_x_y(amplitude_list)
+
 resultat_reel.append(data['x,y'])
-print("estimé : ",resultat_estimation_clean)
-print("réel : ",resultat_reel)
+print("Position réelle : ",resultat_reel)
 
+# Perfect mode
+if methode == 0:
+    resultat_estimation = calcul_distance_cartographie_amplitude.trouver_x_y(amplitude_list)
 
+# Realistic degradation mode
+if methode == 1:
+    print(amplitude_list)
+    var = mic_sup - 1
+    for i in range (len(amplitude_list)):
+        if i == var :
+            amplitude_list[i] = '0'
+    resultat_estimation = calcul_distance_cartographie_amplitude.trouver_x_y_2(amplitude_list)
 
-
+# Advanced degradation mode
 def principal(amplitude_list, choix_micro, choix_bit, pourcentage):
   tableau_valeur_errone = []
   tableau_valeur_errone = degradation.choix_amplitude(amplitude_list, choix_micro, choix_bit, pourcentage)
@@ -88,26 +125,36 @@ def principal(amplitude_list, choix_micro, choix_bit, pourcentage):
   dico_occurences = degradation.compter_occurrences(tableau_final)
   return dico_occurences
 
-
 with open('./dico/dico_coord_sans_para.txt', 'r') as file:
     bible_txt = file.read()
 
 bible = ast.literal_eval(bible_txt)
 
-dico_occurences = principal(amplitude_list, [1,3], 1, 0.1)
-#print(dico_occurences)  # Vérifier la valeur de dico_occurences
+if degre_deg == 1:
+    value_deg = 0.01
+if degre_deg == 2:
+    value_deg = 2
+if degre_deg == 3:
+    value_deg = 4
 
-def calcul_deg(dico):
-    dico_new = {}
-    for case in dico    :
-        x = bible[case]['x']
-        y = bible[case]['y']
-        couple = (x,y)
-        dico_new [couple] = dico[case] 
-    return dico_new
+if methode == 2:
+    resultat_estimation = principal(amplitude_list, mic_mod_tab, nb_bit_deg, value_deg)
 
-resultat_estimation_deg = calcul_deg(dico_occurences)
-print(resultat_estimation_deg)
+    def calcul_deg(dico):
+        dico_new = {}
+        for case in dico    :
+            x = bible[case]['x']
+            y = bible[case]['y']
+            couple = (x,y)
+            dico_new [couple] = dico[case] 
+        return dico_new
+
+    resultat_estimation = calcul_deg(resultat_estimation)
+    print(resultat_estimation)
+
+print("Position estimée : ",resultat_estimation)
+
+
 
 
 
@@ -115,19 +162,8 @@ print(resultat_estimation_deg)
 
 # Script used to send real and estimated positions for sound based on amplitude values with no degradation
 
-# Connexion to database
-connexion = mysql.connector.connect(
-    host='localhost',
-    port='3306',
-    database='bd_micros',
-    user='root',
-    password='root'
-)
-
-# Creating a cursor for executing SQL queries
-cursor = connexion.cursor()
-
 # Executing an SQL query to insert data in coord_point_reel
+print(resultat_reel)
 for element in resultat_reel:
     x = element[0]
     y = element[1]
@@ -139,19 +175,18 @@ cursor.execute("SELECT MAX(ID) FROM coord_points_reel")
 result = cursor.fetchone() #To retrieve the first line of the result
 ID_mesure = result[0]
 
-# Executing an SQL query to insert data in coord_point
-for element in resultat_estimation_clean:
-    x = element[0]
-    y = element[1]
-    cursor.execute("INSERT INTO coord_points (ID_mesure, x, y) VALUES (%s, %s, %s)", (ID_mesure, x, y))
-
-
 # Executing an SQL query to insert data in coord_point_deg
-for element in resultat_estimation_deg:
+print(resultat_estimation)
+for element in resultat_estimation:
     x = element[0]
     y = element[1]
-    poids = resultat_estimation_deg[element]
-    cursor.execute("INSERT INTO coord_points_deg (ID_mesure, poids, x, y) VALUES (%s, %s, %s, %s)", (ID_mesure, poids, x, y))
+
+    if methode == 1 or methode == 2: 
+        poids = resultat_estimation[element]
+    else :
+        poids = 6
+
+    cursor.execute("INSERT INTO coord_points (ID_mesure, poids, x, y) VALUES (%s, %s, %s, %s)", (ID_mesure, poids, x, y))
 
 
 
