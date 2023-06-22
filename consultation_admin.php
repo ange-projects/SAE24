@@ -29,10 +29,10 @@
 
 <div id="globalDiv">
         <svg id="plan" width="500" height="500"></svg>
-        <div class="degradation">
+    <div class="degradation">
         <div class="center">
             <h3> Paramètres de dégradation </h3>
-            <form method="POST" action="degradation.php">
+            <form id="degradation" method="POST" action="degradation.php">
                 <fieldset id="degrad">
                     <legend>Sélectionner le(s) micro(s) à dégrader :</legend>
                     <div>
@@ -84,7 +84,23 @@
                 <button type="submit" class="submit-button">Submit</button>
             </form>
         </div>
+
+        <table>
+            <thead>
+                <tr>
+                <th>ID_mesure</th>
+                <th>poids</th>
+                <th>x</th>
+                <th>y</th>
+                <th>time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
     </div>
+
 
     <div class="consultation">
         <svg id="history_plan" width="500" height="500"></svg>

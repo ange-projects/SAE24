@@ -18,16 +18,20 @@
         $ID_array[0] = mysqli_fetch_assoc($SQL_data)['id_mesure'];
     }
         $list_id = implode(',', $ID_array);
-        $request_content = "SELECT x, y FROM coord_points WHERE id_mesure IN ($list_id)";
+        $request_content = "SELECT x, y, poid, time FROM coord_points WHERE id_mesure IN ($list_id)";
         $SQL_data = mysqli_query($connexion, $request_content);
         $coord = array(
             'x' => array(),
-            'y' => array()
+            'y' => array(),
+            'poid' => array(),
+            'time' => array()
         );
-        
+
         while ($line = mysqli_fetch_assoc($SQL_data)) {
             $coord['x'][] = $line['x'];
             $coord['y'][] = $line['y'];
+            $coord['poid'][] = $line['poid'];
+            $coord['time'][] = $line['time'];
         }
         $coord['id'] = $ID_array;
 
