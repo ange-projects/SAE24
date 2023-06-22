@@ -28,12 +28,15 @@
     </section>
 
 <div id="globalDiv">
-    <svg id="RealPosition" width="500" height="500"></svg>
 
-    <svg id="plan" width="500" height="500"></svg>
-    <div class="degradation">
-        <div class="center">
-            <h3> Changer la vitesse </h3>
+    <div id="plans">
+        <svg id="RealPosition" width="500" height="500"></svg>
+        <svg id="plan" width="500" height="500"></svg>
+    </div>
+
+        <div id="menu">
+            <div class="center">
+                <h3> Changer la vitesse </h3>
             <br>
             <form id="degradation" method="POST" action="degradation.php">
             <fieldset id="degrad">
@@ -136,22 +139,22 @@
                 <br>
                 <button type="submit" class="submit-button">Submit</button>
             </form>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                <th>ID_mesure</th>
-                <th>poids</th>
-                <th>x</th>
-                <th>y</th>
-                <th>time</th>
-                </tr>
-            </thead>
-            <tbody>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                    <th>ID_mesure</th>
+                    <th>poids</th>
+                    <th>x</th>
+                    <th>y</th>
+                    <th>time</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <!-- Table rows will be dynamically added here -->
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>   
     </div>
 
 
