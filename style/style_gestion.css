@@ -15,8 +15,8 @@
 
 body {
     font-family: "Poppins";
-    background-image: url(../img/bground.jpg);
-    background-size: 100%;
+    background-image: url(../img/nouveau_fond_ecran_2.jpg);
+    background-size: cover;
 }
 
 /*Navigation bar*/

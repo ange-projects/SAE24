@@ -166,7 +166,7 @@
 
     <div class="consultation">
         <div id="historique"></div>
-            <h1>Historique des positions</h1>
+            <h1 class="titre_graph">Historique des positions</h1>
             <svg id="history_plan" width="500" height="500"></svg>
             <div class="form">
                 <form id="display_history">
