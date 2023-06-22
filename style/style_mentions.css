@@ -27,8 +27,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: rgb(161,161,161);
-    background: linear-gradient(0deg, rgba(161,161,161,0) 0%, rgba(227,227,227,1) 100%);
+    background: rgb(161, 161, 161);
+    background: linear-gradient(0deg, rgba(161, 161, 161, 0) 0%, rgba(227, 227, 227, 1) 100%);
 }
 
 .navbar a {
@@ -86,7 +86,7 @@ body {
 .grid {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(3, 600px);
+    grid-template-columns: repeat(3, 400px);
     grid-auto-rows: auto;
     list-style: inside;
 }
@@ -110,6 +110,7 @@ body {
     text-align: center;
     backdrop-filter: blur(7px);
 }
+
 .blocc {
     padding: 1.5rem;
     border-radius: 20px;
@@ -120,6 +121,7 @@ body {
     backdrop-filter: blur(7px);
     grid-column: 2;
 }
+
 .bloca h3 {
     letter-spacing: 1.25px;
     color: rgb(36, 50, 247);
@@ -139,6 +141,7 @@ body {
 .blocb h3 {
     letter-spacing: 1.25px;
 }
+
 .blocb h3 a {
     letter-spacing: 1.25px;
     color: rgb(36, 50, 247);
