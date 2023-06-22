@@ -166,15 +166,19 @@ div.center {
   margin-left: 5px;
 }
 
+div.hidden {
+    overflow: hidden;
+    max-height: 0px;
+}
 .active::after {
   content: '\25B2';
 }
 
 .accordion:hover,
 .room:hover {
-  background-color: #d3edf8;
+  background-color: #d9d9d9;
 }
 
 .active {
-  background-color: #e5f7ff;
+  background-color: #d9d9d9;
 }

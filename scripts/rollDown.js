@@ -3,7 +3,7 @@ function togglePanel(panel) {
   // Check if the current value of 'maxHeight' is equal to the current total scroll height of the panel
   if (panel.previousElementSibling.classList.contains("active")) {
     // If the condition is true, it means the user wants to close the menu: set the 'maxHeight' CSS property of the panel to null (0)
-    panel.style.maxHeight = null;
+    panel.style.maxHeight = 0;
     // remove the "active" class from the previous sibling element: .active CSS isn't applied anymore, arrow points to bottom
     panel.previousElementSibling.classList.remove("active");
   } else {

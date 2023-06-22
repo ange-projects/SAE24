@@ -21,7 +21,6 @@
     
     <section id="zero">
         <article id="left">
-            <!-- <span>Réseaux et Télécommunications | IUT de Blagnac</span> -->
             <h1>Page d'administration</h1>
             <p>En tant qu'administrateur, vous avez accès à des fonctionnalités avancées pour surveiller et analyser les données en temps réel.</p>
         </article>
@@ -44,11 +43,14 @@
             <div class="center">
                 <h3> Changer la vitesse </h3>
             <br>
+            <button class='accordion' onclick="Show_And_Hide(this.nextElementSibling)">Vitesse</button>
+            <div class="hidden">
+                <br>
             <form id="vitesse" method="POST" action="degradation.php">
                 <fieldset id="degrad">
                     <legend>Sélectionner la vitesse de l'objet :</legend>
                     <div>
-                        <input type="radio" id="vitesse" name="vitesse" value="3" >
+                        <input type="radio" id="vitesse" name="vitesse" value="1" >
                         <label for="r">Rapide</label>
                     </div>
                     <div>
@@ -56,25 +58,29 @@
                         <label for="m">Moyen</label>
                     </div>
                     <div>
-                        <input type="radio" id="vitesse" name="vitesse" value="1"> 
+                        <input type="radio" id="vitesse" name="vitesse" value="3">
                         <label for="l">Lent</label>
                     </div>
                 </fieldset>
                 <br>
             <button type="submit" class="submit-button">Submit</button>
             </form>
+            </div>
             <br>
             <h3> Paramètres de dégradation </h3>
             <br>
+            <button class='accordion' onclick="Show_And_Hide(this.nextElementSibling)">Dégradation</button>
+            <div class="hidden">
+            <br>
             <form id="degradation" method="POST" action="degradation.php">
                 <input type="radio" id="parfait" name="parfait" value="1" > Conditions parfaites </intput>
-                <br>
+                <br> <br>
                 <button type="submit" class="submit-button">Submit</button>
             </form>
             <br>
-            <button class='accordion' onclick="Show_And_Hide(this.nextElementSibling)">Dégradation</button>
             <form id="degradation" method="POST" action="degradation.php">
                 <fieldset id="degrad">
+                    <br>
                     <legend>Sélectionner le micro à désactiver :</legend>
                     <div>
                         <input type="radio" id="EnleverMic" name="EnleverMic" value="1">
@@ -92,8 +98,11 @@
                 <br>
                 <button type="submit" class="submit-button">Submit</button>
             </form>
+            </div>
             <br>
             <button class='accordion' onclick="Show_And_Hide(this.nextElementSibling)">Dégradation avancée</button>
+            <div class="hidden">
+            <br> 
             <form id="degradationAvancee" method="POST" action="degradation.php">
                 <fieldset id="degrad">
                     <legend>Sélectionner les micros à dégrader :</legend>
@@ -127,20 +136,21 @@
                     <legend>Sélectionner le degré de dégradation du signal :</legend>
                     <div>
                         <input type="radio" id="fo" name="degre_deg" value="3" >
-                        <label for="fo">Fort (2%)</label>
+                        <label for="fo">Fort (4%)</label>
                     </div>
                     <div>
                         <input type="radio" id="mo" name="degre_deg" value="2">
-                        <label for="mo">Moyen (0.5%)</label>
+                        <label for="mo">Moyen (2%)</label>
                     </div>
                     <div>
                         <input type="radio" id="fa" name="degre_deg" value="1"> 
-                        <label for="fa">Faible (0.1%)</label>
+                        <label for="fa">Faible (0.001%)</label>
                     </div>
                 </fieldset>
                 <br>
                 <button type="submit" class="submit-button">Submit</button>
             </form>
+            </div>
             </div>
             <table>
                 <thead>

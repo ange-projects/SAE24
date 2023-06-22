@@ -116,7 +116,7 @@ function updateTable(coords) {
     row.appendChild(idCell);
 
     var poidCell = document.createElement('td');
-    poidCell.textContent = coords['x'][i];
+    poidCell.textContent = coords['poids'][i];
     row.appendChild(poidCell);
     
     var xCell = document.createElement('td');

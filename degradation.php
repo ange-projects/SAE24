@@ -33,15 +33,15 @@
         }
         elseif (isset($_POST['parfait'])) {
             echo  "0, $micro_sup, $micros_mod, $nb_bit_deg, $degre_deg";
-            $requete = "INSERT INTO degradation (methode, micro_sup, micro_mod, nb_bit_deg, degre_deg) VALUES (0, 0, 0, 0, 0)";
+            $requete = "UPDATE degradation SET methode = 0, micro_sup = 0, micro_mod = 0, nb_bit_deg = 0, degre_deg = 0";
         } elseif ($micro_sup == 0) {
-            echo  "2, $micro_sup, $micros_mod, $nb_bit_deg, $degre_deg";
-            $requete = "INSERT INTO degradation (methode, micro_mod, nb_bit_deg, degre_deg) VALUES (2, $micros_mod, $nb_bit_deg, $degre_deg)";
+            echo  "2, $micros_mod, $nb_bit_deg, $degre_deg";
+            $requete = "INSERT INTO degradation SET methode = 2, micro_mod = $micros_mod, nb_bit_deg = $nb_bit_deg, degre_deg = $degre_deg, micro_sup = 0";
         } else {
-            $requete = "INSERT INTO degradation (methode, micro_sup) VALUES (1, $micro_sup)";
+            $requete = "INSERT INTO degradation SET methode = 1, micro_mod = 0, nb_bit_deg = 0, degre_deg = 0, micro_sup = $micro_sup";
         }
         echo $requete;
-        $result = mysqli_query($connexion, $requete);
+        // $result = mysqli_query($connexion, $requete);
 
 
     }
