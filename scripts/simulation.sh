@@ -19,7 +19,6 @@
 
 
 #!/bin/bash
-<<<<<<< HEAD
 
 rm /home/pi/Desktop/SAE24/scripts/log_simulation.txt
 
@@ -53,19 +52,4 @@ while true; do
 
     # Supprimer le fichier de verrouillage pour la prochaine itération
     rm /home/pi/Desktop/SAE24/scripts/connecte.lock
-=======
-rm /var/www/html/SAE24/scripts/log_simulation.txt
-while true; do
-    # Excute sub_capteur.py en arrire-plan
-    python /var/www/html/SAE24/scripts/sub_capteur.py &
-    echo "Script subscribe ex�cut� � : "$(date +"%d-%m-%Y %H:%M:%S") >> /var/www/html/SAE24/scripts/log_simulation.txt
-    sleep 2
-    # Excute pub_capteur.py en arrire-plan
-    python /var/www/html/SAE24/scripts/pub_capteur.py &
-    echo "Script publication ex�cut� � : "$(date +"%d-%m-%Y %H:%M:%S") >> /var/www/html/SAE24/scripts/log_simulation.txt
-    # Attend 5 secondes avant la prochaine itration
-    sleep 2
-    echo "Fin de la boucle" >> /var/www/html/SAE24/scripts/log_simulation.txt
-    echo "-----------------------------------------------------------" >> /var/www/html/SAE24/scripts/log_simulation.txt
->>>>>>> e853c6f28801f864ade2a35c7221037727176988
 done
