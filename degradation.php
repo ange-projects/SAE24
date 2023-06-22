@@ -10,7 +10,7 @@
 
     if (!$connexion) {
        die("Échec de la connexion à la base de données : " . mysqli_connect_error());
-    }             
+    }
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Retrieving informations from plan.php's form
@@ -18,11 +18,11 @@
     if (isset($_POST['mic1'])) {
         $micro_actif[] = '1';
     }
-    
+
     if (isset($_POST['mic2'])) {
         $micro_actif[] = '2';
     }
-    
+
     if (isset($_POST['mic3'])) {
         $micro_actif[] = '3';
     }
