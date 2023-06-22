@@ -120,6 +120,7 @@ body {
     text-align: center;
     backdrop-filter: blur(7px);
     grid-column: 2;
+    margin-bottom: 50px;
 }
 
 .bloca h3 {
