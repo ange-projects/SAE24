@@ -1,5 +1,5 @@
 
-// --------------------- plan generation --------------------------
+// --------------------- plans generation and variables initialisation --------------------------
 // Set up dimensions and variables
 const width = 500;
 const height = 500;
@@ -15,15 +15,10 @@ const gridSize = 26.25; //size of each cell
 const gridWidth = 16;
 const gridHeight = 16;
 
-// set the deault DB name (normal)
-let bdd = "coord_points";
 
-// Set up SVG containers
+
+// Set up SVG containers (estimated position)
 const svg = d3.select("#plan")
-  .attr("width", width)
-  .attr("height", height);
-
-const Realsvg = d3.select("#RealPosition")
   .attr("width", width)
   .attr("height", height);
 
@@ -37,19 +32,13 @@ const yScale = d3.scaleLinear()
   .domain([8, 0])
   .range([padding, height - padding]);
 
-// Draw x axis
-Realsvg.append("g")
-  .attr("transform", "translate(0," + (height - padding) + ")")
-  .call(d3.axisBottom(xScale));
 
+// Draw x axis
 svg.append("g")
   .attr("transform", "translate(0," + (height - padding) + ")")
   .call(d3.axisBottom(xScale));
 
 // Draw y axis
-Realsvg.append("g")
-  .attr("transform", "translate(" + padding + ",0)")
-  .call(d3.axisLeft(yScale));
 
 svg.append("g")
   .attr("transform", "translate(" + padding + ",0)")
@@ -57,13 +46,6 @@ svg.append("g")
 
 // Generate grid lines
 for (let i = 0; i <= gridWidth; i++) {
-  Realsvg.append("line")
-    .attr("x1", i * gridSize + padding)
-    .attr("y1", 0 + padding)
-    .attr("x2", i * gridSize + padding)
-    .attr("y2", gridHeight * gridSize + padding)
-    .attr("stroke", "lightgray");
-
   svg.append("line")
     .attr("x1", i * gridSize + padding)
     .attr("y1", 0 + padding)
@@ -73,13 +55,6 @@ for (let i = 0; i <= gridWidth; i++) {
 }
 
 for (let i = 0; i <= gridHeight; i++) {
-  Realsvg.append("line")
-    .attr("x1", 0 + padding)
-    .attr("y1", i * gridSize + padding)
-    .attr("x2", gridWidth * gridSize + padding)
-    .attr("y2", i * gridSize + padding)
-    .attr("stroke", "lightgray");
-
   svg.append("line")
     .attr("x1", 0 + padding)
     .attr("y1", i * gridSize + padding)
@@ -88,78 +63,24 @@ for (let i = 0; i <= gridHeight; i++) {
     .attr("stroke", "lightgray");
 }
 
-function updateTable(coords) {
-  // Get a reference to the table body
-  var tableBody = document.querySelector('table tbody');
-  // Clear the existing table content
-  tableBody.innerHTML = '';
-
-  // Create table rows for each data point
-  for (var i = 0; i < coords['x'].length; i++) {
-    // Create a new table row
-    var row = document.createElement('tr');
-    // Create table cells and fill them with coord data
-    var idCell = document.createElement('td');
-    idCell.textContent = coords['id'][0];
-    row.appendChild(idCell);
-
-    var poidCell = document.createElement('td');
-    poidCell.textContent = coords['x'][i];
-    row.appendChild(poidCell);
-
-    var xCell = document.createElement('td');
-    xCell.textContent = coords['x'][i];
-    row.appendChild(xCell);
-
-    var yCell = document.createElement('td');
-    yCell.textContent = coords['y'][i];
-    row.appendChild(yCell);
-
-    var timeCell = document.createElement('td');
-    timeCell.textContent = coords['time'][i];
-    row.appendChild(timeCell);
-
-
-    // Add the row to the table body
-    tableBody.appendChild(row);
-  }
-}
-
-
-  // Define the points group (multiple possible positions)
+// Define the points group (multiple possible positions)
 const points = svg.append("g");
-const Realpoint = Realsvg.append("g");
 points.append("circle");
 
-// Function to update the point's position
-async function updateRealPoint() {
-  // const response = await fetch("get_coordinates.php?type=real");
-  const response = await fetch("get_coordinates.php");
-  const Realcoord = await response.json();
-    // Update the unique point position with animation
-    filteredData = [
-      { x: Realcoord['x'][0], y: Realcoord['y'][0] }
-      ];
-      console.log("real point filtered data is " + filteredData.x);
-      pointColor = "lightblue";
-      Realpoint
-      .selectAll("circle")
-      .data(filteredData) // Pass the filtered data here
-      .join("circle")
-      .attr("r", pointRadius)
-      .style("fill", RealpointColor)
-      .transition()
-      .duration(animationDuration)
-      .attr("cx", d => xScale(d.x))
-      .attr("cy", d => yScale(d.y));
-}
+
+// ---------------------- Point display functions ---------------------------
 
 // Function to update the estimated point's position
 async function updatePoint() {
   const response = await fetch("get_coordinates.php");
   const coord = await response.json();
   pointColor = "lightgrey";
-  updateTable(coord);
+
+  // check if the update table function is set, 
+  // if yes, we are loged in as admin so we need to update the dynamic table
+  if (typeof updateTable == 'function') { 
+    updateTable(coord);
+  }
 
   // Filter data to only contain the two points we want to display
   // If there are 3 points to display, their position will be the ones at the index i, i+1, i+2
@@ -198,39 +119,9 @@ async function updatePoint() {
       .attr("cx", d => xScale(d.x))
       .attr("cy", d => yScale(d.y));
 }
-  interval = 0;
 
-// Get the degradation form element
-const formDeg = document.getElementById('degradation');
-
-
-// Get references to the checkboxes and radio buttons
-var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-// var radioButtons = document.querySelectorAll('input[type="radio"]');
-
-// Create a function to check if any checkbox is checked
-function isChecked(Myfield) {
-  for (var i = 0; i < Myfield.length; i++) {
-    if (Myfield[i].checked) {
-      return true;
-    }
-  }
-  return false;
-}
-
-// Check if at least one checkbox or radio button is checked when the form is submitted
-formDeg.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
-  if (isChecked(checkboxes)) {
-    console.log("element checked");
-    bdd = "coord_points_deg";
-  } else {
-    console.log("element not checked");
-  }
-});
+// ---------------------- Real and estimated point's position ---------------------------
 
 // Automatically update the point's position at regular intervals
 setInterval(updatePoint, updateInterval);
 
-// Automatically update the real point's position at regular intervals
-setInterval(updateRealPoint, updateInterval);

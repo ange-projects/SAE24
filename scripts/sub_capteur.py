@@ -44,6 +44,8 @@ client.on_disconnect = deconnexion
 #---Attempt to connect to the broker---
 try:
     client.connect(broker, port)
+    with open('/home/pi/Desktop/SAE24/scripts/connecte.lock', 'w') as file:
+        pass
 except:
     print("Erreur de connexion au broker")
 

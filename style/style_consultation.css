@@ -18,6 +18,16 @@ h3.space_under {
     align-items: center;
 }
 
+#plans {
+    display: flex;
+    justify-content: space-around;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-around;
+}
+
 /* div containing the SVG and forms */
 div.consultation {
     margin-left: auto;
@@ -64,8 +74,6 @@ svg {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-
-/* ------------------  forms style ---------------------*/
 
 /* Style for slider value (time rewind, speed) */
 #intervalDisplay,
@@ -142,18 +150,19 @@ div.center {
 table {
     border-collapse: collapse;
     width: 50%;
-  }
+}
 
-  th, td {
+th,
+td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
-  }
+}
 
-  th {
+th {
     background-color: #f2f2f2;
-  }
+}
 
-  td {
+td {
     background-color: #fff;
-  }
+}
