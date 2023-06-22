@@ -4,6 +4,7 @@ h1,
 p {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 1.15rem;
 }
 
 h3.space_under {
@@ -18,29 +19,18 @@ h3.space_under {
     align-items: center;
 }
 
-#plans {
-    display: flex;
-    justify-content: space-around;
-}
-
-#menu {
-    display: flex;
-    justify-content: space-around;
-}
-
 /* div containing the SVG and forms */
 div.consultation {
     margin-left: auto;
     margin-right: auto;
-    display: block;
-    float: left;
+    display: flow-root;
     text-align: center;
     align-items: center;
 }
 
 /* div containing */
 div.consultation .form {
-    max-width: 75%;
+    max-width: 33%;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: auto;

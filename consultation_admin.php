@@ -30,8 +30,14 @@
 <div id="globalDiv">
 
     <div id="plans">
-        <svg id="RealPosition" width="500" height="500"></svg>
-        <svg id="plan" width="500" height="500"></svg>
+        <div>
+            <h2 class="titre_graph">Position réelle</h2>
+            <svg id="RealPosition" width="500" height="500"></svg>
+        </div>
+        <div>
+            <h2 class="titre_graph">Position estimée</h2>
+            <svg id="plan" width="500" height="500"></svg>
+        </div>
     </div>
 
         <div id="menu">
@@ -159,27 +165,29 @@
 
 
     <div class="consultation">
-        <svg id="history_plan" width="500" height="500"></svg>
-        <div class="form">
-            <form id="display_history">
-                <h3 class="space_under">Remonter dans le temps : </h3>
-                <span id="intervalDisplay">0 minutes</span>
+        <div id="historique"></div>
+            <h1>Historique des positions</h1>
+            <svg id="history_plan" width="500" height="500"></svg>
+            <div class="form">
+                <form id="display_history">
+                    <h3 class="space_under">Remonter dans le temps : </h3>
+                    <span id="intervalDisplay">0 minutes</span>
+                    <br>
+                    <input type="range" name="interval" id="intervalBar" min="-99999999999" max="0" value="0" oninput="updateValue(this.value)"></input>
+                    <br>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
                 <br>
-                <input type="range" name="interval" id="intervalBar" min="-99999999999" max="0" value="0" oninput="updateValue(this.value)"></input>
-                <br>
-                <button type="submit" class="submit-button">Submit</button>
-            </form>
-            <br>
-            <form id="speed">
-                <h3 class="space_under">Temps de transition entre chaque position :</h3>
-                <span id="speedDisplay">2000 ms</span>
-                <br>
-                <input type="range" name="speed" id="speedBar" min="100" max="5000" value="1000" oninput="GetSpeed(this.value)"></input>
-                <br>
-            </form>
+                <form id="speed">
+                    <h3 class="space_under">Temps de transition entre chaque position :</h3>
+                    <span id="speedDisplay">2000 ms</span>
+                    <br>
+                    <input type="range" name="speed" id="speedBar" min="100" max="5000" value="1000" oninput="GetSpeed(this.value)"></input>
+                    <br>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 
 <script>
