@@ -1,9 +1,8 @@
 import random
 from math import sqrt
-
+import def_fct 
 
 #-----------------------Bit degradation----------------------
-
 
 def degradation_bit(valeur,bit, pourcentage):
   id_micro, data = valeur[0:2], valeur[2:]
@@ -43,8 +42,6 @@ def degradation_bit(valeur,bit, pourcentage):
   data_modif = ''.join(liste_bit)
   return id_micro + data_modif
     
-#print(degradation_bit('111111111111111111111111111111111111111111111111111111111111111111',2,2))
-
 def estimation_case(tableau_errone):
   liste_case_min, liste_case_min2 = [], []
   dico_amplitude_errone, dico_distance = {}, {}
@@ -52,16 +49,16 @@ def estimation_case(tableau_errone):
   for index, element in enumerate(tableau_errone):
     id_micro,data_errone = element[0:2], element[2:]
     
-    amplitude_errone = binaire_a_amplitude(data_errone)
-    valeur_distance = sqrt(coef_permittivite/amplitude_errone)
+    amplitude_errone = def_fct.binaire_a_amplitude(data_errone)
+    valeur_distance = sqrt(def_fct.coef_permittivite/amplitude_errone)
 
     dico_amplitude_errone['am_errone_mic' + str(index+1)] = amplitude_errone
     dico_distance["distance_mic" + str(index+1)] = valeur_distance
 
     ecart_min, case_min, ecart_min_2, case_min_2 = 10000, 0, 10000, 0
     
-    for case, distances in distance_case.items():
-      a_comparer = distance_case[case]['micro'+str(index+1)]
+    for case, distances in def_fct.distance_case.items():
+      a_comparer = def_fct.distance_case[case]['micro'+str(index+1)]
       distance_mic = dico_distance['distance_mic'+str(index+1)]
       ecart = abs(a_comparer - distance_mic)
       if ecart <= ecart_min:
@@ -73,15 +70,7 @@ def estimation_case(tableau_errone):
     liste_case_min.append(case_min)
     liste_case_min2.append(case_min_2)
     
-  #print(liste_case_min)
-  #print(liste_case_min2)
-
   return liste_case_min + liste_case_min2  
-    
-
-  #print(dico_amplitude_errone)
-  #print(dico_distance)
-
 
 def choix_amplitude(tableau, choix_micro, choix_bit, pourcentage):
 
@@ -108,14 +97,16 @@ def compter_occurrences(liste):
             dico_occurence[element] = 1
     return dico_occurence
 
-def principal(tab, choix_micro, choix_bit, pourcentage):
-  tableau_valeur_errone = []
-  tableau_valeur_errone = choix_amplitude(tab, choix_micro, choix_bit, pourcentage)
-  tableau_final = estimation_case(tableau_valeur_errone)
-  dico_occurences = compter_occurrences(tableau_final)
-  print(dico_occurences)
-  
-tab = ['010011110100111011000001011000011101101110010110110000000100100000', '100011110101000101010000000101100100101101011101001110011110001101', '110011110110010001010011100110101010000111101110000101111001000011']
+#-------------------------------Fonction principale-------------------------------
 
-principal(tab, [1,3], 1, 0.1)
+# tab = ['010011110101001000111010010001100011011001101110111110010100001010', '100011110110011111001001101011111111000001000110001010100110101100', '110011110101001101010001011111110101100010001101111110101111100011']
+
+# def principal(tab, choix_micro, choix_bit, pourcentage):
+#   tableau_valeur_errone = []
+#   tableau_valeur_errone = choix_amplitude(tab, choix_micro, choix_bit, pourcentage)
+#   tableau_final = estimation_case(tableau_valeur_errone)
+#   dico_occurences = compter_occurrences(tableau_final)
+#   print(dico_occurences)
+
+# principal(tab, [1,3], 1, 0.1)
   

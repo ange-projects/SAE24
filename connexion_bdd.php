@@ -1,7 +1,16 @@
 <?php
-    $servername="192.168.102.239";
-    $username="brulix";
-    $password="brul1goat";
+    // $servername="192.168.102.239";
+    // $username="brulix";
+    // $password="brul1goat";
+    // $dbname="bd_micros";
+    // $mysql_port="3306";
+
+    // $connexion = mysqli_connect($servername, $username, $password, $dbname)
+    //     or die("Connexion impossible à la base de données");
+
+    $servername="localhost";
+    $username="root";
+    $password="root";
     $dbname="bd_micros";
     $mysql_port="3306";
 

@@ -1,7 +1,6 @@
 import time
 import mysql.connector
 import paho.mqtt.client as mqtt
-import calcul_distance_cartographie_amplitude
 import random
 
 
@@ -15,11 +14,11 @@ with open('dico/dico_pos_x_y.txt', 'r') as file:
 
 # Connexion to database
 connexion = mysql.connector.connect(
-    host='192.168.102.239',
+    host='localhost',
     port='3306',
     database='bd_micros',
-    user='brulix',
-    password='brul1goat'
+    user='root',
+    password='root'
 )
 
 # Creating a cursor for executing SQL queries
@@ -68,7 +67,7 @@ def get_voisin(pos):
     return voisin
 
 voisin = get_voisin(placement)
-print("Voici les cases possibles: ",voisin)
+print("Voici les cases possibles au voisinage de la précédente : ",voisin)
 case_aleatoire = random.choice(voisin)
 amplitude_aleatoire = dico_amplitude_binaire_id[case_aleatoire]
 position_x, position_y = dico_pos_x_y[case_aleatoire]
