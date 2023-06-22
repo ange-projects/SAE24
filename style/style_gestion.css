@@ -204,6 +204,10 @@ body {
     display: flex;
 }
 
+div .left {
+    text-align: center;
+}
+
 .left,
 .right {
     width: 48%;
@@ -216,7 +220,7 @@ body {
 }
 
 #gantt_fin {
-    width: 100%;
+    width: 80%;
 }
 
 .contener {

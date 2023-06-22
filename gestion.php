@@ -31,7 +31,7 @@
                 <img src='./img/Gantt_prev.png' id="gantt_prev"  alt='Diagramme de Gantt prévisionnel'>
             </div>
             <div class="left">
-                <img id="gantt_fin" src='./img/Gantt_prev.png' alt='Diagramme de Gantt final'>
+                <img id="gantt_fin" src='./img/Gantt-Final-SAE24.png' alt='Diagramme de Gantt final'>
             </div>
         </div>
     </section>
