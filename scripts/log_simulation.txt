@@ -1,3 +1,577 @@
+<<<<<<< HEAD
+Script subscribe exécuté à : 22-06-2023 10:43:32
+Script publication exécuté à : 22-06-2023 10:43:32
+Fin de la boucle a : 22-06-2023 10:43:44
+Temps d'exécution : 12.373618879 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:43:44
+Script publication exécuté à : 22-06-2023 10:43:46
+Fin de la boucle a : 22-06-2023 10:43:58
+Temps d'exécution : 13.303765850 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:43:58
+Script publication exécuté à : 22-06-2023 10:43:59
+Fin de la boucle a : 22-06-2023 10:44:11
+Temps d'exécution : 13.298810812 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:44:11
+Script publication exécuté à : 22-06-2023 10:44:12
+Fin de la boucle a : 22-06-2023 10:44:24
+Temps d'exécution : 13.289576447 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:44:24
+Script publication exécuté à : 22-06-2023 10:44:25
+Fin de la boucle a : 22-06-2023 10:44:30
+Temps d'exécution : 5.300729152 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:44:30
+Script publication exécuté à : 22-06-2023 10:44:31
+Fin de la boucle a : 22-06-2023 10:44:35
+Temps d'exécution : 5.303452924 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:44:35
+Script publication exécuté à : 22-06-2023 10:44:36
+Fin de la boucle a : 22-06-2023 10:44:40
+Temps d'exécution : 5.285272199 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:44:40
+Script publication exécuté à : 22-06-2023 10:44:41
+Fin de la boucle a : 22-06-2023 10:44:46
+Temps d'exécution : 5.296938294 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:44:46
+Script publication exécuté à : 22-06-2023 10:44:47
+Fin de la boucle a : 22-06-2023 10:44:51
+Temps d'exécution : 5.290572661 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:44:51
+Script publication exécuté à : 22-06-2023 10:44:52
+Fin de la boucle a : 22-06-2023 10:44:56
+Temps d'exécution : 5.288750610 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:44:56
+Script publication exécuté à : 22-06-2023 10:44:57
+Fin de la boucle a : 22-06-2023 10:45:02
+Temps d'exécution : 5.280045009 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:02
+Script publication exécuté à : 22-06-2023 10:45:03
+Fin de la boucle a : 22-06-2023 10:45:07
+Temps d'exécution : 5.267907059 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:07
+Script publication exécuté à : 22-06-2023 10:45:08
+Fin de la boucle a : 22-06-2023 10:45:12
+Temps d'exécution : 5.286444929 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:12
+Script publication exécuté à : 22-06-2023 10:45:13
+Fin de la boucle a : 22-06-2023 10:45:18
+Temps d'exécution : 5.283841273 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:18
+Script publication exécuté à : 22-06-2023 10:45:19
+Fin de la boucle a : 22-06-2023 10:45:23
+Temps d'exécution : 5.291748510 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:23
+Script publication exécuté à : 22-06-2023 10:45:24
+Fin de la boucle a : 22-06-2023 10:45:28
+Temps d'exécution : 5.290785141 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:28
+Script publication exécuté à : 22-06-2023 10:45:29
+Fin de la boucle a : 22-06-2023 10:45:33
+Temps d'exécution : 5.302686749 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:33
+Script publication exécuté à : 22-06-2023 10:45:34
+Fin de la boucle a : 22-06-2023 10:45:39
+Temps d'exécution : 5.298604778 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:39
+Script publication exécuté à : 22-06-2023 10:45:40
+Fin de la boucle a : 22-06-2023 10:45:44
+Temps d'exécution : 5.309851446 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:44
+Script publication exécuté à : 22-06-2023 10:45:45
+Fin de la boucle a : 22-06-2023 10:45:49
+Temps d'exécution : 5.293284749 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:49
+Script publication exécuté à : 22-06-2023 10:45:50
+Fin de la boucle a : 22-06-2023 10:45:55
+Temps d'exécution : 5.306932582 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:45:55
+Script publication exécuté à : 22-06-2023 10:45:56
+Fin de la boucle a : 22-06-2023 10:46:00
+Temps d'exécution : 5.301587292 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:00
+Script publication exécuté à : 22-06-2023 10:46:01
+Fin de la boucle a : 22-06-2023 10:46:05
+Temps d'exécution : 5.296656682 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:05
+Script publication exécuté à : 22-06-2023 10:46:06
+Fin de la boucle a : 22-06-2023 10:46:11
+Temps d'exécution : 5.312500838 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:11
+Script publication exécuté à : 22-06-2023 10:46:12
+Fin de la boucle a : 22-06-2023 10:46:16
+Temps d'exécution : 5.306779405 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:16
+Script publication exécuté à : 22-06-2023 10:46:17
+Fin de la boucle a : 22-06-2023 10:46:21
+Temps d'exécution : 5.303632780 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:21
+Script publication exécuté à : 22-06-2023 10:46:22
+Fin de la boucle a : 22-06-2023 10:46:27
+Temps d'exécution : 5.299749550 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:27
+Script publication exécuté à : 22-06-2023 10:46:28
+Fin de la boucle a : 22-06-2023 10:46:32
+Temps d'exécution : 5.289122714 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:32
+Script publication exécuté à : 22-06-2023 10:46:33
+Fin de la boucle a : 22-06-2023 10:46:37
+Temps d'exécution : 5.302942884 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:37
+Script publication exécuté à : 22-06-2023 10:46:38
+Fin de la boucle a : 22-06-2023 10:46:43
+Temps d'exécution : 5.297424779 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:43
+Script publication exécuté à : 22-06-2023 10:46:44
+Fin de la boucle a : 22-06-2023 10:46:48
+Temps d'exécution : 5.301282795 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:48
+Script publication exécuté à : 22-06-2023 10:46:49
+Fin de la boucle a : 22-06-2023 10:46:53
+Temps d'exécution : 5.288960980 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:53
+Script publication exécuté à : 22-06-2023 10:46:54
+Fin de la boucle a : 22-06-2023 10:46:59
+Temps d'exécution : 5.308356644 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:46:59
+Script publication exécuté à : 22-06-2023 10:47:00
+Fin de la boucle a : 22-06-2023 10:47:04
+Temps d'exécution : 5.299955557 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:04
+Script publication exécuté à : 22-06-2023 10:47:05
+Fin de la boucle a : 22-06-2023 10:47:09
+Temps d'exécution : 5.294252816 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:09
+Script publication exécuté à : 22-06-2023 10:47:10
+Fin de la boucle a : 22-06-2023 10:47:15
+Temps d'exécution : 5.293014597 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:15
+Script publication exécuté à : 22-06-2023 10:47:16
+Fin de la boucle a : 22-06-2023 10:47:20
+Temps d'exécution : 5.298248112 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:20
+Script publication exécuté à : 22-06-2023 10:47:21
+Fin de la boucle a : 22-06-2023 10:47:25
+Temps d'exécution : 5.296965465 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:25
+Script publication exécuté à : 22-06-2023 10:47:26
+Fin de la boucle a : 22-06-2023 10:47:31
+Temps d'exécution : 5.306805374 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:31
+Script publication exécuté à : 22-06-2023 10:47:32
+Fin de la boucle a : 22-06-2023 10:47:36
+Temps d'exécution : 5.286375177 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:36
+Script publication exécuté à : 22-06-2023 10:47:37
+Fin de la boucle a : 22-06-2023 10:47:41
+Temps d'exécution : 5.299734203 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:41
+Script publication exécuté à : 22-06-2023 10:47:42
+Fin de la boucle a : 22-06-2023 10:47:46
+Temps d'exécution : 5.286949837 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:46
+Script publication exécuté à : 22-06-2023 10:47:47
+Fin de la boucle a : 22-06-2023 10:47:52
+Temps d'exécution : 5.305300513 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:52
+Script publication exécuté à : 22-06-2023 10:47:53
+Fin de la boucle a : 22-06-2023 10:47:57
+Temps d'exécution : 5.280763963 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:47:57
+Script publication exécuté à : 22-06-2023 10:47:58
+Fin de la boucle a : 22-06-2023 10:48:02
+Temps d'exécution : 5.299135262 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:02
+Script publication exécuté à : 22-06-2023 10:48:03
+Fin de la boucle a : 22-06-2023 10:48:08
+Temps d'exécution : 5.293945948 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:08
+Script publication exécuté à : 22-06-2023 10:48:09
+Fin de la boucle a : 22-06-2023 10:48:13
+Temps d'exécution : 5.295394093 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:13
+Script publication exécuté à : 22-06-2023 10:48:14
+Fin de la boucle a : 22-06-2023 10:48:18
+Temps d'exécution : 5.295777252 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:18
+Script publication exécuté à : 22-06-2023 10:48:19
+Fin de la boucle a : 22-06-2023 10:48:24
+Temps d'exécution : 5.285038011 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:24
+Script publication exécuté à : 22-06-2023 10:48:25
+Fin de la boucle a : 22-06-2023 10:48:29
+Temps d'exécution : 5.275826717 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:29
+Script publication exécuté à : 22-06-2023 10:48:30
+Fin de la boucle a : 22-06-2023 10:48:34
+Temps d'exécution : 5.286413069 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:34
+Script publication exécuté à : 22-06-2023 10:48:35
+Fin de la boucle a : 22-06-2023 10:48:40
+Temps d'exécution : 5.281157866 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:40
+Script publication exécuté à : 22-06-2023 10:48:41
+Fin de la boucle a : 22-06-2023 10:48:45
+Temps d'exécution : 5.255103311 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:45
+Script publication exécuté à : 22-06-2023 10:48:46
+Fin de la boucle a : 22-06-2023 10:48:50
+Temps d'exécution : 5.271983378 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:50
+Script publication exécuté à : 22-06-2023 10:48:51
+Fin de la boucle a : 22-06-2023 10:48:55
+Temps d'exécution : 5.285159538 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:48:55
+Script publication exécuté à : 22-06-2023 10:48:56
+Fin de la boucle a : 22-06-2023 10:49:01
+Temps d'exécution : 5.279980062 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:01
+Script publication exécuté à : 22-06-2023 10:49:02
+Fin de la boucle a : 22-06-2023 10:49:06
+Temps d'exécution : 5.282534907 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:06
+Script publication exécuté à : 22-06-2023 10:49:07
+Fin de la boucle a : 22-06-2023 10:49:11
+Temps d'exécution : 5.274559374 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:11
+Script publication exécuté à : 22-06-2023 10:49:12
+Fin de la boucle a : 22-06-2023 10:49:17
+Temps d'exécution : 5.281867487 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:17
+Script publication exécuté à : 22-06-2023 10:49:18
+Fin de la boucle a : 22-06-2023 10:49:22
+Temps d'exécution : 5.275529379 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:22
+Script publication exécuté à : 22-06-2023 10:49:23
+Fin de la boucle a : 22-06-2023 10:49:27
+Temps d'exécution : 5.271341553 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:27
+Script publication exécuté à : 22-06-2023 10:49:28
+Fin de la boucle a : 22-06-2023 10:49:33
+Temps d'exécution : 5.278347169 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:33
+Script publication exécuté à : 22-06-2023 10:49:34
+Fin de la boucle a : 22-06-2023 10:49:38
+Temps d'exécution : 5.286810526 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:38
+Script publication exécuté à : 22-06-2023 10:49:39
+Fin de la boucle a : 22-06-2023 10:49:43
+Temps d'exécution : 5.275931280 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:43
+Script publication exécuté à : 22-06-2023 10:49:44
+Fin de la boucle a : 22-06-2023 10:49:48
+Temps d'exécution : 5.288574996 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:48
+Script publication exécuté à : 22-06-2023 10:49:49
+Fin de la boucle a : 22-06-2023 10:49:54
+Temps d'exécution : 5.286304019 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:54
+Script publication exécuté à : 22-06-2023 10:49:55
+Fin de la boucle a : 22-06-2023 10:49:59
+Temps d'exécution : 5.280822198 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:49:59
+Script publication exécuté à : 22-06-2023 10:50:00
+Fin de la boucle a : 22-06-2023 10:50:04
+Temps d'exécution : 5.272512134 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:04
+Script publication exécuté à : 22-06-2023 10:50:05
+Fin de la boucle a : 22-06-2023 10:50:10
+Temps d'exécution : 5.275757591 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:10
+Script publication exécuté à : 22-06-2023 10:50:11
+Fin de la boucle a : 22-06-2023 10:50:15
+Temps d'exécution : 5.294231748 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:15
+Script publication exécuté à : 22-06-2023 10:50:16
+Fin de la boucle a : 22-06-2023 10:50:20
+Temps d'exécution : 5.282495947 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:20
+Script publication exécuté à : 22-06-2023 10:50:21
+Fin de la boucle a : 22-06-2023 10:50:26
+Temps d'exécution : 5.277327038 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:26
+Script publication exécuté à : 22-06-2023 10:50:27
+Fin de la boucle a : 22-06-2023 10:50:31
+Temps d'exécution : 5.285380085 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:31
+Script publication exécuté à : 22-06-2023 10:50:32
+Fin de la boucle a : 22-06-2023 10:50:36
+Temps d'exécution : 5.284259453 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:36
+Script publication exécuté à : 22-06-2023 10:50:37
+Fin de la boucle a : 22-06-2023 10:50:42
+Temps d'exécution : 5.286832886 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:42
+Script publication exécuté à : 22-06-2023 10:50:43
+Fin de la boucle a : 22-06-2023 10:50:47
+Temps d'exécution : 5.290576824 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:47
+Script publication exécuté à : 22-06-2023 10:50:48
+Fin de la boucle a : 22-06-2023 10:50:52
+Temps d'exécution : 5.276595583 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:52
+Script publication exécuté à : 22-06-2023 10:50:53
+Fin de la boucle a : 22-06-2023 10:50:57
+Temps d'exécution : 5.276899671 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:50:57
+Script publication exécuté à : 22-06-2023 10:50:58
+Fin de la boucle a : 22-06-2023 10:51:03
+Temps d'exécution : 5.287900697 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:03
+Script publication exécuté à : 22-06-2023 10:51:04
+Fin de la boucle a : 22-06-2023 10:51:08
+Temps d'exécution : 5.257101973 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:08
+Script publication exécuté à : 22-06-2023 10:51:09
+Fin de la boucle a : 22-06-2023 10:51:13
+Temps d'exécution : 5.268173623 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:13
+Script publication exécuté à : 22-06-2023 10:51:14
+Fin de la boucle a : 22-06-2023 10:51:19
+Temps d'exécution : 5.277259831 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:19
+Script publication exécuté à : 22-06-2023 10:51:20
+Fin de la boucle a : 22-06-2023 10:51:24
+Temps d'exécution : 5.287402221 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:24
+Script publication exécuté à : 22-06-2023 10:51:25
+Fin de la boucle a : 22-06-2023 10:51:29
+Temps d'exécution : 5.288262654 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:29
+Script publication exécuté à : 22-06-2023 10:51:30
+Fin de la boucle a : 22-06-2023 10:51:35
+Temps d'exécution : 5.278380314 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:35
+Script publication exécuté à : 22-06-2023 10:51:36
+Fin de la boucle a : 22-06-2023 10:51:40
+Temps d'exécution : 5.259052371 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:40
+Script publication exécuté à : 22-06-2023 10:51:41
+Fin de la boucle a : 22-06-2023 10:51:45
+Temps d'exécution : 5.274462502 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:45
+Script publication exécuté à : 22-06-2023 10:51:46
+Fin de la boucle a : 22-06-2023 10:51:50
+Temps d'exécution : 5.281300093 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:50
+Script publication exécuté à : 22-06-2023 10:51:51
+Fin de la boucle a : 22-06-2023 10:51:56
+Temps d'exécution : 5.285212619 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:51:56
+Script publication exécuté à : 22-06-2023 10:51:57
+Fin de la boucle a : 22-06-2023 10:52:01
+Temps d'exécution : 5.267878033 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:01
+Script publication exécuté à : 22-06-2023 10:52:02
+Fin de la boucle a : 22-06-2023 10:52:06
+Temps d'exécution : 5.286805044 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:06
+Script publication exécuté à : 22-06-2023 10:52:07
+Fin de la boucle a : 22-06-2023 10:52:12
+Temps d'exécution : 5.262556747 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:12
+Script publication exécuté à : 22-06-2023 10:52:13
+Fin de la boucle a : 22-06-2023 10:52:17
+Temps d'exécution : 5.258473911 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:17
+Script publication exécuté à : 22-06-2023 10:52:18
+Fin de la boucle a : 22-06-2023 10:52:22
+Temps d'exécution : 5.269337019 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:22
+Script publication exécuté à : 22-06-2023 10:52:23
+Fin de la boucle a : 22-06-2023 10:52:27
+Temps d'exécution : 5.278070520 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:27
+Script publication exécuté à : 22-06-2023 10:52:28
+Fin de la boucle a : 22-06-2023 10:52:33
+Temps d'exécution : 5.274413249 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:33
+Script publication exécuté à : 22-06-2023 10:52:34
+Fin de la boucle a : 22-06-2023 10:52:38
+Temps d'exécution : 5.272061846 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:38
+Script publication exécuté à : 22-06-2023 10:52:39
+Fin de la boucle a : 22-06-2023 10:52:43
+Temps d'exécution : 5.280601600 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:43
+Script publication exécuté à : 22-06-2023 10:52:44
+Fin de la boucle a : 22-06-2023 10:52:49
+Temps d'exécution : 5.273050734 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:49
+Script publication exécuté à : 22-06-2023 10:52:50
+Fin de la boucle a : 22-06-2023 10:52:54
+Temps d'exécution : 5.271246249 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:54
+Script publication exécuté à : 22-06-2023 10:52:55
+Fin de la boucle a : 22-06-2023 10:52:59
+Temps d'exécution : 5.275395852 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:52:59
+Script publication exécuté à : 22-06-2023 10:53:00
+Fin de la boucle a : 22-06-2023 10:53:05
+Temps d'exécution : 5.280881270 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:05
+Script publication exécuté à : 22-06-2023 10:53:06
+Fin de la boucle a : 22-06-2023 10:53:10
+Temps d'exécution : 5.278009404 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:10
+Script publication exécuté à : 22-06-2023 10:53:11
+Fin de la boucle a : 22-06-2023 10:53:15
+Temps d'exécution : 5.276804338 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:15
+Script publication exécuté à : 22-06-2023 10:53:16
+Fin de la boucle a : 22-06-2023 10:53:20
+Temps d'exécution : 5.282836258 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:20
+Script publication exécuté à : 22-06-2023 10:53:21
+Fin de la boucle a : 22-06-2023 10:53:26
+Temps d'exécution : 5.286200038 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:26
+Script publication exécuté à : 22-06-2023 10:53:27
+Fin de la boucle a : 22-06-2023 10:53:31
+Temps d'exécution : 5.286509118 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:31
+Script publication exécuté à : 22-06-2023 10:53:32
+Fin de la boucle a : 22-06-2023 10:53:36
+Temps d'exécution : 5.281649255 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:36
+Script publication exécuté à : 22-06-2023 10:53:37
+Fin de la boucle a : 22-06-2023 10:53:42
+Temps d'exécution : 5.283186235 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:42
+Script publication exécuté à : 22-06-2023 10:53:43
+Fin de la boucle a : 22-06-2023 10:53:47
+Temps d'exécution : 5.276707176 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:47
+Script publication exécuté à : 22-06-2023 10:53:48
+Fin de la boucle a : 22-06-2023 10:53:52
+Temps d'exécution : 5.272062102 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:52
+Script publication exécuté à : 22-06-2023 10:53:53
+Fin de la boucle a : 22-06-2023 10:53:58
+Temps d'exécution : 5.277168565 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:53:58
+Script publication exécuté à : 22-06-2023 10:53:59
+Fin de la boucle a : 22-06-2023 10:54:03
+Temps d'exécution : 5.271903342 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:54:03
+Script publication exécuté à : 22-06-2023 10:54:04
+Fin de la boucle a : 22-06-2023 10:54:08
+Temps d'exécution : 5.283859662 secondes
+-----------------------------------------------------------
+Script subscribe exécuté à : 22-06-2023 10:54:08
+Script publication exécuté à : 22-06-2023 10:54:09
+=======
 Script subscribe ex�cut� � : 22-06-2023 09:30:16
 Script publication ex�cut� � : 22-06-2023 09:30:18
 Fin de la boucle
@@ -55,3 +629,4 @@ Script publication ex�cut� � : 22-06-2023 09:31:10
 Fin de la boucle
 -----------------------------------------------------------
 Script subscribe ex�cut� � : 22-06-2023 09:31:12
+>>>>>>> e853c6f28801f864ade2a35c7221037727176988
