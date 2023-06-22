@@ -204,6 +204,14 @@ body {
     display: flex;
 }
 
+div .left {
+    text-align: center;
+}
+
+div .right {
+    text-align: center;
+}
+
 .left,
 .right {
     width: 48%;
@@ -212,11 +220,11 @@ body {
 }
 
 #gantt_prev {
-    width: 100%;
+    width: 80%;
 }
 
 #gantt_fin {
-    width: 100%;
+    width: 80%;
 }
 
 .contener {
