@@ -1,3 +1,6 @@
+import random
+import time
+
 #PARTIE DEPLACEMENT ALEATOIRE POINT
 # Initialize placement at position 15
 placement = 15

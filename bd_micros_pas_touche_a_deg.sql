@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1deb5ubuntu1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 22, 2023 at 09:31 AM
--- Server version: 8.0.33-0ubuntu0.22.04.2
--- PHP Version: 8.1.2-1ubuntu2.11
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 22 juin 2023 à 10:06
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,23 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bd_micros`
+-- Base de données : `bd_micros`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Structure de la table `admin`
 --
 
 CREATE TABLE `admin` (
-  `ID` int NOT NULL,
-  `login` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `mdp` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+  `ID` int(11) NOT NULL,
+  `login` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Déchargement des données de la table `admin`
 --
 
 INSERT INTO `admin` (`ID`, `login`, `mdp`) VALUES
@@ -43,12 +43,12 @@ INSERT INTO `admin` (`ID`, `login`, `mdp`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coord_cases`
+-- Structure de la table `coord_cases`
 --
 
 CREATE TABLE `coord_cases` (
-  `ID` int NOT NULL,
-  `num_case` int NOT NULL,
+  `ID` int(11) NOT NULL,
+  `num_case` int(11) NOT NULL,
   `x` float NOT NULL,
   `y` float NOT NULL,
   `MIC1` double NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE `coord_cases` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `coord_cases`
+-- Déchargement des données de la table `coord_cases`
 --
 
 INSERT INTO `coord_cases` (`ID`, `num_case`, `x`, `y`, `MIC1`, `MIC2`, `MIC3`) VALUES
@@ -321,19 +321,19 @@ INSERT INTO `coord_cases` (`ID`, `num_case`, `x`, `y`, `MIC1`, `MIC2`, `MIC3`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coord_points`
+-- Structure de la table `coord_points`
 --
 
 CREATE TABLE `coord_points` (
-  `ID` int NOT NULL,
-  `ID_mesure` int NOT NULL,
+  `ID` int(11) NOT NULL,
+  `ID_mesure` int(11) NOT NULL,
   `x` float NOT NULL,
   `y` float NOT NULL,
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `time` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `coord_points`
+-- Déchargement des données de la table `coord_points`
 --
 
 INSERT INTO `coord_points` (`ID`, `ID_mesure`, `x`, `y`, `time`) VALUES
@@ -1095,25 +1095,32 @@ INSERT INTO `coord_points` (`ID`, `ID_mesure`, `x`, `y`, `time`) VALUES
 (15974, 1250, 3.75, 1.25, '2023-06-22 09:30:59'),
 (15975, 1251, 4.25, 1.75, '2023-06-22 09:31:03'),
 (15976, 1252, 3.75, 1.25, '2023-06-22 09:31:07'),
-(15977, 1253, 4.25, 1.75, '2023-06-22 09:31:11');
+(15977, 1253, 4.25, 1.75, '2023-06-22 09:31:11'),
+(15978, 1254, 3.75, 0.25, '2023-06-22 09:40:37'),
+(15979, 1255, 2.75, 7.25, '2023-06-22 09:40:40'),
+(15980, 1256, 3.25, 7.25, '2023-06-22 09:40:43'),
+(15981, 1257, 2.75, 7.25, '2023-06-22 09:41:03'),
+(15982, 1258, 4.25, 0.25, '2023-06-22 09:41:07'),
+(15983, 1259, 3.75, 0.25, '2023-06-22 09:41:10'),
+(15984, 1260, 3.75, 7.25, '2023-06-22 10:04:45');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coord_points_deg`
+-- Structure de la table `coord_points_deg`
 --
 
 CREATE TABLE `coord_points_deg` (
-  `ID` int NOT NULL,
-  `ID_mesure` int NOT NULL,
-  `poids` int NOT NULL,
+  `ID` int(11) NOT NULL,
+  `ID_mesure` int(11) NOT NULL,
+  `poids` int(11) NOT NULL,
   `x` float NOT NULL,
   `y` float NOT NULL,
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `time` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `coord_points_deg`
+-- Déchargement des données de la table `coord_points_deg`
 --
 
 INSERT INTO `coord_points_deg` (`ID`, `ID_mesure`, `poids`, `x`, `y`, `time`) VALUES
@@ -1190,18 +1197,18 @@ INSERT INTO `coord_points_deg` (`ID`, `ID_mesure`, `poids`, `x`, `y`, `time`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coord_points_reel`
+-- Structure de la table `coord_points_reel`
 --
 
 CREATE TABLE `coord_points_reel` (
-  `ID` int NOT NULL,
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ID` int(11) NOT NULL,
+  `time` datetime NOT NULL DEFAULT current_timestamp(),
   `x` float NOT NULL,
   `y` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `coord_points_reel`
+-- Déchargement des données de la table `coord_points_reel`
 --
 
 INSERT INTO `coord_points_reel` (`ID`, `time`, `x`, `y`) VALUES
@@ -1953,112 +1960,122 @@ INSERT INTO `coord_points_reel` (`ID`, `time`, `x`, `y`) VALUES
 (1250, '2023-06-22 09:30:59', 3.75, 1.25),
 (1251, '2023-06-22 09:31:03', 4.25, 1.75),
 (1252, '2023-06-22 09:31:07', 3.75, 1.25),
-(1253, '2023-06-22 09:31:11', 4.25, 1.75);
+(1253, '2023-06-22 09:31:11', 4.25, 1.75),
+(1254, '2023-06-22 09:40:37', 3.75, 0.25),
+(1255, '2023-06-22 09:40:40', 2.75, 7.25),
+(1256, '2023-06-22 09:40:43', 3.25, 7.25),
+(1257, '2023-06-22 09:41:03', 2.75, 7.25),
+(1258, '2023-06-22 09:41:07', 4.25, 0.25),
+(1259, '2023-06-22 09:41:10', 3.75, 0.25),
+(1260, '2023-06-22 10:04:45', 3.75, 7.25);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `degradation`
+-- Structure de la table `degradation`
 --
 
 CREATE TABLE `degradation` (
-  `id` int NOT NULL,
-  `nb_bit` int NOT NULL,
-  `nb_micro` int NOT NULL
+  `id` int(11) NOT NULL,
+  `force_mic` int(11) NOT NULL,
+  `micro_actif` varchar(3) NOT NULL,
+  `vitesse` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `degradation`
+-- Déchargement des données de la table `degradation`
 --
 
-INSERT INTO `degradation` (`id`, `nb_bit`, `nb_micro`) VALUES
-(1, 0, 3),
-(2, 1, 1),
-(3, 2, 3);
+INSERT INTO `degradation` (`id`, `force_mic`, `micro_actif`, `vitesse`) VALUES
+(1, 0, '3', 1),
+(2, 1, '1', 2),
+(3, 2, '3', 3),
+(4, 2, '23', 2),
+(5, 2, '23', 2);
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `coord_cases`
+-- Index pour la table `coord_cases`
 --
 ALTER TABLE `coord_cases`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `num_case` (`num_case`);
 
 --
--- Indexes for table `coord_points`
+-- Index pour la table `coord_points`
 --
 ALTER TABLE `coord_points`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ID_mesure` (`ID_mesure`);
 
 --
--- Indexes for table `coord_points_deg`
+-- Index pour la table `coord_points_deg`
 --
 ALTER TABLE `coord_points_deg`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ID_mesure` (`ID_mesure`);
 
 --
--- Indexes for table `coord_points_reel`
+-- Index pour la table `coord_points_reel`
 --
 ALTER TABLE `coord_points_reel`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `degradation`
+-- Index pour la table `degradation`
 --
 ALTER TABLE `degradation`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `coord_cases`
+-- AUTO_INCREMENT pour la table `coord_cases`
 --
 ALTER TABLE `coord_cases`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=517;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=517;
 
 --
--- AUTO_INCREMENT for table `coord_points`
+-- AUTO_INCREMENT pour la table `coord_points`
 --
 ALTER TABLE `coord_points`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15978;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15985;
 
 --
--- AUTO_INCREMENT for table `coord_points_deg`
+-- AUTO_INCREMENT pour la table `coord_points_deg`
 --
 ALTER TABLE `coord_points_deg`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16022;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16022;
 
 --
--- AUTO_INCREMENT for table `coord_points_reel`
+-- AUTO_INCREMENT pour la table `coord_points_reel`
 --
 ALTER TABLE `coord_points_reel`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1254;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1261;
 
 --
--- AUTO_INCREMENT for table `degradation`
+-- AUTO_INCREMENT pour la table `degradation`
 --
 ALTER TABLE `degradation`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `coord_points`
+-- Contraintes pour la table `coord_points`
 --
 ALTER TABLE `coord_points`
   ADD CONSTRAINT `coord_points_ibfk_1` FOREIGN KEY (`ID_mesure`) REFERENCES `coord_points_reel` (`ID`);
 
 --
--- Constraints for table `coord_points_deg`
+-- Contraintes pour la table `coord_points_deg`
 --
 ALTER TABLE `coord_points_deg`
   ADD CONSTRAINT `coord_points_ibfk_2` FOREIGN KEY (`ID_mesure`) REFERENCES `coord_points_reel` (`ID`);
