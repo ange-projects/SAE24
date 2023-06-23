@@ -54,18 +54,15 @@
     <section class="zero">
         <div class="bloc">
                 <h3>Fonctionnalités du Projet</h3>
-                <ul class="index_dale">
-                    <li>&#8250; Section à éditer</li>
-                </ul>
-                <img id="img_fonctionnement" src="./img/sfonctionnement.png" alt="coucou" title="Schéma de fonctionnement de la solution SAE24"> 
-        <div>
+                <div class="bloc">
+                    <img id="img_chart" src="./img/flow_chart.png" alt="coucou" title="Flow chart   de la solution SAE24"> 
+                </div>
+                <div class="bloc">
+                    <img id="img_fonctionnement" src="./img/sfonctionnement.png" alt="coucou" title="Schéma de fonctionnement de la solution SAE24"> 
+                </div>
+       </div>
     </section>
 
-   <!-- <script src="surlignage.js"></script> -->
-    <script>
-    surlignerElementActif('acc_js');
-     
-    </script>
     <script src="script_accueil.js"></script>
     
 </body>
