@@ -231,3 +231,7 @@ div .right {
     display: flex;
     justify-content: end;
 }
+
+video {
+    border-radius: 6%;
+}

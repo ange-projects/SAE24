@@ -153,5 +153,12 @@
         </p>
     </section>
     <script src="script_accueil.js"></script>
+
+    <section id="intro">
+        <h2>Timelapse</h2>
+        <video width="640" height="360" controls>
+             <source src="./img/Short-Timelaps.mp4" type="video/mp4">
+        </video>
+    </section>
 </body>
 </html>
