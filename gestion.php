@@ -73,11 +73,11 @@
                     <h4>Nombre d'heures passées sur le projet</h4>
                     <li>&#8250; 60 h</li>
                     <h4>Problèmes rencontrés</h4>
-                    <li>&#8250; Insérer problèmes.</li>
+                    <li>&#8250; Ayant décidé de m’orienter principalement vers la programmation web, afin de découvrir la programmation en JavaScript, j’ai rencontré certaines difficultés lors de l’apprentissage de ce langage. En effet, après concertation avec les autres membres du groupe, j'ai décidé de créer un plan dynamique via l'utilisation de la librairie d3.js. Ce choix implique donc l’utilisation de la programmation orientée objet, un concept ne m’éttant pas familier et pour lequel je n’ai reçu que très peu d’enseignement. Créer un programme complexe basé sur ce concept a donc été un défi difficile à relever.</li>
                     <h4>Solutions apportées</h4>
-                    <li>&#8250; Insérer solutions.</li>
+                    <li>&#8250; De sorte à m’informer sur le sujet de la POO et en particulier en JavaScript j’ai participé à de nombreux cours en ligne, notamment ceux de fr.javascript.info que je recommande.</li>
                     <h4>Notation individuelle des membres du groupe :</h4>
-                    <p>Pierre : ; Corentin : ; Ange : ; Gaspard :</p>
+                    <p>Pierre : 5/5 ; Corentin : 5/5  ; Yoann: 5/5  ; Gaspard : 5/5</p>
                 </ul>
             </div>
             <div class="blocb">               
