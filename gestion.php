@@ -106,7 +106,7 @@
 
                     
                     <h4>Notation individuelle des membres du groupe :</h4>
-                    <p>Pierre : 5/ 5; Corentin : 5/5 ; Ange : 5/5 ; Yoann : 5/5 ; Gaspard : 5/5 </p>
+                    <p>Pierre : 5/ 5; Corentin : 5/5 ; Ange : 5/5 ; Yoann : 5/5</p>
                 </ul>
             </div>
             <div class="blocb">
@@ -115,11 +115,11 @@
                     <h4>Nombre d'heures passées sur le projet</h4>
                     <li>&#8250; 60 h</li>
                     <h4>Problèmes rencontrés</h4>
-                    <li>&#8250; Insérer problèmes.</li>
+                    <li>&#8250; Ayant été le membre le plus volatile du groupe, notamment vers la fin de cette SAÉ, j’ai rencontré de nombreux problèmes puisque étant intervenu à de multiples reprises afin d’aider à concevoir et debugger certains programmes/scripts. Les problèmes les plus notables rencontrés relevaient de la compréhension du Python et du PHP afin de réaliser un script de déplacement et des formulaires en interaction avec la BD fonctionnels. Les allers-retours entre la compréhension de la grille générée, les index associés aux coordonnées, et le déplacement du point simulé en lien avec différents dictionnaires dans un langage que je découvrais ont fait parti de mes tâches les plus complexes, en plus de la création/participation aux scripts gérant la dégradation du signal.</li>
                     <h4>Solutions apportées</h4>
-                    <li>&#8250; Insérer solutions.</li>
+                    <li>&#8250; Une concentration soutenue et une collaboration étroite avec certains de mes camarades (Pierre et Ange pour les formulaires et la table en lien avec les options de dégradation ; Corentin et Gaspard pour l’imbrication et la conception du déplacement simulé) m’ont permis d’outre-passer la plupart de mes problèmes.</li>
                     <h4>Notation individuelle des membres du groupe :</h4>
-                    <p>Pierre : ; Corentin : ; Ange : ; Gaspard :</p>
+                    <p>Pierre : 5/5 ; Corentin : 5/5 ; Ange : 5/5 ; Gaspard : 5/5</p>
                 </ul>
             </div>
         </div>
