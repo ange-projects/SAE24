@@ -58,13 +58,13 @@
                 <h3 id="Pierre"><a href="#Pierre">Pierre CHAVEROUX</a></h3>
                 <ul>
                     <h4>Nombre d'heures passées sur le projet</h4>
-                    <li>&#8250; X h</li>
+                    <li>&#8250; 60 h</li>
                     <h4>Problèmes rencontrés</h4>
-                    <li>&#8250; Insérer problèmes.</li>
+                    <li>&#8250;  Je n’ai que peu de problèmes au cours de ce projet. Ayant travaillé sur plusieurs aspects de ce dernier, j’ai rencontré le plus de difficulté lors de l’injection des données dans la base de donnée via le script sub_capteur.py. En effet, le format des différents tableaux gérés n’a pas toujours été évident à prendre en compte. Il a en effet fallu adapter de nombreuse fois les tableaux, mais aussi la base de donnée. La modification assez récurrente de cette dernière m’a été assez pénible puisque que m’a obligé à revenir mon travail assez régulièrement. Mes autres missions se sont déroulées sans problème majeur. </li>
                     <h4>Solutions apportées</h4>
-                    <li>&#8250; Insérer solutions.</li>
+                    <li>&#8250; Le problème de formatage des données pour l’envoi dans la BDD aura été réglé avec l’aide de mon camarade Corentin qui m’a aidé à développer des fonctions adaptant les différents tableaux au bon format. En ce qui concerne la conception de la base de donnée, il aura été nécessaire de recentrer le groupe autour de ce sujet pour convenir une fois pour toutes de la structure de cette dernière. Une fois cette mise au point faite, mon travail s’est trouvé facilité. </li>
                     <h4>Notation individuelle des membres du groupe :</h4>
-                    <p>Pierre : ; Corentin : ; Ange : ; Gaspard :</p>
+                    <p>Yoann : 5/5 ; Yoann : 5/5 ; Ange : 5/5 ; Gaspard : 5/5</p>
                 </ul>
             </div>
             <div class="bloc">
@@ -88,7 +88,7 @@
                     <h4>Problèmes rencontrés et Solutions apportées</h4>
                     <li>&#8250; L’utilisation de la bibliothèque “struct” permettant la manipulation de données agrégées sous forme binaire comme une séquence d'octets a été complexe au regard du peu de ressources disponibles sur le net. Mais, dans l’ensemble, les avantages des divers langages de programmation et bibliothèques utilisés lors de cette SAÉ ont permis de vous proposer un travail de précision et de qualité.</li>
                     <h4>Notation individuelle des membres du groupe :</h4>
-                    <p>Pierre : 5; Yoann : 5; Ange : 5; Gaspard : 5</p>
+                    <p>Pierre : 5/5 ; Yoann : 5/5 ; Ange : 5/5 ; Gaspard : 5/5</p>
                 </ul>
             </div>
             <div class="blocb">
