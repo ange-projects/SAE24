@@ -92,16 +92,21 @@
                 </ul>
             </div>
             <div class="blocb">
-                <h3 id="Gaspard"><a href="#Gaspard">Gaspard BERSOULLE</a></h3>
+                <h3 id="Gaspard"><a href="#Gaspard">Gaspard BERSOULLÉ</a></h3>
                 <ul>
                     <h4>Nombre d'heures passées sur le projet</h4>
                     <li>&#8250; 60 h</li>
                     <h4>Problèmes rencontrés</h4>
-                    <li>&#8250; Insérer problèmes.</li>
+                    <li>&#8250; La solution de conteneurisation Docker a rencontré des difficultés sur le Raspberry Pi en raison de l'incompatibilité des conteneurs avec l'architecture ARM v7 32 bits. Cela a empêché l'utilisation efficace de Docker pour partager le code source, héberger la base de données, le site web et le broker MQTT.</li>
                     <h4>Solutions apportées</h4>
-                    <li>&#8250; Insérer solutions.</li>
+                    <li>&#8250;  Hébergement individuel des sites web avec XAMPP : Plutôt que de tenter de mettre en place une solution d'hébergement centralisée avec XAMPP sur le Raspberry Pi.</li>
+                    <li>&#8250;  Utilisation de GitHub pour le partage de code : Pour faciliter la collaboration et partager le code source à héberger chacuns de son côté.</li>
+                    <li>&#8250;  Hébergement de la base de données sur  sur l'un des PC de l'équipe afin d'avoir tous accès à la même base.</li>
+                    <li>&#8250;  Utilisation de Mosquitto directement sur le Raspberry Pi : Plutôt que de passer par des conteneurs Docker pour exécuter Mosquitto, il a été décidé d'installer Mosquitto directement sur le Raspberry Pi. Cela évite les problèmes de compatibilité.</li>
+
+                    
                     <h4>Notation individuelle des membres du groupe :</h4>
-                    <p>Pierre : ; Corentin : ; Ange : ; Gaspard :</p>
+                    <p>Pierre : 5/ 5; Corentin : 5/5 ; Ange : 5/5 ; Yoann : 5/5 ; Gaspard : 5/5 </p>
                 </ul>
             </div>
             <div class="blocb">
