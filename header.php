@@ -12,10 +12,10 @@
 		
             // Check if the user is logged in
 		    if (isset($_SESSION['login']) && $_SESSION['login'] == 'admin') {
-			    echo '<li><a href="consultation_admin.php"> Full Consultation </a>';
+			    echo '<li><a href="consultation_admin.php">Consultation Admin</a>';
                 echo '<li><a href="deconnexion.php">Déconnexion</a></li>';
 		    } else {
-                echo '<li><a href="plan.php">Free Consultation</a></li>';
+                echo '<li><a href="plan.php">Consultation</a></li>';
 			    echo '<li><a href="login.php">Se connecter</a></li>';
 		    }
 		?>
